@@ -1,33 +1,38 @@
 # Pending tasks — Dr. Sindhu Dental Clinic (DRSDC)
 
-Last updated: 2026-09-30. Tick items off as they close; add new ones at the bottom of the right section.
+Last updated: 2026-09-30 (local build complete). Data to collect from the clinic is tracked separately in **`DRSDC_PendingItems.md`**.
 
-## A. Waiting on the owner (blocks the build)
+## A. Decisions for the account owner
 
-- [ ] "go" on the plan (palette, fonts, structure)
-- [ ] Decision: logo source — the only icon file (`suhasini-logo-512.png`) has "Suhasini" in its filename. Proposal: redraw the tooth mark as a new SVG in DRSDC colours (no file copied, no "Suhasini" anywhere).
-- [ ] Decision: doctor names — Dr. Sindhu / Dr. Preethi / Dr. Naveen Kumar are *also* listed as SMSDC consultants (same specialities) in `suhasini.json`. Confirm this is intended (shared consultants) or supply different placeholder names.
+- [ ] Official clinic name: "Dr. Sindhu Dental Clinic" (approved) vs "Dr. Sindhu Dental Clinic & Implant Centre" (on the supplied logo). Must match signboard + Google Business Profile.
+- [ ] Body font `display: swap` (as specified) vs `display: optional`: swap causes a small, deterministic layout shift on /contact at Lighthouse's 412 px mobile width (CLS 0.135 → mobile Performance exactly 90). `optional` removes it.
+- [ ] Palette: the site uses the specified sage/coral palette; the new logo is blue + leaf green. Keep, or tint the palette toward the logo?
+- [ ] Approve deploying a staging site (Cloud Run service, URL, build args) — not done, LOCAL ONLY so far.
+- [ ] Approve onboarding `tenant/dr-sindhu.json` to staging/production and adding the site origin to the API's CORS list.
 
-## B. Data to collect from Dr. Sindhu (mirrors DRSDC_PendingItems.md)
+## B. After the clinic supplies data (see DRSDC_PendingItems.md)
 
-- [ ] Clinic phone / WhatsApp number
-- [ ] Clinic email
-- [ ] PIN code, door number, landmark on Ashramam Road
-- [ ] Google Maps pin / share link
-- [ ] Working days (assumed Mon–Sat, Sunday closed)
-- [ ] Final logo (current one is a placeholder)
-- [ ] Doctor photos (initials avatars until then)
-- [ ] Doctors' real full names and State Dental Council registration numbers
-- [ ] Who handles implants (prosthetic), dentures and orthodontics — currently routed to Dr. Sindhu for consultation
-- [ ] Clinic photos for the Gallery
-- [ ] Social media URLs (Instagram, YouTube, X, LinkedIn, Facebook)
-- [ ] Domain name
-- [ ] Review of legal page drafts (Privacy/DPDP, Terms, Disclaimer, Cookies)
-- [ ] Google Business Profile items (see `GBP-Checklist.txt`)
+- [ ] Fill clinic.json (email, PIN, landmark, Maps), set statuses to approved
+- [ ] Real logo/photos → `npm run brand`, gallery, doctor photos
+- [ ] Doctor surnames + registration numbers → doctors.json → `npm run tenant`
+- [ ] Legal and article reviews → set `draft: false` / `reviewStatus: reviewed`
+- [ ] Set `NEXT_PUBLIC_SITE_URL` to the real domain; re-run Lighthouse + `scripts/qa/seo-audit.mjs`; Rich Results Test on the live URL
 
-## C. Later (outside this local build)
+## C. When going live with booking
 
-- [ ] Staging plan: Cloud Run service, staging URL, CORS origin on the ClinicFlow API — needs explicit approval
-- [ ] Onboard `tenant/dr-sindhu.json` to staging/production — needs explicit approval
-- [ ] Fill `content/booking.json` clinicSlug / clinicId / apiBaseUrl after onboarding
-- [ ] Enterprise upgrade offer (~1 month after launch) — see `docs/UPGRADE_TO_ENTERPRISE.md`
+- [ ] Onboard tenant (STARTER), then super-admin sets clinic **ACTIVE** (importer does not), set doctor durations (15 min) + weekly schedules (Mon–Sat 10:00–21:00, break 14:00–17:00)
+- [ ] `booking.json` → `apiBaseUrl`, `clinicSlug` (or `NEXT_PUBLIC_CLINICFLOW_*` build args)
+- [ ] API `APP_CORS_ALLOWEDORIGINS` += site origin (owner approval)
+- [ ] Real doctor login emails (invite flow; no passwords in files)
+
+## D. Core (ClinicFlow) observations from local testing — for the ClinicFlow team, not this repo
+
+- [ ] `GALLERY_NOT_ENTITLED` message says "upgrade to Starter or above" but the gate is Pro+ since 21 Aug 2026 (`ErrorCode.java` text is stale).
+- [ ] `onboard_tenant.py` doesn't set clinic status ACTIVE; `D:\ClinicFlow\CLAUDE.md` lists seeded super-admin (seeded login), but migration V9 seeds (seeded login, not repeated here).
+- [ ] Guest booking with an email that already has a patient login fails with `AUTH_EMAIL_ALREADY_EXISTS` — consider attaching the booking to the existing patient instead.
+
+## E. Later
+
+- [ ] Enterprise upgrade offer (~1 month after launch) — `docs/UPGRADE_TO_ENTERPRISE.md`
+- [ ] Telugu version (SMSDC has one; not in scope for DRSDC v1)
+- [ ] Before/after gallery and counters only with real, consented data

@@ -203,7 +203,10 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
   }
 
   // ---------- Rendering ----------
-  if (!resolved) {
+  // The first two steps only need content, so they render immediately (no layout shift while the booking
+  // system is checked in the background). From the date step on, the resolved service is required.
+  const needsService = step !== 'problem' && step !== 'doctor';
+  if (!resolved && needsService) {
     return (
       <p className="flex items-center gap-3 py-10 text-textSecondary" role="status">
         <Icon name="loader" className="h-5 w-5 animate-spin" /> Checking availability…
@@ -211,7 +214,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
     );
   }
 
-  if (resolved.mode === 'unavailable') {
+  if (resolved?.mode === 'unavailable') {
     return (
       <div className="space-y-4 py-4" role="status">
         <H className="text-2xl">Online booking is not available right now</H>
@@ -236,7 +239,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
         ? 'Your request will open in WhatsApp for you to send. The appointment is confirmed once the clinic replies.'
         : null;
 
-  const stepsOrder: Step[] = ['problem', 'doctor', 'date', 'time', 'details', ...(service?.requiresOtp ? (['otp'] as Step[]) : [])];
+  const stepsOrder: Step[] = ['problem', 'doctor', 'date', 'time', 'details', ...(!resolved || service?.requiresOtp ? (['otp'] as Step[]) : [])];
   const stepIndex = stepsOrder.indexOf(step);
   const back = stepIndex > 0 && step !== 'done' ? () => go(stepsOrder[stepIndex - 1]) : null;
 
@@ -263,7 +266,6 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
           <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-mint" aria-hidden="true">
             <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${((stepIndex + 1) / stepsOrder.length) * 100}%` }} />
           </div>
-          {modeNote && <p className="mt-3 rounded-xl bg-coralSoft px-4 py-2.5 text-sm text-text">{modeNote}</p>}
         </div>
       )}
 
@@ -451,6 +453,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
           }}
         >
           {heading(<>Your details</>)}
+          {modeNote && <p className="mt-3 rounded-xl bg-coralSoft px-4 py-2.5 text-sm text-text">{modeNote}</p>}
           <Summary config={config} option={option?.label} doctor={doctor(slot?.doctorSlug ?? '')?.displayName} date={date} time={slot?.time} />
           <div className="mt-5 grid gap-4">
             <Field id="bk-name" label="Full name" error={touched ? fieldErrors.name : null}>

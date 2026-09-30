@@ -7,7 +7,7 @@
     "sourceTitle": { "src": "images/dr-sindhu-logo-title.png" }
   },
   "images": {
-    "hero": { "src": "/images/illustrations/hero.webp", "width": 1200, "height": 1350, "alt": "Illustration of a healthy tooth with a leaf, in sage and coral", "status": "placeholder" },
+    "hero": { "src": "/images/illustrations/hero.webp", "width": 1200, "height": 1350, "alt": "Illustration of a leaf sprig growing from layered green hills under a coral sun", "status": "placeholder" },
     "about": { "src": "/images/illustrations/about.webp", "width": 1200, "height": 900, "alt": "Illustration of a calm dental treatment room", "status": "placeholder" },
     "og": { "src": "/images/og.png", "width": 1200, "height": 630, "alt": "Dr. Sindhu Dental Clinic, Ashramam Road, Tadepalli", "status": "placeholder" },
     "article-gums-heart": { "src": "/images/illustrations/gums-heart.webp", "width": 1200, "height": 750, "alt": "Illustration linking gum health and heart health", "status": "placeholder" },

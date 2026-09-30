@@ -1,0 +1,163 @@
+{
+  "base": "http://localhost:3100",
+  "date": "2026-09-30T10:27:19.037Z",
+  "rows": [
+    {
+      "form": "mobile",
+      "path": "/",
+      "performance": 94,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "2.9 s",
+      "cls": "0.031",
+      "tbt": "30 ms",
+      "failing": [
+        "largest-contentful-paint (2.9 s)"
+      ]
+    },
+    {
+      "form": "mobile",
+      "path": "/treatments/gum-care",
+      "performance": 96,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "2.7 s",
+      "cls": "0.032",
+      "tbt": "20 ms",
+      "failing": [
+        "largest-contentful-paint (2.7 s)"
+      ]
+    },
+    {
+      "form": "mobile",
+      "path": "/doctors/dr-sindhu",
+      "performance": 96,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "2.7 s",
+      "cls": "0.001",
+      "tbt": "40 ms",
+      "failing": [
+        "largest-contentful-paint (2.7 s)"
+      ]
+    },
+    {
+      "form": "mobile",
+      "path": "/gallery",
+      "performance": 95,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "2.7 s",
+      "cls": "0",
+      "tbt": "130 ms",
+      "failing": [
+        "largest-contentful-paint (2.7 s)"
+      ]
+    },
+    {
+      "form": "mobile",
+      "path": "/contact",
+      "performance": 91,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "2.7 s",
+      "cls": "0.135",
+      "tbt": "30 ms",
+      "failing": [
+        "largest-contentful-paint (2.7 s)",
+        "cumulative-layout-shift (0.135)"
+      ]
+    },
+    {
+      "form": "mobile",
+      "path": "/book",
+      "performance": 93,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "3.0 s",
+      "cls": "0",
+      "tbt": "90 ms",
+      "failing": [
+        "largest-contentful-paint (3.0 s)"
+      ]
+    },
+    {
+      "form": "desktop",
+      "path": "/",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.6 s",
+      "cls": "0.007",
+      "tbt": "0 ms",
+      "failing": []
+    },
+    {
+      "form": "desktop",
+      "path": "/treatments/gum-care",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.6 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": []
+    },
+    {
+      "form": "desktop",
+      "path": "/doctors/dr-sindhu",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.6 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": []
+    },
+    {
+      "form": "desktop",
+      "path": "/gallery",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.6 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": []
+    },
+    {
+      "form": "desktop",
+      "path": "/contact",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.6 s",
+      "cls": "0.004",
+      "tbt": "0 ms",
+      "failing": []
+    },
+    {
+      "form": "desktop",
+      "path": "/book",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.7 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": []
+    }
+  ]
+}

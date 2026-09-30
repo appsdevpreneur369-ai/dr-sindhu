@@ -83,11 +83,18 @@ const tag = (w, h, text) =>
 const svg = (w, h, body) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${body}</svg>`;
 
 const scenes = {
+  // Hero: deliberately NOT a tooth (keeps DRSDC visually distinct from other local clinic sites) — layered
+  // gum-line hills, a coral sun and a leaf sprig growing from healthy ground: "healthy gums first".
   'public/images/illustrations/hero.webp': [1200, 1350, (w, h) =>
-    bg(w, h, c.mintStrong, c.coralSoft) + dots(w, h) + blob(820, 380, 330, c.surface, 0.55) + blob(360, 980, 300, c.decorativeSage, 0.35) + blob(900, 1120, 200, c.decorativeCoral, 0.28) +
-    `<ellipse cx="600" cy="1090" rx="260" ry="36" fill="${c.primaryDeep}" opacity=".12"/>` + tooth(600, 640, 2.9) +
-    leaf(820, 360, 1.5, -35) + leaf(840, 420, 1.1, 10, c.primary) + sparkle(300, 300, 1.8) + sparkle(960, 760, 1.2, c.primary) + sparkle(250, 820, 1, c.decorativeCoral) +
-    `<path d="M170,1180 C380,1100 820,1100 1030,1180" stroke="${c.primary}" stroke-width="10" fill="none" stroke-linecap="round" opacity=".35"/>`],
+    bg(w, h, c.coralSoft, c.mint) + dots(w, h) +
+    `<circle cx="820" cy="400" r="210" fill="${c.decorativeCoral}" opacity=".55"/><circle cx="820" cy="400" r="140" fill="${c.coralSoft}" opacity=".9"/>` +
+    `<path d="M0,900 C220,800 420,820 620,880 C820,940 1000,860 1200,780 V1350 H0 Z" fill="${c.decorativeSage}" opacity=".55"/>` +
+    `<path d="M0,1010 C260,930 520,990 760,1030 C940,1060 1080,1000 1200,960 V1350 H0 Z" fill="${c.primary}" opacity=".85"/>` +
+    `<path d="M0,1140 C300,1080 620,1150 900,1160 C1040,1165 1130,1130 1200,1110 V1350 H0 Z" fill="${c.primaryDeep}"/>` +
+    // leaf sprig
+    `<path d="M600,1020 C590,900 600,760 640,620" stroke="${c.primaryDeep}" stroke-width="12" fill="none" stroke-linecap="round"/>` +
+    leaf(630, 820, 2.1, -150, c.decorativeSage) + leaf(612, 900, 1.8, -20, c.primary) + leaf(640, 690, 1.9, -60, c.primary) + leaf(626, 760, 1.5, -130, c.decorativeSage) +
+    sparkle(300, 330, 1.8, c.primary) + sparkle(1010, 700, 1.3, c.surface) + sparkle(220, 760, 1.1, c.decorativeCoral) + sparkle(960, 220, 1, c.primary)],
   'public/images/illustrations/about.webp': [1200, 900, (w, h) =>
     bg(w, h, c.sand, c.mint) + dots(w, h) +
     `<rect x="700" y="90" width="380" height="300" rx="28" fill="${c.surface}" opacity=".85"/><path d="M890,90 V390 M700,240 H1080" stroke="${c.mintStrong}" stroke-width="10"/>` +

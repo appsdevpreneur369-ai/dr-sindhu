@@ -1,0 +1,427 @@
+{
+  "base": "http://localhost:3100",
+  "date": "2026-09-30T10:27:19.447Z",
+  "rows": [
+    {
+      "path": "/",
+      "title": "Dr. Sindhu Dental Clinic — Dentist in Tadepalli",
+      "titleLength": 47,
+      "descriptionLength": 154,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments",
+      "title": "Dental Treatments in Tadepalli | Dr. Sindhu Dental",
+      "titleLength": 50,
+      "descriptionLength": 159,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/gum-care",
+      "title": "Gum Treatment & Periodontist in Tadepalli",
+      "titleLength": 41,
+      "descriptionLength": 149,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/general-dentistry",
+      "title": "Dental Check-ups & Fillings in Tadepalli | Dr. Sindhu Dental",
+      "titleLength": 60,
+      "descriptionLength": 131,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/root-canal-treatment",
+      "title": "Root Canal Specialist in Tadepalli | Dr. Sindhu Dental",
+      "titleLength": 54,
+      "descriptionLength": 137,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/oral-surgery",
+      "title": "Wisdom Tooth Removal & Oral Surgery, Tadepalli",
+      "titleLength": 46,
+      "descriptionLength": 140,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/dental-implants",
+      "title": "Dental Implants in Tadepalli | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 59,
+      "descriptionLength": 142,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/oral-hygiene",
+      "title": "Teeth Cleaning & Scaling in Tadepalli | Dr. Sindhu Dental",
+      "titleLength": 57,
+      "descriptionLength": 129,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/cosmetic-dentistry",
+      "title": "Teeth Whitening & Cosmetic Dentistry, Tadepalli",
+      "titleLength": 47,
+      "descriptionLength": 109,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/dentures",
+      "title": "Dentures in Tadepalli — Complete & Partial",
+      "titleLength": 42,
+      "descriptionLength": 115,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/treatments/orthodontics",
+      "title": "Braces & Clear Aligners in Tadepalli | Dr. Sindhu Dental",
+      "titleLength": 56,
+      "descriptionLength": 120,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/doctors",
+      "title": "Our Dentists in Tadepalli | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 56,
+      "descriptionLength": 141,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList",
+        "IndividualPhysician",
+        "IndividualPhysician",
+        "IndividualPhysician"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/doctors/dr-sindhu",
+      "title": "Dr. Sindhu, MDS — Periodontist | Dr. Sindhu Dental",
+      "titleLength": 50,
+      "descriptionLength": 158,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "IndividualPhysician",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/doctors/dr-preethi",
+      "title": "Dr. Preethi, MDS — Oral & Maxillofacial Surgeon",
+      "titleLength": 47,
+      "descriptionLength": 157,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "IndividualPhysician",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/doctors/dr-naveen-kumar",
+      "title": "Dr. Naveen Kumar, MDS — Root Canal Specialist",
+      "titleLength": 45,
+      "descriptionLength": 158,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "IndividualPhysician",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/book",
+      "title": "Book a Dental Appointment | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 56,
+      "descriptionLength": 145,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/contact",
+      "title": "Contact & Timings | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 48,
+      "descriptionLength": 143,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/about",
+      "title": "About the Clinic | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 47,
+      "descriptionLength": 143,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/gallery",
+      "title": "Our Clinic — Photos | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 50,
+      "descriptionLength": 137,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "ImageGallery",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/patient-education",
+      "title": "Patient Education | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 48,
+      "descriptionLength": 152,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/patient-education/healthy-gums-healthy-heart",
+      "title": "Healthy Gums, Healthy Heart | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 58,
+      "descriptionLength": 154,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage+Article",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/patient-education/after-deep-cleaning",
+      "title": "After Deep Cleaning of the Gums | Dr. Sindhu Dental",
+      "titleLength": 51,
+      "descriptionLength": 148,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage+Article",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/patient-education/after-root-canal-treatment",
+      "title": "After Root Canal Treatment: Caring for the Tooth",
+      "titleLength": 48,
+      "descriptionLength": 123,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage+Article",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/patient-education/after-tooth-extraction",
+      "title": "After a Tooth Extraction: Your First Week",
+      "titleLength": 41,
+      "descriptionLength": 148,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "MedicalWebPage+Article",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/faqs",
+      "title": "Frequently Asked Questions | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 57,
+      "descriptionLength": 142,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/emergency",
+      "title": "Dental Emergency Advice | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 54,
+      "descriptionLength": 143,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy Policy | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 45,
+      "descriptionLength": 128,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/terms",
+      "title": "Terms of Use | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 43,
+      "descriptionLength": 94,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/disclaimer",
+      "title": "Medical Disclaimer | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 49,
+      "descriptionLength": 119,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    },
+    {
+      "path": "/cookies",
+      "title": "Cookie Policy | Dr. Sindhu Dental, Tadepalli",
+      "titleLength": 44,
+      "descriptionLength": 84,
+      "h1": 1,
+      "jsonLdTypes": [
+        "Dentist",
+        "BreadcrumbList"
+      ],
+      "jsonLdErrors": [],
+      "issues": []
+    }
+  ],
+  "sitemapImages": 13,
+  "brokenImages": 0
+}

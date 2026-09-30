@@ -2,7 +2,7 @@
 
 Public website for **Dr. Sindhu Dental Clinic**, Ashramam Road, Tadepalli (project code DRSDC), a ClinicFlow247 **STARTER** tenant with one extra: this free custom website.
 
-Status: **planning — waiting for the owner's "go"** (2026-09-30). Update this line as work progresses.
+Status: **v0.1 built and tested locally (2026-09-30)** — not deployed, no remote. Open items: `pending_tasks_dr-sindhu.md`; data to collect: `DRSDC_PendingItems.md`.
 
 ## Hard rules
 
@@ -10,7 +10,7 @@ Status: **planning — waiting for the owner's "go"** (2026-09-30). Update this 
 - **Starter plan only.** The site must not promise more than Starter (source: `D:\ClinicFlow\clinicflow-frontend\src\components\landing\pricingData.ts`): up to 5 doctors, unlimited appointments, online booking, live queue, digital prescriptions, email confirmations/reminders, WhatsApp 1,000/mo, SMS 1,000/mo. Not advertised/built: analytics, portal gallery, white-label portal, custom subdomain, custom fields, dedicated onboarding, review requests, no-show alerts, win-back, waitlist.
 - **Plan gate:** `content/plan.json` `{ "plan": "starter" }` gates anything beyond Starter. Upgrading to Enterprise must be a config change (see `docs/UPGRADE_TO_ENTERPRISE.md`).
 - **Everything config-driven** from `/content`, zod-validated; every record has `status: approved | placeholder`. No hard-coded copy, colours, images, phones or hours in components. `NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true` shows "Draft" badges.
-- **Placeholders never become dead links.** While phone/WhatsApp/email are placeholders: hide Call/WhatsApp/email buttons (show "Book online"), omit them from JSON-LD, disable the WhatsApp booking fallback.
+- **Placeholders never become dead links.** While phone/WhatsApp/email are placeholders: hide Call/WhatsApp/email buttons (show "Book online"), omit them from JSON-LD, disable the WhatsApp booking fallback (`src/lib/contact.ts`, `selectMode.ts`). Phone + WhatsApp +91 94416 95953 are approved (30 Sep 2026); email is still a placeholder.
 - **Never invent** a phone, email, reviews, ratings, years of experience, awards, patient counts or stats. Initials avatars until real doctor photos. No prices. Cautious medical wording ("linked with", "may help").
 - **Distinct from SMSDC (Suhasini).** Architecture/logic may be reused; visual design and all copy must be new — no sentence copied from SMSDC (duplicate-content risk in the same town). No "Suhasini" text, file or logo anywhere in the repo output (grep the build).
 - ClinicFlow login/booking/portal pages keep standard ClinicFlow branding (branding is Enterprise-only) — link to them, don't brand them.
@@ -36,22 +36,43 @@ Next.js 14 App Router, TypeScript strict, Tailwind, next/font (Fraunces headings
 
 ## Important tasks (checklist)
 
-1. [ ] git init, scaffold Next.js 14 + Tailwind + vitest + eslint
-2. [ ] `/content`: clinic, brand, plan, images, doctors, services (9 categories re-routed), home, faqs, education, legal, booking, routing, navigation, portal, social — all zod-validated
-3. [ ] Logo: tooth mark traced/recoloured from the SMSDC icon → `public/brand/drsdc-mark.*` + Fraunces wordmark; paths only in `content/images.json`; status placeholder
-4. [ ] Layout: glass nav condensing on scroll, footer with social icons (inert while empty), sticky mobile action bar
-5. [ ] Pages: Home, About, Doctors (+3), Treatments (+9), Gallery, Patient Education (+ "Healthy Gums, Healthy Heart" + 2–3 aftercare), FAQs, Book, Contact (open/closed now, Asia/Kolkata), Emergency, Privacy (DPDP Act 2023), Terms, Disclaimer, Cookies, 404
-6. [ ] Booking popup + wizard (problem → doctor → date → slot → OTP → confirm); BookingService modes + fallback; placeholder-phone rule; never fake success
-7. [ ] Portal links + redirects (`/clinic/:slug/*`, `/login`, `/register`)
-8. [ ] SEO: metadata, canonical, OG/Twitter, sitemap (with images), robots, JSON-LD (Dentist, Physician ×3, BreadcrumbList, MedicalWebPage/Article, FAQPage, ImageObject), env noindex
-9. [ ] `tenant/dr-sindhu.json` (suhasini.json schema, STARTER, whiteLabel false, invite flow, no passwords)
-10. [ ] Tests: lint, tsc, vitest (schema, routing, booking fallback, popup, validation, redirects, plan gating), build, contrast
-11. [ ] Lighthouse mobile+desktop × 6 pages → `docs/seo-reports/`; JSON-LD validation
-12. [ ] Optional local ClinicFlow e2e booking (localhost only; else enquiry fallback)
-13. [ ] Manual QA 360/768/1280, keyboard, reduced motion, DRSDC vs SMSDC screenshot, "Suhasini" grep
-14. [ ] Docs: EDITING, SEO, BOOKING, UPGRADE_TO_ENTERPRISE, DRSDC_PendingItems; final report
+1. [x] git init, Next.js 14 + Tailwind + vitest + eslint
+2. [x] `/content` (zod-validated, cross-references checked): clinic, brand, plan, portal, social, doctors, services (9 categories), routing, booking, home, about, faqs, emergency, gallery, images, navigation, pages, education/*.md, legal/*.md
+3. [x] Logo from the owner's files in `images/` → `npm run brand` (mark in header + Fraunces wordmark; icons, OG image, placeholder illustrations)
+4. [x] Layout: glass header condensing on scroll, footer with inert social icons, sticky mobile action bar
+5. [x] All pages incl. 3 doctors, 9 treatment categories, 4 articles, 4 legal drafts, 404
+6. [x] Booking popup + wizard; BookingService clinicflow → enquiry → whatsapp; placeholder-phone rule
+7. [x] Portal links + redirects (`/login`, `/register`, `/staff-login`, `/clinic/*`, `/services*`, renamed doctors)
+8. [x] SEO: metadata, canonical, OG/Twitter, image sitemap, robots, JSON-LD, env noindex
+9. [x] `tenant/dr-sindhu.json` generated by `npm run tenant`
+10. [x] lint, tsc, 47 unit tests, build, contrast (all AA)
+11. [x] Lighthouse mobile+desktop × 6 pages (`docs/seo-reports/2026-09-30/`); JSON-LD 0 errors
+12. [x] Local ClinicFlow e2e (isolated API copy + throwaway Postgres on :55432)
+13. [x] QA 360/768/1280, keyboard, reduced motion, DRSDC vs SMSDC screenshot, no "Suhasini" in build output
+14. [x] Docs: EDITING, SEO, BOOKING, UPGRADE_TO_ENTERPRISE, DRSDC_PendingItems
 
-Open/pending items: `pending_tasks_dr-sindhu.md` (work) and `DRSDC_PendingItems.md` (data to collect from the clinic).
+## Commands
+
+| Command | What |
+| --- | --- |
+| `npm run dev` | Dev server |
+| `npm run build && npm start` | Production build (set env in `.env.production.local`) |
+| `npm run check` | lint + typecheck + tests + contrast + build |
+| `npm run brand` | Re-generate logo sizes, icons, OG image, illustrations from `images/` + `brand.json` |
+| `npm run tenant` | Re-generate `tenant/dr-sindhu.json` from `/content` |
+| `node scripts/qa/screens.mjs <base> qa/screens` | Screenshots at 360/768/1280 + overflow/tap-target report |
+| `node scripts/qa/lighthouse.mjs <base> docs/seo-reports/<date>` | Lighthouse mobile + desktop |
+| `node scripts/qa/seo-audit.mjs <base> <schemaorg.jsonld> out.json` | SEO + local JSON-LD validation |
+| `node scripts/qa/e2e-booking.mjs <base> qa/e2e` | Booking e2e against a LOCAL ClinicFlow API only |
+
+In Git Bash prefix scripts that take `/paths` with `MSYS_NO_PATHCONV=1`.
+
+## Structure
+
+- `src/lib/content/*` — zod schemas + loader (server-only; client components get props). `src/lib/days.ts` is zod-free for client code.
+- `src/lib/plan-matrix.mjs`, `site-redirects.mjs` — plain JS shared with `next.config.mjs` (plan gating, portal URLs, redirects).
+- `src/lib/booking/*` — booking logic (ported from SMSDC; no patient-account layer).
+- `src/components/*`, `src/app/*` — UI. Colours only via Tailwind tokens from `brand.json` (no hex in components).
 
 ## Checks before calling anything done
 

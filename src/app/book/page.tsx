@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Icon } from '@/components/ui/Icon';
 import { OpenStatus } from '@/components/ui/OpenStatus';
@@ -18,9 +17,7 @@ export default function BookPage() {
       <section className="section">
         <div className="container-site grid gap-10 lg:grid-cols-[1.5fr_1fr]">
           <div className="card p-5 sm:p-8">
-            <Suspense fallback={<p className="text-textSecondary">Loading booking…</p>}>
-              <BookPageWizard />
-            </Suspense>
+            <BookPageWizard />
           </div>
           <aside className="space-y-5">
             <div className="card p-6">

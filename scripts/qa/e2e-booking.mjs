@@ -11,6 +11,7 @@ const [base = 'http://localhost:3200', out = 'qa/e2e'] = process.argv.slice(2);
 fs.mkdirSync(out, { recursive: true });
 const browser = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true });
 const results = [];
+const repeatEmail = `drsdc.e2e.repeat+${Date.now()}@example.com`; // fresh per run: first booking succeeds, second is refused
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 const click = async (page, text) => {
   const el = await page.waitForSelector(`[role=dialog] ::-p-text(${text})`, { timeout: 20000 });
@@ -88,13 +89,13 @@ async function walkInner(page, prefix, { expectOtp, email, expectError }) {
   await page.click('header button[aria-haspopup=dialog]');
   await page.waitForSelector('[role=dialog]');
   await wait(2500);
-  const again = await walk(page, '1b-email-taken', { expectOtp: true, email: 'drsdc.e2e.repeat@example.com', expectError: false }).catch((e) => ({ error: String(e) }));
+  const again = await walk(page, '1b-email-taken', { expectOtp: true, email: repeatEmail, expectError: false }).catch((e) => ({ error: String(e) }));
   const dup = await (async () => {
     await page.click('[role=dialog] button[aria-label="Close booking"]');
     await page.click('header button[aria-haspopup=dialog]');
     await page.waitForSelector('[role=dialog]');
     await wait(2500);
-    return walk(page, '1c-email-taken', { expectOtp: true, email: 'drsdc.e2e.repeat@example.com', expectError: true });
+    return walk(page, '1c-email-taken', { expectOtp: true, email: repeatEmail, expectError: true });
   })();
   results.push({ scenario: 'first booking with a fixed email', heading: again.heading ?? again.error });
   results.push({ scenario: 'second booking, same email → emailTaken message', ...dup });
@@ -133,7 +134,16 @@ async function walkInner(page, prefix, { expectOtp, email, expectError }) {
   await page.goto(`${base}/book?problem=toothache`, { waitUntil: 'load' });
   await wait(2500);
   const text = await page.$eval('main', (m) => m.innerText);
-  results.push({ scenario: 'API unreachable → WhatsApp mode on /book (prefilled toothache)', showsWhatsAppNote: /open in WhatsApp/.test(text), startsAtDoctorStep: /Choose your doctor/.test(text) });
+  const startsAtDoctorStep = /Choose your doctor/.test(text);
+  const noOtpStep = /Step 2 of 5/.test(text); // WhatsApp mode has no SMS-code step
+  // Walk to the details step, where the mode note is shown.
+  await (await page.waitForSelector('main ::-p-text(Continue)')).click();
+  await (await page.waitForSelector('main [role=listbox] [role=option]:nth-child(2)')).click();
+  await (await page.waitForSelector('main [role=radiogroup][aria-label=Time] [role=radio]')).click();
+  await (await page.waitForSelector('main ::-p-text(Continue)')).click();
+  await page.waitForSelector('#bk-name');
+  const details = await page.$eval('main', (m) => m.innerText);
+  results.push({ scenario: 'API unreachable → WhatsApp mode on /book (prefilled toothache)', startsAtDoctorStep, noOtpStep, showsWhatsAppNote: /open in WhatsApp/.test(details), submitLabel: /Continue to WhatsApp/.test(details) });
   await page.screenshot({ path: `${out}/3-whatsapp-book.png` });
   await ctx.close();
 }

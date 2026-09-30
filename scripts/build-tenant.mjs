@@ -100,7 +100,26 @@ const tenant = {
   faqs: faqs.items.slice(0, 6).map((f) => ({ question: f.q, answer: f.a.replace('{{hoursSummary}}', hoursText.replace(/\.$/, '')) })),
   processSteps: [],
   videos: [],
-  treatments: services.categories.map((c, i) => {
+  treatments: ['pro', 'enterprise'].includes(plan) ? treatmentRows() : [],
+  _note_treatmentsPlan:
+    'Core gates treatments + gallery to PRO and above (PlanService "gallery"; confirmed on a local API 30 Sep 2026: 402 GALLERY_NOT_ENTITLED on STARTER). The website shows all 9 treatments from its own content either way. On upgrade, re-run `npm run tenant` with plan.json = enterprise to fill this list.',
+  _upgradeTreatments: ['pro', 'enterprise'].includes(plan) ? [] : treatmentRows(),
+  _note_treatments: '9 categories from content/services.json; sub-treatments folded into the description (no sub-treatment entity in core). No prices.',
+  contentPages: [],
+  flags: [
+    'DRSDC: plan STARTER, whiteLabel false -- do not upload logo/theme (Enterprise-only).',
+    'DRSDC: treatments are not imported on STARTER (core: Pro+ only); the website lists them from its own content.',
+    'DRSDC: all doctors use placeholder mciRegistrationNumber PENDING-VERIFICATION-<NAME>; replace with State Dental Council numbers before any real e-prescription.',
+    'DRSDC: Dr. Sindhu and Dr. Preethi have placeholder lastName "MDS" (API requires a surname).',
+    'DRSDC: clinic email and address PIN/landmark are placeholders.',
+    'DRSDC: implants (prosthetic), dentures and orthodontics have no in-house specialist yet -- routed to Dr. Sindhu for consultation.',
+    'DRSDC: these three consultants also appear in the SMSDC tenant; ClinicFlow accounts must still be unique per email.',
+    'DRSDC: new clinics start PENDING -- a super-admin must set status ACTIVE (PUT /clinics/{id}) before the public booking page works; the importer does not do this.',
+  ],
+};
+
+function treatmentRows() {
+  return services.categories.map((c, i) => {
     const docs = [...new Set([...c.doctors, ...c.subTreatments.flatMap((s) => s.doctors ?? [])])].map((id) => byId[id].displayName);
     return {
       title: c.title,
@@ -108,18 +127,9 @@ const tenant = {
       description: `${c.subTreatments.map((s) => s.title).join(' · ')}. With ${docs.join(' and ')}.${c.confirmSpecialist ? ' First consultation with Dr. Sindhu (specialist to be confirmed).' : ''} ${services.priceNote}`,
       displayOrder: i,
     };
-  }),
-  _note_treatments: '9 categories from content/services.json; sub-treatments folded into the description (no sub-treatment entity in core). No prices.',
-  contentPages: [],
-  flags: [
-    'DRSDC: plan STARTER, whiteLabel false -- do not upload logo/theme (Enterprise-only).',
-    'DRSDC: all doctors use placeholder mciRegistrationNumber PENDING-VERIFICATION-<NAME>; replace with State Dental Council numbers before any real e-prescription.',
-    'DRSDC: Dr. Sindhu and Dr. Preethi have placeholder lastName "MDS" (API requires a surname).',
-    'DRSDC: clinic email and address PIN/landmark are placeholders.',
-    'DRSDC: implants (prosthetic), dentures and orthodontics have no in-house specialist yet -- routed to Dr. Sindhu for consultation.',
-    'DRSDC: these three consultants also appear in the SMSDC tenant; ClinicFlow accounts must still be unique per email.',
-  ],
-};
+  });
+}
+
 
 const out = path.join(root, 'tenant', 'dr-sindhu.json');
 fs.mkdirSync(path.dirname(out), { recursive: true });

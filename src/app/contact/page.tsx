@@ -1,4 +1,5 @@
 import { BookButton } from '@/components/booking/BookButton';
+import { MapFacade } from '@/components/contact/MapFacade';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Icon, WhatsAppIcon } from '@/components/ui/Icon';
 import { OpenStatus } from '@/components/ui/OpenStatus';
@@ -100,9 +101,7 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-4">
-            <div className="overflow-hidden rounded-brand border border-border bg-surface shadow-soft">
-              <iframe title={`Map: ${c.maps.query}`} src={mapEmbedSrc} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="block aspect-[4/3] w-full border-0 lg:aspect-[4/5]" />
-            </div>
+            <MapFacade src={mapEmbedSrc} title={`Map: ${c.maps.query}`} label="Show map" />
             {mapsApproximate && (
               <p className="flex gap-2 text-sm text-textSecondary">
                 <Icon name="info" className="mt-0.5 h-4 w-4 shrink-0" /> The map shows Ashramam Road; the clinic&apos;s exact pin will be added soon. <DraftBadge status={c.maps.status} />
