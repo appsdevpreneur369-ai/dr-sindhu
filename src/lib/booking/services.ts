@@ -246,7 +246,8 @@ export class ClinicFlowBookingService extends ContentBackedService {
       kind: 'booked',
       appointmentId: a.id,
       status: a.status,
-      doctorName: a.doctorName ?? this.doctor(req.doctorSlug)?.displayName ?? '',
+      // Prefer the website's name: core stores placeholder surnames (e.g. "MDS") for single-name doctors.
+      doctorName: this.doctor(req.doctorSlug)?.displayName ?? a.doctorName ?? '',
       branchName: a.branchName ?? undefined,
       date: a.appointmentDate,
       time: hhmm(a.startTime),

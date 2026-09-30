@@ -8,6 +8,8 @@ const noindex = env !== 'production' || process.env.NEXT_PUBLIC_NOINDEX === 'tru
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  // Separate build folders for test variants (e.g. NEXT_DIST_DIR=.next-e2e); default .next.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   poweredByHeader: false,
   images: { formats: ['image/avif', 'image/webp'] },
   async redirects() {

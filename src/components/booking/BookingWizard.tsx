@@ -21,6 +21,8 @@ const ERRORS: Record<string, string> = {
   server: 'The booking system had a problem. Please try again in a moment.',
   request: 'Something in the request was not accepted. Please check your details.',
   slotTaken: 'Sorry — that time was just taken. Please choose another time.',
+  emailTaken: 'This email already has a patient account. Sign in on the patient portal to book, or use a different email.',
+  conflict: 'The booking system could not accept this booking. Please check your details or choose another time.',
   otpInvalid: 'That code is not correct or has expired. Check the SMS or ask for a new code.',
   notFound: 'Online booking is not available for this doctor right now.',
   invalidResponse: 'The booking system sent an unexpected reply. Please try again.',
@@ -175,6 +177,10 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
     } catch (e) {
       const kind = e instanceof BookingError ? e.kind : 'network';
       setError(ERRORS[kind]);
+      if (kind === 'emailTaken') {
+        go('details');
+        setError(ERRORS.emailTaken);
+      }
       if (kind === 'slotTaken' && date) {
         setSlot(null);
         await loadSlots(date, true);
@@ -450,7 +456,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
             <Field id="bk-name" label="Full name" error={touched ? fieldErrors.name : null}>
               <input id="bk-name" autoComplete="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="input" />
             </Field>
-            <Field id="bk-phone" label="Mobile number" hint="10 digits. We'll text you a code to confirm." error={touched ? fieldErrors.phone : null}>
+            <Field id="bk-phone" label="Mobile number" hint={service?.requiresOtp ? "10 digits. We'll text you a code to confirm." : '10-digit mobile number, so the clinic can reach you.'} error={touched ? fieldErrors.phone : null}>
               <div className="flex">
                 <span className="inline-flex items-center rounded-l-xl border border-r-0 border-border bg-mint px-3 text-textSecondary">+91</span>
                 <input id="bk-phone" type="tel" inputMode="numeric" autoComplete="tel-national" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="input rounded-l-none" />

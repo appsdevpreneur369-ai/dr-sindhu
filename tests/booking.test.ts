@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { BookingError } from '@/lib/booking/api';
+import { BookingError, parseResponse, AnyBody } from '@/lib/booking/api';
 import { autoOpenDelayMs, canAutoOpen, isExcludedPath, type PopupConfig } from '@/lib/booking/popupRules';
 import { fallbackOrder, selectMode } from '@/lib/booking/selectMode';
 import { EnquiryBookingService, WhatsAppBookingService, resolveBookingService } from '@/lib/booking/services';
@@ -155,5 +155,28 @@ describe('popup rules', () => {
   it('respects enabled and showOnMobile', () => {
     expect(canAutoOpen({ ...base, config: { ...config, enabled: false } })).toBe(false);
     expect(canAutoOpen({ ...base, isMobile: true, config: { ...config, showOnMobile: false } })).toBe(false);
+  });
+});
+
+describe('API error mapping', () => {
+  const kindOf = async (status: number, code?: string) => {
+    try {
+      await parseResponse(json(status, code ? { success: false, error: { code, message: 'x' } } : {}), AnyBody);
+    } catch (e) {
+      return (e as BookingError).kind;
+    }
+  };
+  it('email already registered is its own error, not "slot taken" (found in local e2e)', async () => {
+    expect(await kindOf(409, 'AUTH_EMAIL_ALREADY_EXISTS')).toBe('emailTaken');
+  });
+  it('only real slot codes (or a bare 409) mean slot taken; unknown 409 codes are a generic conflict', async () => {
+    expect(await kindOf(409, 'APPOINTMENT_SLOT_NOT_AVAILABLE')).toBe('slotTaken');
+    expect(await kindOf(409)).toBe('slotTaken');
+    expect(await kindOf(409, 'SOMETHING_ELSE')).toBe('conflict');
+  });
+  it('OTP, rate limit and server errors', async () => {
+    expect(await kindOf(400, 'OTP_INVALID')).toBe('otpInvalid');
+    expect(await kindOf(429)).toBe('rateLimit');
+    expect(await kindOf(503)).toBe('server');
   });
 });

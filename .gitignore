@@ -49,3 +49,4 @@ docs/seo-reports/**/*.report.json
 
 # QA screenshots and scratch output (final report screenshots live in docs/screenshots)
 /qa/
+/.next-e2e/

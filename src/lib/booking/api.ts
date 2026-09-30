@@ -39,7 +39,7 @@ export const ErrorEnvelopeSchema = z.object({
 export type ApiDoctor = z.infer<typeof DoctorSchema>;
 export type ApiAppointment = z.infer<typeof AppointmentSchema>;
 
-export type BookingErrorKind = 'network' | 'rateLimit' | 'server' | 'request' | 'slotTaken' | 'otpInvalid' | 'notFound' | 'invalidResponse' | 'unavailable';
+export type BookingErrorKind = 'network' | 'rateLimit' | 'server' | 'request' | 'conflict' | 'slotTaken' | 'otpInvalid' | 'emailTaken' | 'notFound' | 'invalidResponse' | 'unavailable';
 
 /** ClinicFlow error codes → kinds. Checked before the HTTP status (several errors share 409). */
 const CODE_KINDS: Record<string, BookingErrorKind> = {
@@ -49,6 +49,8 @@ const CODE_KINDS: Record<string, BookingErrorKind> = {
   SLOT_LOCK_NOT_FOUND: 'slotTaken',
   OTP_INVALID: 'otpInvalid',
   OTP_EXPIRED: 'otpInvalid',
+  // guest-book creates a patient login; an email that already has one is refused (found in local e2e, 30 Sep 2026).
+  AUTH_EMAIL_ALREADY_EXISTS: 'emailTaken',
 };
 
 export class BookingError extends Error {
@@ -76,7 +78,8 @@ export async function parseResponse<T extends z.ZodTypeAny>(res: Response, schem
     const msg = env.success ? env.data.error.message : undefined;
     if (code && CODE_KINDS[code]) throw new BookingError(CODE_KINDS[code], msg, code);
     if (res.status === 429) throw new BookingError('rateLimit', msg, code);
-    if (res.status === 409) throw new BookingError('slotTaken', msg, code);
+    // Only a known slot code means "slot taken"; any other 409 is a generic conflict (never a misleading message).
+    if (res.status === 409) throw new BookingError(code ? 'conflict' : 'slotTaken', msg, code);
     if (res.status === 404) throw new BookingError('notFound', msg, code);
     if (res.status >= 500) throw new BookingError('server', msg, code);
     throw new BookingError('request', msg, code);
