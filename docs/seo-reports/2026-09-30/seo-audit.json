@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:3100",
-  "date": "2026-09-30T11:03:43.522Z",
+  "date": "2026-09-30T12:24:27.516Z",
   "rows": [
     {
       "path": "/",
@@ -182,7 +182,7 @@
       "path": "/doctors/dr-sindhu",
       "title": "Dr. Sindhu, MDS — Periodontist | Dr. Sindhu Dental",
       "titleLength": 50,
-      "descriptionLength": 158,
+      "descriptionLength": 156,
       "h1": 1,
       "jsonLdTypes": [
         "Dentist",

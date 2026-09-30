@@ -1,62 +1,101 @@
 {
   "status": "placeholder",
   "hero": {
-    "eyebrow": "Dental clinic · Ashramam Road, Tadepalli",
-    "title": "Healthy gums first. A confident smile follows.",
-    "lead": "A periodontist-led clinic in Tadepalli with specialists for gum care, oral surgery and root canal treatment — so most problems can be looked after under one roof.",
+    "badge": "Periodontist-led dental clinic · Ashramam Road, Tadepalli",
+    "titleLine1": "Healthy gums.",
+    "titleLine2": "Confident smiles.",
+    "lead": "Specialist dental care for the whole family — gum treatment, root canals, wisdom teeth, implants and everyday check-ups — led by Dr. Sindhu, a periodontist with over 15 years of experience.",
     "image": "hero",
-    "primaryCta": "Book an appointment",
-    "secondaryCta": { "label": "See treatments", "href": "/treatments" },
+    "primaryCta": "Book Appointment",
+    "secondaryCta": { "label": "Explore Treatments", "href": "/treatments" },
+    "checks": ["3 MDS specialists", "Evening appointments", "Costs explained first"],
     "chips": [
       { "icon": "clock", "text": "Open today {{todayHours}}", "kind": "hours" },
-      { "icon": "calendar-check", "text": "Book in 60 seconds", "kind": "static" }
+      { "icon": "award", "text": "15+ years of experience", "sub": "Dr. Sindhu, Periodontist", "kind": "static" },
+      { "icon": "calendar-check", "text": "Book in 60 seconds", "sub": "Online, any time", "kind": "static" }
     ]
   },
-  "symptoms": {
-    "eyebrow": "Start here",
-    "title": "What's troubling you?",
-    "lead": "Pick what you are feeling. We'll suggest the right doctor and open the booking for you."
+  "stats": {
+    "_note": "Only real, verifiable facts: 15+ years (given by the account owner, 30 Sep 2026), counts derived from content, and the approved hours.",
+    "status": "approved",
+    "items": [
+      { "value": "15+", "label": "Years of experience", "sub": "Dr. Sindhu, clinic head", "icon": "award", "source": "account owner, 30 Sep 2026" },
+      { "value": "{{doctorCountNum}}", "label": "MDS specialists", "sub": "Gums, surgery, root canals", "icon": "stethoscope", "source": "doctors.json" },
+      { "value": "{{categoryCountNum}}", "label": "Treatment areas", "sub": "Under one roof", "icon": "sparkles", "source": "services.json" },
+      { "value": "6", "label": "Days a week", "sub": "Morning & evening sessions", "icon": "calendar-clock", "source": "clinic.json hours" }
+    ]
+  },
+  "about": {
+    "eyebrow": "About the clinic",
+    "title": "Gentle, specialist care that starts with healthy gums",
+    "paragraphs": [
+      "Dr. Sindhu Dental Clinic on Ashramam Road, Tadepalli, is led by Dr. Sindhu, MDS — a periodontist with over 15 years of experience. Gum health is the foundation of every plan here, because fillings, crowns and implants last longest on healthy gums and bone.",
+      "An oral and maxillofacial surgeon and a root canal specialist complete the team, so most problems can be treated at one clinic by the doctor trained for them."
+    ],
+    "points": ["Specialist-led care for every age", "Clear explanations and costs before treatment", "Sterilised instruments, every patient, every time"],
+    "image": "about",
+    "badgeValue": "15+",
+    "badgeLabel": "Years of experience",
+    "cta": { "label": "More about us", "href": "/about" }
   },
   "treatments": {
-    "eyebrow": "Treatments",
-    "title": "Care for every part of your smile",
+    "eyebrow": "Our treatments",
+    "title": "Complete dental care, one caring team",
     "lead": "{{categoryCount}} treatment areas, each matched to the doctor best placed to help."
   },
-  "approach": {
-    "eyebrow": "Why a gum-first clinic",
-    "title": "Strong teeth need healthy foundations",
-    "lead": "Crowns, implants and fillings last longest when the gums and bone around them are healthy. That is why every plan here begins with a gum check.",
-    "points": [
-      { "icon": "leaf", "title": "Specialist-led", "text": "The clinic is headed by a periodontist, with an oral surgeon and a root canal specialist on the team." },
-      { "icon": "message-circle", "title": "Plain explanations", "text": "You see what we see, hear the options in simple words, and know the cost before treatment begins." },
-      { "icon": "shield-check", "title": "Careful hygiene", "text": "Instruments are sterilised and single-use items are used once, every time." },
-      { "icon": "calendar-clock", "title": "Evening sessions", "text": "Open {{hoursShort}}, so a visit can fit around work or college." }
-    ]
+  "symptoms": {
+    "eyebrow": "Not sure where to start?",
+    "title": "What's troubling you?",
+    "lead": "Pick what you feel and we'll suggest the right doctor and open the booking for you."
   },
   "doctors": {
-    "eyebrow": "Your doctors",
-    "title": "Meet the specialists",
-    "lead": "{{doctorCount}} MDS specialists, each focused on one area of dental care."
+    "eyebrow": "Our specialists",
+    "title": "Meet the doctors",
+    "lead": "{{doctorCount}} MDS specialists, each focused on one area of your dental health."
+  },
+  "why": {
+    "eyebrow": "Why patients choose us",
+    "title": "Care that feels easy from the first visit",
+    "points": [
+      { "icon": "award", "title": "Over 15 years of experience", "text": "Dr. Sindhu brings more than 15 years in dentistry to planning your care." },
+      { "icon": "leaf", "title": "Gum-first approach", "text": "Every plan begins with a gum check, so other treatment rests on a healthy base." },
+      { "icon": "stethoscope", "title": "The right specialist", "text": "Gum care, oral surgery and root canals are each handled by an MDS specialist." },
+      { "icon": "message-circle", "title": "No surprises", "text": "You see what we see, hear the options in simple words and know the cost first." },
+      { "icon": "shield-check", "title": "Strict sterilisation", "text": "Instruments are sterilised between patients; single-use items are used once." },
+      { "icon": "calendar-clock", "title": "Evening sessions", "text": "Open {{hoursShort}}, so a visit fits around work or college." }
+    ]
+  },
+  "steps": {
+    "eyebrow": "How it works",
+    "title": "Your visit in four simple steps",
+    "items": [
+      { "icon": "calendar-check", "title": "Book online", "text": "Pick your concern, doctor and time — or call the clinic." },
+      { "icon": "stethoscope", "title": "Examination", "text": "A careful check-up, with X-rays only when they help." },
+      { "icon": "clipboard-check", "title": "Clear plan", "text": "Options, number of visits and cost explained. You decide." },
+      { "icon": "smile", "title": "Treatment & aftercare", "text": "Comfortable treatment, written aftercare and reminders." }
+    ]
   },
   "booking": {
-    "eyebrow": "Online booking",
-    "title": "Book in a minute, get reminders automatically",
-    "lead": "Choose your concern, doctor and time online. Once booked, reminders reach you so you don't miss the visit.",
-    "stepsTitle": "How booking works",
+    "stepsTitle": "Booking takes a minute",
     "steps": [
       { "title": "Tell us the problem", "text": "Pick a symptom or treatment." },
       { "title": "Choose doctor and time", "text": "See the days and times available." },
       { "title": "Confirm with your mobile", "text": "A one-time code verifies your number." }
     ]
   },
+  "gallery": {
+    "eyebrow": "Gallery",
+    "title": "A calm, modern setting",
+    "lead": "Representative photos — pictures of our own clinic are coming soon."
+  },
   "education": {
     "eyebrow": "Patient education",
-    "title": "Read before you worry",
+    "title": "Know your smile better",
     "lead": "Short, practical guides written for patients."
   },
   "faq": {
     "eyebrow": "Questions",
-    "title": "Asked often"
+    "title": "Questions patients often ask"
   },
   "visit": {
     "eyebrow": "Visit us",
@@ -64,14 +103,9 @@
     "lead": "We are on Ashramam Road in Tadepalli, a short drive from Undavalli, Mangalagiri and Vijayawada."
   },
   "cta": {
-    "title": "Your gums will thank you.",
-    "lead": "Book a check-up today — it takes about a minute.",
-    "button": "Book an appointment"
-  },
-  "stats": {
-    "_note": "Counters stay hidden until real, verifiable numbers exist. Never invent them.",
-    "status": "placeholder",
-    "items": []
+    "title": "Ready for a healthier, happier smile?",
+    "lead": "Book a check-up online in about a minute, or call the clinic.",
+    "button": "Book Appointment"
   },
   "beforeAfter": {
     "_note": "Before/after slider stays hidden until the clinic supplies real, consented patient photos.",

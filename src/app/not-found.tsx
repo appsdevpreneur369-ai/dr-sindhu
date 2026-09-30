@@ -17,7 +17,7 @@ export default function NotFound() {
   const n = sitePages.notFound;
   return (
     <section className="section relative overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-mint blur-2xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-sky blur-2xl" />
       <div className="container-site relative max-w-2xl text-center">
         <p className="font-heading text-7xl font-semibold text-primary sm:text-8xl">404</p>
         <h1 className="mt-4 text-3xl sm:text-4xl">{n.h1}</h1>

@@ -14,9 +14,9 @@ export default function DoctorsPage() {
       <PageHeader title={p.h1!} intro={p.intro} crumbs={[{ name: 'Doctors', path: '/doctors' }]} />
       <JsonLd data={siteDoctors.map(physicianJsonLd)} />
       <section className="section">
-        <div className="container-site grid gap-5 md:grid-cols-3">
-          {siteDoctors.map((d) => (
-            <DoctorCard key={d.id} d={d} headingLevel="h2" />
+        <div className="container-site grid gap-6 md:grid-cols-3">
+          {siteDoctors.map((d, i) => (
+            <DoctorCard key={d.id} d={d} index={i} headingLevel="h2" />
           ))}
         </div>
       </section>

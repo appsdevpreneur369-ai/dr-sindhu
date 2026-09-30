@@ -13,7 +13,7 @@ export function GalleryGrid({ items, categories }: { items: Item[]; categories: 
     <>
       <div className="mb-8 flex flex-wrap gap-2" role="group" aria-label="Filter photos">
         {[null, ...categories].map((c) => (
-          <button key={c ?? 'all'} type="button" aria-pressed={cat === c} onClick={() => setCat(c)} className={cn('chip', cat === c && 'border-primary bg-mint text-primaryDeep')}>
+          <button key={c ?? 'all'} type="button" aria-pressed={cat === c} onClick={() => setCat(c)} className={cn('chip', cat === c && 'border-primary bg-sky text-primaryDeep')}>
             {c ?? 'All'}
           </button>
         ))}

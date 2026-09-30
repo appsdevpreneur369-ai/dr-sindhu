@@ -5,8 +5,9 @@ Last updated: 2026-09-30 (local build complete). Data to collect from the clinic
 ## A. Decisions for the account owner
 
 - [x] Official clinic name: **"Dr. Sindhu Dental Clinic"** (30 Sep 2026). Title-logo artwork with "& Implant Centre" not published; corrected artwork requested (DRSDC_PendingItems #6).
-- [x] Fonts use `display: 'optional'` (30 Sep 2026) — removes the font-swap layout shift.
-- [ ] Palette: the site uses the specified sage/coral palette; the new logo is blue + leaf green. Keep, or tint the palette toward the logo?
+- [x] Redesign (30 Sep 2026): SMSDC-style professional layout, logo blue + green palette, no red, Roboto + Montserrat, underline nav, Home/About first, stock photos. Fonts back on `display: 'swap'` so the chosen fonts always show (CLS measured 0).
+- [x] Palette now follows the logo (blue + green).
+- [ ] Replace representative stock photos with the clinic's own (see DRSDC_PendingItems #10).
 - [ ] Approve deploying a staging site (Cloud Run service, URL, build args) — not done, LOCAL ONLY so far.
 - [ ] Approve onboarding `tenant/dr-sindhu.json` to staging/production and adding the site origin to the API's CORS list.
 
@@ -24,6 +25,8 @@ Last updated: 2026-09-30 (local build complete). Data to collect from the clinic
 - [ ] `booking.json` → `apiBaseUrl`, `clinicSlug` (or `NEXT_PUBLIC_CLINICFLOW_*` build args)
 - [ ] API `APP_CORS_ALLOWEDORIGINS` += site origin (owner approval)
 - [ ] Real doctor login emails (invite flow; no passwords in files)
+
+- [ ] Next.js image optimiser hung on some photos (fixed here by pre-generated WebP + custom loader); worth checking the same `sharp`/Next combination in other ClinicFlow sites.
 
 ## D. Core (ClinicFlow) observations from local testing — for the ClinicFlow team, not this repo
 

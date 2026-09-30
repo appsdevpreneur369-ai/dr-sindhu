@@ -1,0 +1,173 @@
+{
+  "_note": "Representative stock photos (Unsplash License). Not photos of this clinic or its doctors.",
+  "photos": {
+    "hero.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "fBiJxs5GhaM",
+      "photographer": "Shedrack Salami",
+      "url": "https://unsplash.com/photos/a-woman-in-a-gray-shirt-is-smiling-fBiJxs5GhaM",
+      "description": "a woman in a gray shirt is smiling"
+    },
+    "about.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "e7MJLM5VGjY",
+      "photographer": "Benyamin Bohlouli",
+      "url": "https://unsplash.com/photos/modern-dental-office-with-chair-and-equipment-e7MJLM5VGjY",
+      "description": "modern dental office with chair and equipment"
+    },
+    "treat-gum-care.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "lilsT4lhaLQ",
+      "photographer": "Ozkan Guner",
+      "url": "https://unsplash.com/photos/a-persons-mouth-with-teeth-lilsT4lhaLQ",
+      "description": "a person's mouth with teeth"
+    },
+    "treat-general-dentistry.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "8BkF0sTC6Uo",
+      "photographer": "Caroline LM",
+      "url": "https://unsplash.com/photos/dental-exam-with-mirror-and-tool-8BkF0sTC6Uo",
+      "description": "dental exam with mirror and tool"
+    },
+    "treat-root-canal-treatment.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "QWgq6Rjw0SE",
+      "photographer": "Harold Hisona",
+      "url": "https://unsplash.com/photos/panoramic-dental-x-ray-showing-teeth-and-jawbone-QWgq6Rjw0SE",
+      "description": "Panoramic dental x-ray showing teeth and jawbone"
+    },
+    "treat-oral-surgery.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "y8fWicGsv4g",
+      "photographer": "Quilia",
+      "url": "https://unsplash.com/photos/stainless-steel-fork-and-bread-knife-on-white-ceramic-plate-y8fWicGsv4g",
+      "description": "stainless steel fork and bread knife on white ceramic plate"
+    },
+    "treat-dental-implants.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "W9YEY6G8LVM",
+      "photographer": "Jonathan Borba",
+      "url": "https://unsplash.com/photos/dental-implant-model-with-teeth-W9YEY6G8LVM",
+      "description": "dental implant model with teeth"
+    },
+    "treat-oral-hygiene.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "oZKmP9VdvB0",
+      "photographer": "William Warby",
+      "url": "https://unsplash.com/photos/white-blue-and-green-toothbrush-with-blue-toothpaste-oZKmP9VdvB0",
+      "description": "white, blue, and green toothbrush with blue toothpaste"
+    },
+    "treat-cosmetic-dentistry.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "1AhGNGKuhR0",
+      "photographer": "Lesly Juarez",
+      "url": "https://unsplash.com/photos/long-black-haired-woman-smiling-close-up-photography-1AhGNGKuhR0",
+      "description": "long black haired woman smiling close-up photography"
+    },
+    "treat-dentures.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "LOgBp87WzIk",
+      "photographer": "Harold Hisona",
+      "url": "https://unsplash.com/photos/dentist-demonstrating-dental-implant-on-model-LOgBp87WzIk",
+      "description": "Dentist demonstrating dental implant on model"
+    },
+    "treat-orthodontics.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "B9lLokDYTMY",
+      "photographer": "Katarzyna Zygnerska",
+      "url": "https://unsplash.com/photos/a-model-of-a-teeth-with-braces-and-braces-B9lLokDYTMY",
+      "description": "A model of a teeth with braces and braces"
+    },
+    "gallery-reception.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "B_sK_xgzwVA",
+      "photographer": "Benyamin Bohlouli",
+      "url": "https://unsplash.com/photos/blue-couch-beside-green-potted-plant-B_sK_xgzwVA",
+      "description": "blue couch beside green potted plant"
+    },
+    "gallery-treatment-room.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "vVKh9xeLub4",
+      "photographer": "Benyamin Bohlouli",
+      "url": "https://unsplash.com/photos/white-and-blue-hospital-bed-vVKh9xeLub4",
+      "description": "white and blue hospital bed"
+    },
+    "gallery-chair.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "Pc8lpKJwecM",
+      "photographer": "Ozkan Guner",
+      "url": "https://unsplash.com/photos/a-dental-room-with-a-chair-and-a-monitor-Pc8lpKJwecM",
+      "description": "a dental room with a chair and a monitor"
+    },
+    "gallery-instruments.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "R8MoN4FV5q0",
+      "photographer": "Ozkan Guner",
+      "url": "https://unsplash.com/photos/a-pair-of-dental-instruments-sitting-on-top-of-a-bed-R8MoN4FV5q0",
+      "description": "a pair of dental instruments sitting on top of a bed"
+    },
+    "gallery-xray.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "DwlC4fija6o",
+      "photographer": "Fr0ggy5",
+      "url": "https://unsplash.com/photos/dental-x-ray-displayed-on-a-monitor-in-a-clinic-DwlC4fija6o",
+      "description": "Dental x-ray displayed on a monitor in a clinic"
+    },
+    "gallery-modern-chair.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "Fdku_oMrDvk",
+      "photographer": "Kari Bjorn Photography",
+      "url": "https://unsplash.com/photos/a-dental-room-with-a-desk-and-chairs-Fdku_oMrDvk",
+      "description": "a dental room with a desk and chairs"
+    },
+    "article-gums-heart.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "2nV0wnVubAA",
+      "photographer": "Marek Studzinski",
+      "url": "https://unsplash.com/photos/a-stethoscope-with-a-heart-on-top-of-it-2nV0wnVubAA",
+      "description": "a stethoscope with a heart on top of it"
+    },
+    "article-extraction.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "kQF6yN9Ek0U",
+      "photographer": "Vitaly Gariev",
+      "url": "https://unsplash.com/photos/young-woman-yawning-with-hand-over-mouth-kQF6yN9Ek0U",
+      "description": "Young woman yawning with hand over mouth"
+    },
+    "article-root-canal.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "spLCJw0kUk8",
+      "photographer": "Ozkan Guner",
+      "url": "https://unsplash.com/photos/a-white-substance-in-a-glass-spLCJw0kUk8",
+      "description": "a white substance in a glass"
+    },
+    "article-deep-cleaning.jpg": {
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "id": "ys-bNF00aeQ",
+      "photographer": "Ozkan Guner",
+      "url": "https://unsplash.com/photos/a-close-up-of-a-persons-mouth-ys-bNF00aeQ",
+      "description": "a close up of a person's mouth"
+    }
+  }
+}

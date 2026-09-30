@@ -263,14 +263,14 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
               </button>
             )}
           </div>
-          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-mint" aria-hidden="true">
+          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-sky" aria-hidden="true">
             <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${((stepIndex + 1) / stepsOrder.length) * 100}%` }} />
           </div>
         </div>
       )}
 
       {error && (
-        <p role="alert" className="mb-4 flex gap-2 rounded-xl border border-danger/30 bg-surface px-4 py-3 text-sm font-medium text-danger">
+        <p role="alert" className="mb-4 flex gap-2 rounded-xl border border-warning/30 bg-surface px-4 py-3 text-sm font-medium text-warning">
           <Icon name="circle-alert" className="mt-0.5 h-4 w-4 shrink-0" /> {error}
         </p>
       )}
@@ -284,7 +284,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
               <button
                 key={p.id}
                 type="button"
-                className={cn('chip', treatmentId === `problem:${p.id}` && 'border-primary bg-mint')}
+                className={cn('chip', treatmentId === `problem:${p.id}` && 'border-primary bg-sky')}
                 onClick={() => {
                   setTreatmentId(`problem:${p.id}`);
                   setDoctorChoice(null);
@@ -364,7 +364,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
           {next && (
             <button
               type="button"
-              className="mt-4 flex w-full items-center gap-3 rounded-2xl border border-primary/30 bg-mint px-4 py-3 text-left hover:border-primary"
+              className="mt-4 flex w-full items-center gap-3 rounded-2xl border border-primary/30 bg-sky px-4 py-3 text-left hover:border-primary"
               onClick={() => {
                 setDate(next.date);
                 setDoctorChoice(next.doctorSlug);
@@ -395,7 +395,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
                     loadSlots(d);
                     go('time');
                   }}
-                  className={cn('flex min-h-[72px] w-[4.5rem] shrink-0 snap-start flex-col items-center justify-center rounded-2xl border bg-surface', date === d ? 'border-primary bg-mint' : 'border-border hover:border-primary')}
+                  className={cn('flex min-h-[72px] w-[4.5rem] shrink-0 snap-start flex-col items-center justify-center rounded-2xl border bg-surface', date === d ? 'border-primary bg-sky' : 'border-border hover:border-primary')}
                 >
                   <span className="text-xs font-semibold uppercase text-textSecondary">{fmtDate(d, { weekday: 'short' })}</span>
                   <span className="font-heading text-2xl font-semibold text-text">{fmtDate(d, { day: 'numeric' })}</span>
@@ -453,7 +453,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
           }}
         >
           {heading(<>Your details</>)}
-          {modeNote && <p className="mt-3 rounded-xl bg-coralSoft px-4 py-2.5 text-sm text-text">{modeNote}</p>}
+          {modeNote && <p className="mt-3 rounded-xl bg-sky px-4 py-2.5 text-sm text-text">{modeNote}</p>}
           <Summary config={config} option={option?.label} doctor={doctor(slot?.doctorSlug ?? '')?.displayName} date={date} time={slot?.time} />
           <div className="mt-5 grid gap-4">
             <Field id="bk-name" label="Full name" error={touched ? fieldErrors.name : null}>
@@ -461,7 +461,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
             </Field>
             <Field id="bk-phone" label="Mobile number" hint={service?.requiresOtp ? "10 digits. We'll text you a code to confirm." : '10-digit mobile number, so the clinic can reach you.'} error={touched ? fieldErrors.phone : null}>
               <div className="flex">
-                <span className="inline-flex items-center rounded-l-xl border border-r-0 border-border bg-mint px-3 text-textSecondary">+91</span>
+                <span className="inline-flex items-center rounded-l-xl border border-r-0 border-border bg-sky px-3 text-textSecondary">+91</span>
                 <input id="bk-phone" type="tel" inputMode="numeric" autoComplete="tel-national" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="input rounded-l-none" />
               </div>
             </Field>
@@ -483,7 +483,7 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
                 </span>
               </label>
               {touched && fieldErrors.consent && (
-                <p id="bk-consent-err" className="mt-1 text-sm font-medium text-danger">
+                <p id="bk-consent-err" className="mt-1 text-sm font-medium text-warning">
                   {fieldErrors.consent}
                 </p>
               )}
@@ -538,8 +538,8 @@ export function BookingWizard({ config, prefill = {}, onBooked, headingLevel = '
 
 function Choice({ selected, onClick, title, text, initials, icon }: { selected: boolean; onClick: () => void; title: string; text: string; initials?: string; icon?: string }) {
   return (
-    <button type="button" role="radio" aria-checked={selected} onClick={onClick} className={cn('flex min-h-[64px] items-center gap-4 rounded-2xl border bg-surface px-4 py-3 text-left transition-colors', selected ? 'border-primary bg-mint' : 'border-border hover:border-primary')}>
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[38%] bg-mint font-heading font-semibold text-primaryDeep ring-1 ring-mintStrong">{initials ?? <Icon name={icon ?? 'check'} />}</span>
+    <button type="button" role="radio" aria-checked={selected} onClick={onClick} className={cn('flex min-h-[64px] items-center gap-4 rounded-2xl border bg-surface px-4 py-3 text-left transition-colors', selected ? 'border-primary bg-sky' : 'border-border hover:border-primary')}>
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[38%] bg-sky font-heading font-semibold text-primaryDeep ring-1 ring-skyStrong">{initials ?? <Icon name={icon ?? 'check'} />}</span>
       <span className="flex-1">
         <span className="block font-semibold text-text">{title}</span>
         <span className="text-sm text-textSecondary">{text}</span>
@@ -598,7 +598,7 @@ function Field({ id, label, hint, error, children }: { id: string; label: string
       {children}
       {hint && !error && <p className="mt-1 text-sm text-textSecondary">{hint}</p>}
       {error && (
-        <p className="mt-1 text-sm font-medium text-danger" role="alert">
+        <p className="mt-1 text-sm font-medium text-warning" role="alert">
           {error}
         </p>
       )}
@@ -608,7 +608,7 @@ function Field({ id, label, hint, error, children }: { id: string; label: string
 
 function Summary({ option, doctor, date, time }: { config: BookingClientConfig; option?: string; doctor?: string; date: string | null; time?: string }) {
   return (
-    <dl className="mt-4 grid grid-cols-[auto,1fr] gap-x-4 gap-y-1 rounded-2xl bg-mint px-4 py-3 text-sm">
+    <dl className="mt-4 grid grid-cols-[auto,1fr] gap-x-4 gap-y-1 rounded-2xl bg-sky px-4 py-3 text-sm">
       <dt className="text-textSecondary">Concern</dt>
       <dd className="font-medium text-text">{option}</dd>
       <dt className="text-textSecondary">Doctor</dt>
@@ -636,7 +636,7 @@ function Result({ result, config, optionLabel, headingRef, H }: { result: Bookin
     });
     return (
       <div className="py-2">
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-mint text-primary">
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sky text-primary">
           <Icon name="check" className="h-7 w-7" strokeWidth={2.5} />
         </span>
         <H ref={headingRef} tabIndex={-1} className="mt-4 text-2xl outline-none">

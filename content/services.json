@@ -9,7 +9,9 @@
       "shortTitle": "Gum care",
       "icon": "leaf",
       "size": "lg",
-      "doctors": ["periodontist"],
+      "doctors": [
+        "periodontist"
+      ],
       "confirmSpecialist": false,
       "short": "Bleeding, puffy or receding gums treated by the clinic's own periodontist.",
       "intro": [
@@ -17,25 +19,66 @@
         "Gum care is the clinic's home speciality. Dr. Sindhu measures the gum pockets around each tooth, explains what she finds, and plans treatment from a thorough deep clean through to gum surgery when it is genuinely needed."
       ],
       "steps": [
-        { "title": "Gum check", "text": "Pocket depths are measured around every tooth and X-rays taken if required." },
-        { "title": "Deep clean", "text": "Hardened deposits are removed from above and below the gum line, usually over one or two visits." },
-        { "title": "Review and maintain", "text": "Healing is checked after a few weeks and a maintenance interval is agreed." }
+        {
+          "title": "Gum check",
+          "text": "Pocket depths are measured around every tooth and X-rays taken if required."
+        },
+        {
+          "title": "Deep clean",
+          "text": "Hardened deposits are removed from above and below the gum line, usually over one or two visits."
+        },
+        {
+          "title": "Review and maintain",
+          "text": "Healing is checked after a few weeks and a maintenance interval is agreed."
+        }
       ],
       "subTreatments": [
-        { "slug": "deep-cleaning", "title": "Deep cleaning (scaling and root planing)", "summary": "Cleans the root surfaces below the gum line so the gum can re-attach.", "visits": "Usually 1–2 visits" },
-        { "slug": "flap-surgery", "title": "Gum surgery (flap surgery)", "summary": "For deep pockets that do not settle with cleaning alone.", "visits": "Usually 1 procedure plus reviews" },
-        { "slug": "gum-depigmentation", "title": "Gum depigmentation", "summary": "Lightens dark patches on the gums for an even colour.", "visits": "Usually 1 visit" },
-        { "slug": "crown-lengthening", "title": "Crown lengthening", "summary": "Reshapes gum and bone to expose more tooth, for a restoration or a gummy smile.", "visits": "Usually 1 procedure plus review" },
-        { "slug": "periodontal-maintenance", "title": "Periodontal maintenance", "summary": "Regular professional cleans that keep treated gum disease stable.", "visits": "Every 3–6 months" }
+        {
+          "slug": "deep-cleaning",
+          "title": "Deep cleaning (scaling and root planing)",
+          "summary": "Cleans the root surfaces below the gum line so the gum can re-attach.",
+          "visits": "Usually 1–2 visits"
+        },
+        {
+          "slug": "flap-surgery",
+          "title": "Gum surgery (flap surgery)",
+          "summary": "For deep pockets that do not settle with cleaning alone.",
+          "visits": "Usually 1 procedure plus reviews"
+        },
+        {
+          "slug": "gum-depigmentation",
+          "title": "Gum depigmentation",
+          "summary": "Lightens dark patches on the gums for an even colour.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "crown-lengthening",
+          "title": "Crown lengthening",
+          "summary": "Reshapes gum and bone to expose more tooth, for a restoration or a gummy smile.",
+          "visits": "Usually 1 procedure plus review"
+        },
+        {
+          "slug": "periodontal-maintenance",
+          "title": "Periodontal maintenance",
+          "summary": "Regular professional cleans that keep treated gum disease stable.",
+          "visits": "Every 3–6 months"
+        }
       ],
       "faqs": [
-        { "q": "Is it normal for gums to bleed when I brush?", "a": "Occasional bleeding is common, but it is not healthy. Regular bleeding usually means the gums are inflamed, and an examination can show whether a simple clean or deeper treatment is needed." },
-        { "q": "Does deep cleaning hurt?", "a": "The area is numbed first, so most people feel pressure rather than pain. Some tenderness for a day or two afterwards is common." }
+        {
+          "q": "Is it normal for gums to bleed when I brush?",
+          "a": "Occasional bleeding is common, but it is not healthy. Regular bleeding usually means the gums are inflamed, and an examination can show whether a simple clean or deeper treatment is needed."
+        },
+        {
+          "q": "Does deep cleaning hurt?",
+          "a": "The area is numbed first, so most people feel pressure rather than pain. Some tenderness for a day or two afterwards is common."
+        }
       ],
       "seo": {
         "title": "Gum Treatment & Periodontist in Tadepalli",
         "description": "Bleeding or receding gums? See the periodontist at Dr. Sindhu Dental Clinic, Ashramam Road, Tadepalli, for gum checks, deep cleaning and gum surgery."
-      }
+      },
+      "image": "treat-gum-care"
     },
     {
       "slug": "general-dentistry",
@@ -44,7 +87,9 @@
       "shortTitle": "General dentistry",
       "icon": "stethoscope",
       "size": "md",
-      "doctors": ["periodontist"],
+      "doctors": [
+        "periodontist"
+      ],
       "confirmSpecialist": false,
       "short": "Check-ups, fillings, sensitivity and children's dental visits.",
       "intro": [
@@ -52,25 +97,70 @@
         "Children are welcome from their first tooth. Early visits help them get used to the dental chair before there is ever a problem to treat."
       ],
       "steps": [
-        { "title": "Talk", "text": "Tell us what is bothering you, your medical history and any medicines you take." },
-        { "title": "Examine", "text": "Teeth, gums and mouth are checked; X-rays only when they add useful information." },
-        { "title": "Plan", "text": "You get the options, the number of visits and the cost before anything is done." }
+        {
+          "title": "Talk",
+          "text": "Tell us what is bothering you, your medical history and any medicines you take."
+        },
+        {
+          "title": "Examine",
+          "text": "Teeth, gums and mouth are checked; X-rays only when they add useful information."
+        },
+        {
+          "title": "Plan",
+          "text": "You get the options, the number of visits and the cost before anything is done."
+        }
       ],
       "subTreatments": [
-        { "slug": "check-up", "title": "Dental consultation and check-up", "summary": "A full look at teeth, gums and mouth with a clear written plan.", "visits": "Usually 1 visit" },
-        { "slug": "fillings", "title": "Tooth-coloured fillings", "summary": "Repairs small cavities with a filling matched to your tooth shade.", "visits": "Usually 1 visit" },
-        { "slug": "sensitivity", "title": "Tooth sensitivity treatment", "summary": "Finds the cause of the twinge with hot, cold or sweet food and treats it.", "visits": "Usually 1–2 visits" },
-        { "slug": "emergency-toothache", "title": "Emergency toothache care", "summary": "Same-day relief for sudden pain or swelling, with the cause treated afterwards.", "visits": "Same day where possible", "doctors": ["periodontist", "endodontist"] },
-        { "slug": "children", "title": "Children's dental check-ups", "summary": "Gentle first visits, cavity checks and brushing advice for parents.", "visits": "Usually 1 visit" }
+        {
+          "slug": "check-up",
+          "title": "Dental consultation and check-up",
+          "summary": "A full look at teeth, gums and mouth with a clear written plan.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "fillings",
+          "title": "Tooth-coloured fillings",
+          "summary": "Repairs small cavities with a filling matched to your tooth shade.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "sensitivity",
+          "title": "Tooth sensitivity treatment",
+          "summary": "Finds the cause of the twinge with hot, cold or sweet food and treats it.",
+          "visits": "Usually 1–2 visits"
+        },
+        {
+          "slug": "emergency-toothache",
+          "title": "Emergency toothache care",
+          "summary": "Same-day relief for sudden pain or swelling, with the cause treated afterwards.",
+          "visits": "Same day where possible",
+          "doctors": [
+            "periodontist",
+            "endodontist"
+          ]
+        },
+        {
+          "slug": "children",
+          "title": "Children's dental check-ups",
+          "summary": "Gentle first visits, cavity checks and brushing advice for parents.",
+          "visits": "Usually 1 visit"
+        }
       ],
       "faqs": [
-        { "q": "How often should I have a check-up?", "a": "Many adults do well with a check-up every six months, but the right interval depends on your gums and cavity risk. The dentist will suggest one for you." },
-        { "q": "At what age should my child first see a dentist?", "a": "Around the first birthday or when the first teeth appear is a good time for a short, friendly visit." }
+        {
+          "q": "How often should I have a check-up?",
+          "a": "Many adults do well with a check-up every six months, but the right interval depends on your gums and cavity risk. The dentist will suggest one for you."
+        },
+        {
+          "q": "At what age should my child first see a dentist?",
+          "a": "Around the first birthday or when the first teeth appear is a good time for a short, friendly visit."
+        }
       ],
       "seo": {
         "title": "Dental Check-ups & Fillings in Tadepalli",
         "description": "Check-ups, tooth-coloured fillings, sensitivity care and children's visits at Dr. Sindhu Dental Clinic on Ashramam Road, Tadepalli."
-      }
+      },
+      "image": "treat-general-dentistry"
     },
     {
       "slug": "root-canal-treatment",
@@ -79,7 +169,9 @@
       "shortTitle": "Root canal",
       "icon": "activity",
       "size": "md",
-      "doctors": ["endodontist"],
+      "doctors": [
+        "endodontist"
+      ],
       "confirmSpecialist": false,
       "short": "Specialist root canal care that aims to keep your own tooth.",
       "intro": [
@@ -87,24 +179,60 @@
         "Treatment is carried out by Dr. Naveen Kumar, an endodontist, under local anaesthetic. Most people say the procedure itself feels much like having a filling."
       ],
       "steps": [
-        { "title": "Diagnose", "text": "An X-ray and tests show which tooth is affected and how far the infection has spread." },
-        { "title": "Clean and seal", "text": "The canals are cleaned, shaped and filled, usually over one to three sittings." },
-        { "title": "Protect", "text": "A back tooth usually needs a crown afterwards so it does not crack." }
+        {
+          "title": "Diagnose",
+          "text": "An X-ray and tests show which tooth is affected and how far the infection has spread."
+        },
+        {
+          "title": "Clean and seal",
+          "text": "The canals are cleaned, shaped and filled, usually over one to three sittings."
+        },
+        {
+          "title": "Protect",
+          "text": "A back tooth usually needs a crown afterwards so it does not crack."
+        }
       ],
       "subTreatments": [
-        { "slug": "rct", "title": "Root canal treatment", "summary": "Removes infected pulp and seals the tooth from the inside.", "visits": "Usually 1–3 sittings" },
-        { "slug": "re-rct", "title": "Re-root canal treatment", "summary": "Re-treats an earlier root canal that has become painful or infected again.", "visits": "Usually 2–3 sittings" },
-        { "slug": "pulp-therapy", "title": "Pulp therapy for children", "summary": "Treats infected milk teeth so they can stay until the adult tooth is ready.", "visits": "Usually 1–2 sittings" },
-        { "slug": "crown-after-rct", "title": "Crown after root canal", "summary": "A protective cap that restores strength to the treated tooth.", "visits": "Usually 2 visits" }
+        {
+          "slug": "rct",
+          "title": "Root canal treatment",
+          "summary": "Removes infected pulp and seals the tooth from the inside.",
+          "visits": "Usually 1–3 sittings"
+        },
+        {
+          "slug": "re-rct",
+          "title": "Re-root canal treatment",
+          "summary": "Re-treats an earlier root canal that has become painful or infected again.",
+          "visits": "Usually 2–3 sittings"
+        },
+        {
+          "slug": "pulp-therapy",
+          "title": "Pulp therapy for children",
+          "summary": "Treats infected milk teeth so they can stay until the adult tooth is ready.",
+          "visits": "Usually 1–2 sittings"
+        },
+        {
+          "slug": "crown-after-rct",
+          "title": "Crown after root canal",
+          "summary": "A protective cap that restores strength to the treated tooth.",
+          "visits": "Usually 2 visits"
+        }
       ],
       "faqs": [
-        { "q": "Is root canal treatment painful?", "a": "The tooth is numbed first, so most people feel little during treatment. The aim of the procedure is to relieve the pain the infection was causing." },
-        { "q": "Why not just remove the tooth?", "a": "Keeping your natural tooth usually protects your bite and the neighbouring teeth. Removal is an option, and the dentist will talk you through both." }
+        {
+          "q": "Is root canal treatment painful?",
+          "a": "The tooth is numbed first, so most people feel little during treatment. The aim of the procedure is to relieve the pain the infection was causing."
+        },
+        {
+          "q": "Why not just remove the tooth?",
+          "a": "Keeping your natural tooth usually protects your bite and the neighbouring teeth. Removal is an option, and the dentist will talk you through both."
+        }
       ],
       "seo": {
         "title": "Root Canal Specialist in Tadepalli",
         "description": "Root canal treatment, re-treatment and children's pulp therapy with an endodontist at Dr. Sindhu Dental Clinic, Ashramam Road, Tadepalli."
-      }
+      },
+      "image": "treat-root-canal-treatment"
     },
     {
       "slug": "oral-surgery",
@@ -113,7 +241,9 @@
       "shortTitle": "Oral surgery",
       "icon": "scissors",
       "size": "sm",
-      "doctors": ["oral-surgeon"],
+      "doctors": [
+        "oral-surgeon"
+      ],
       "confirmSpecialist": false,
       "short": "Wisdom teeth, surgical extractions and minor oral surgery.",
       "intro": [
@@ -121,25 +251,66 @@
         "Surgery is carried out by Dr. Preethi, an oral and maxillofacial surgeon, who also handles small cysts, biopsies and jaw joint consultations."
       ],
       "steps": [
-        { "title": "Assess", "text": "An X-ray shows the root shape and position before anything is planned." },
-        { "title": "Procedure", "text": "Local anaesthetic is used; you will know what to expect at each step." },
-        { "title": "Aftercare", "text": "Written care instructions and a review visit to check healing." }
+        {
+          "title": "Assess",
+          "text": "An X-ray shows the root shape and position before anything is planned."
+        },
+        {
+          "title": "Procedure",
+          "text": "Local anaesthetic is used; you will know what to expect at each step."
+        },
+        {
+          "title": "Aftercare",
+          "text": "Written care instructions and a review visit to check healing."
+        }
       ],
       "subTreatments": [
-        { "slug": "wisdom-tooth-removal", "title": "Wisdom tooth removal", "summary": "Removes impacted or troublesome wisdom teeth.", "visits": "Usually 1 visit plus a review" },
-        { "slug": "surgical-extractions", "title": "Surgical and difficult extractions", "summary": "For broken-down teeth or curved roots that need a surgical approach.", "visits": "Usually 1 visit" },
-        { "slug": "minor-oral-surgery", "title": "Minor oral surgery (cysts, biopsies)", "summary": "Removal or sampling of small lumps and cysts in the mouth.", "visits": "Depends on the case" },
-        { "slug": "jaw-injury", "title": "Jaw and facial bone injury care", "summary": "Assessment and management of injuries to the jaw and face.", "visits": "Depends on the case" },
-        { "slug": "tmj", "title": "Jaw joint (TMJ) pain consultation", "summary": "Clicking, locking or aching in front of the ear examined and treated.", "visits": "Usually 1 consultation to start" }
+        {
+          "slug": "wisdom-tooth-removal",
+          "title": "Wisdom tooth removal",
+          "summary": "Removes impacted or troublesome wisdom teeth.",
+          "visits": "Usually 1 visit plus a review"
+        },
+        {
+          "slug": "surgical-extractions",
+          "title": "Surgical and difficult extractions",
+          "summary": "For broken-down teeth or curved roots that need a surgical approach.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "minor-oral-surgery",
+          "title": "Minor oral surgery (cysts, biopsies)",
+          "summary": "Removal or sampling of small lumps and cysts in the mouth.",
+          "visits": "Depends on the case"
+        },
+        {
+          "slug": "jaw-injury",
+          "title": "Jaw and facial bone injury care",
+          "summary": "Assessment and management of injuries to the jaw and face.",
+          "visits": "Depends on the case"
+        },
+        {
+          "slug": "tmj",
+          "title": "Jaw joint (TMJ) pain consultation",
+          "summary": "Clicking, locking or aching in front of the ear examined and treated.",
+          "visits": "Usually 1 consultation to start"
+        }
       ],
       "faqs": [
-        { "q": "Do all wisdom teeth need to come out?", "a": "No. Wisdom teeth that come in straight and can be cleaned often stay. Removal is advised when they cause repeated pain, infection or damage to the tooth in front." },
-        { "q": "How long does healing take after an extraction?", "a": "The gum usually closes over within one to two weeks. Following the aftercare instructions helps avoid a dry socket." }
+        {
+          "q": "Do all wisdom teeth need to come out?",
+          "a": "No. Wisdom teeth that come in straight and can be cleaned often stay. Removal is advised when they cause repeated pain, infection or damage to the tooth in front."
+        },
+        {
+          "q": "How long does healing take after an extraction?",
+          "a": "The gum usually closes over within one to two weeks. Following the aftercare instructions helps avoid a dry socket."
+        }
       ],
       "seo": {
         "title": "Wisdom Tooth Removal & Oral Surgery, Tadepalli",
         "description": "Wisdom tooth removal, surgical extractions and minor oral surgery by an oral & maxillofacial surgeon at Dr. Sindhu Dental Clinic, Tadepalli."
-      }
+      },
+      "image": "treat-oral-surgery"
     },
     {
       "slug": "dental-implants",
@@ -148,7 +319,10 @@
       "shortTitle": "Implants",
       "icon": "anchor",
       "size": "md",
-      "doctors": ["periodontist", "oral-surgeon"],
+      "doctors": [
+        "periodontist",
+        "oral-surgeon"
+      ],
       "confirmSpecialist": true,
       "short": "Fixed replacements for missing teeth, planned around healthy gums and bone.",
       "intro": [
@@ -156,25 +330,84 @@
         "Healthy gums and enough bone matter as much as the implant itself. Your first consultation is with Dr. Sindhu, who checks the gums and plans the case; the surgical stage is carried out by Dr. Preethi."
       ],
       "steps": [
-        { "title": "Plan", "text": "Gums, bone and bite are checked, with a scan where needed." },
-        { "title": "Place", "text": "The implant is placed under local anaesthetic and left to heal." },
-        { "title": "Restore", "text": "After healing, usually a few months, the final tooth is fitted." }
+        {
+          "title": "Plan",
+          "text": "Gums, bone and bite are checked, with a scan where needed."
+        },
+        {
+          "title": "Place",
+          "text": "The implant is placed under local anaesthetic and left to heal."
+        },
+        {
+          "title": "Restore",
+          "text": "After healing, usually a few months, the final tooth is fitted."
+        }
       ],
       "subTreatments": [
-        { "slug": "single-implant", "title": "Single-tooth implant", "summary": "Replaces one missing tooth without touching the teeth beside it.", "visits": "Usually 2–3 stages over 3–6 months", "doctors": ["periodontist", "oral-surgeon"] },
-        { "slug": "implant-bridge", "title": "Multiple implants / implant-supported bridge", "summary": "Two or more implants carrying a fixed bridge.", "visits": "Planned case by case", "doctors": ["periodontist", "oral-surgeon"] },
-        { "slug": "full-arch", "title": "Full-arch implant solutions", "summary": "A fixed set of teeth on several implants for a whole jaw.", "visits": "Planned case by case", "doctors": ["periodontist", "oral-surgeon"] },
-        { "slug": "implant-dentures", "title": "Implant-supported dentures", "summary": "A denture that clips onto implants so it stays firm.", "visits": "Planned case by case", "doctors": ["periodontist"] },
-        { "slug": "bone-grafting", "title": "Bone grafting and sinus lift", "summary": "Builds up bone where there is not enough to hold an implant.", "visits": "Depends on the case", "doctors": ["oral-surgeon"] }
+        {
+          "slug": "single-implant",
+          "title": "Single-tooth implant",
+          "summary": "Replaces one missing tooth without touching the teeth beside it.",
+          "visits": "Usually 2–3 stages over 3–6 months",
+          "doctors": [
+            "periodontist",
+            "oral-surgeon"
+          ]
+        },
+        {
+          "slug": "implant-bridge",
+          "title": "Multiple implants / implant-supported bridge",
+          "summary": "Two or more implants carrying a fixed bridge.",
+          "visits": "Planned case by case",
+          "doctors": [
+            "periodontist",
+            "oral-surgeon"
+          ]
+        },
+        {
+          "slug": "full-arch",
+          "title": "Full-arch implant solutions",
+          "summary": "A fixed set of teeth on several implants for a whole jaw.",
+          "visits": "Planned case by case",
+          "doctors": [
+            "periodontist",
+            "oral-surgeon"
+          ]
+        },
+        {
+          "slug": "implant-dentures",
+          "title": "Implant-supported dentures",
+          "summary": "A denture that clips onto implants so it stays firm.",
+          "visits": "Planned case by case",
+          "doctors": [
+            "periodontist"
+          ]
+        },
+        {
+          "slug": "bone-grafting",
+          "title": "Bone grafting and sinus lift",
+          "summary": "Builds up bone where there is not enough to hold an implant.",
+          "visits": "Depends on the case",
+          "doctors": [
+            "oral-surgeon"
+          ]
+        }
       ],
       "faqs": [
-        { "q": "Am I suitable for an implant?", "a": "Most healthy adults are. Uncontrolled diabetes, heavy smoking and active gum disease can affect healing, so these are checked and managed first." },
-        { "q": "How long does the whole process take?", "a": "Commonly three to six months from placement to the final tooth, depending on bone healing and whether grafting is needed." }
+        {
+          "q": "Am I suitable for an implant?",
+          "a": "Most healthy adults are. Uncontrolled diabetes, heavy smoking and active gum disease can affect healing, so these are checked and managed first."
+        },
+        {
+          "q": "How long does the whole process take?",
+          "a": "Commonly three to six months from placement to the final tooth, depending on bone healing and whether grafting is needed."
+        }
       ],
       "seo": {
         "title": "Dental Implants in Tadepalli",
         "description": "Single-tooth implants, implant bridges and implant dentures planned around healthy gums at Dr. Sindhu Dental Clinic, Ashramam Road, Tadepalli."
-      }
+      },
+      "image": "treat-dental-implants"
     },
     {
       "slug": "oral-hygiene",
@@ -183,7 +416,9 @@
       "shortTitle": "Cleaning",
       "icon": "sparkle",
       "size": "sm",
-      "doctors": ["periodontist"],
+      "doctors": [
+        "periodontist"
+      ],
       "confirmSpecialist": false,
       "short": "Scaling, polishing, fluoride, sealants and fresh-breath care.",
       "intro": [
@@ -191,24 +426,60 @@
         "Prevention for children — fluoride and fissure sealants — helps protect new back teeth during the years they are most prone to decay."
       ],
       "steps": [
-        { "title": "Check", "text": "Gums and plaque levels are checked first." },
-        { "title": "Clean", "text": "Tartar is removed and the teeth are polished." },
-        { "title": "Coach", "text": "Simple brushing and flossing tips suited to your mouth." }
+        {
+          "title": "Check",
+          "text": "Gums and plaque levels are checked first."
+        },
+        {
+          "title": "Clean",
+          "text": "Tartar is removed and the teeth are polished."
+        },
+        {
+          "title": "Coach",
+          "text": "Simple brushing and flossing tips suited to your mouth."
+        }
       ],
       "subTreatments": [
-        { "slug": "scaling-polishing", "title": "Scaling and polishing", "summary": "Removes tartar and surface stains.", "visits": "Usually 1 visit" },
-        { "slug": "fluoride", "title": "Fluoride application", "summary": "Strengthens enamel against decay.", "visits": "Usually 1 visit" },
-        { "slug": "sealants", "title": "Pit and fissure sealants for children", "summary": "A thin protective coat on the grooves of back teeth.", "visits": "Usually 1 visit" },
-        { "slug": "bad-breath", "title": "Bad-breath care and hygiene counselling", "summary": "Finds the cause of persistent bad breath and how to manage it.", "visits": "Usually 1–2 visits" }
+        {
+          "slug": "scaling-polishing",
+          "title": "Scaling and polishing",
+          "summary": "Removes tartar and surface stains.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "fluoride",
+          "title": "Fluoride application",
+          "summary": "Strengthens enamel against decay.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "sealants",
+          "title": "Pit and fissure sealants for children",
+          "summary": "A thin protective coat on the grooves of back teeth.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "bad-breath",
+          "title": "Bad-breath care and hygiene counselling",
+          "summary": "Finds the cause of persistent bad breath and how to manage it.",
+          "visits": "Usually 1–2 visits"
+        }
       ],
       "faqs": [
-        { "q": "Will cleaning make my teeth loose?", "a": "No. Cleaning removes tartar that was sitting where gum should be. Teeth can feel different for a few days as the gums settle." },
-        { "q": "How often do I need a professional clean?", "a": "Every six months suits many people; those with gum disease may need it more often." }
+        {
+          "q": "Will cleaning make my teeth loose?",
+          "a": "No. Cleaning removes tartar that was sitting where gum should be. Teeth can feel different for a few days as the gums settle."
+        },
+        {
+          "q": "How often do I need a professional clean?",
+          "a": "Every six months suits many people; those with gum disease may need it more often."
+        }
       ],
       "seo": {
         "title": "Teeth Cleaning & Scaling in Tadepalli",
         "description": "Scaling and polishing, fluoride, sealants for children and bad-breath care at Dr. Sindhu Dental Clinic, Ashramam Road, Tadepalli."
-      }
+      },
+      "image": "treat-oral-hygiene"
     },
     {
       "slug": "cosmetic-dentistry",
@@ -217,7 +488,9 @@
       "shortTitle": "Cosmetic",
       "icon": "smile",
       "size": "sm",
-      "doctors": ["periodontist"],
+      "doctors": [
+        "periodontist"
+      ],
       "confirmSpecialist": false,
       "short": "Whitening, bonding, veneers and gum contouring for a more even smile.",
       "intro": [
@@ -225,25 +498,66 @@
         "Dr. Sindhu discusses what is realistic for your teeth and shows you the options before you decide."
       ],
       "steps": [
-        { "title": "Listen", "text": "Tell us what you would like to change." },
-        { "title": "Check health", "text": "Gums and teeth are checked so treatment lasts." },
-        { "title": "Choose", "text": "Options, number of visits and cost are explained up front." }
+        {
+          "title": "Listen",
+          "text": "Tell us what you would like to change."
+        },
+        {
+          "title": "Check health",
+          "text": "Gums and teeth are checked so treatment lasts."
+        },
+        {
+          "title": "Choose",
+          "text": "Options, number of visits and cost are explained up front."
+        }
       ],
       "subTreatments": [
-        { "slug": "whitening", "title": "Teeth whitening", "summary": "Professionally supervised lightening of natural teeth.", "visits": "Usually 1–2 visits" },
-        { "slug": "smile-makeover", "title": "Smile makeover", "summary": "A combined plan that may include whitening, bonding and gum shaping.", "visits": "Planned case by case" },
-        { "slug": "veneers", "title": "Veneers and laminates", "summary": "Thin facings that change the shape or shade of front teeth.", "visits": "Usually 2–3 visits" },
-        { "slug": "bonding", "title": "Tooth-coloured bonding", "summary": "Repairs chips and small gaps with tooth-coloured material.", "visits": "Usually 1 visit" },
-        { "slug": "gum-contouring", "title": "Gum contouring", "summary": "Evens out the gum line for a more balanced smile.", "visits": "Usually 1 visit" }
+        {
+          "slug": "whitening",
+          "title": "Teeth whitening",
+          "summary": "Professionally supervised lightening of natural teeth.",
+          "visits": "Usually 1–2 visits"
+        },
+        {
+          "slug": "smile-makeover",
+          "title": "Smile makeover",
+          "summary": "A combined plan that may include whitening, bonding and gum shaping.",
+          "visits": "Planned case by case"
+        },
+        {
+          "slug": "veneers",
+          "title": "Veneers and laminates",
+          "summary": "Thin facings that change the shape or shade of front teeth.",
+          "visits": "Usually 2–3 visits"
+        },
+        {
+          "slug": "bonding",
+          "title": "Tooth-coloured bonding",
+          "summary": "Repairs chips and small gaps with tooth-coloured material.",
+          "visits": "Usually 1 visit"
+        },
+        {
+          "slug": "gum-contouring",
+          "title": "Gum contouring",
+          "summary": "Evens out the gum line for a more balanced smile.",
+          "visits": "Usually 1 visit"
+        }
       ],
       "faqs": [
-        { "q": "Does whitening damage enamel?", "a": "When it is supervised and the right strength is used, whitening is considered safe for enamel. Some temporary sensitivity is common." },
-        { "q": "Will whitening change my fillings or crowns?", "a": "No. Whitening only lightens natural teeth, so visible fillings may need replacing afterwards to match." }
+        {
+          "q": "Does whitening damage enamel?",
+          "a": "When it is supervised and the right strength is used, whitening is considered safe for enamel. Some temporary sensitivity is common."
+        },
+        {
+          "q": "Will whitening change my fillings or crowns?",
+          "a": "No. Whitening only lightens natural teeth, so visible fillings may need replacing afterwards to match."
+        }
       ],
       "seo": {
         "title": "Teeth Whitening & Cosmetic Dentistry, Tadepalli",
         "description": "Teeth whitening, bonding, veneers and gum contouring at Dr. Sindhu Dental Clinic on Ashramam Road, Tadepalli."
-      }
+      },
+      "image": "treat-cosmetic-dentistry"
     },
     {
       "slug": "dentures",
@@ -252,7 +566,9 @@
       "shortTitle": "Dentures",
       "icon": "layers",
       "size": "sm",
-      "doctors": ["periodontist"],
+      "doctors": [
+        "periodontist"
+      ],
       "confirmSpecialist": true,
       "short": "Complete, partial and flexible dentures, plus repairs and relines.",
       "intro": [
@@ -260,24 +576,60 @@
         "Your first consultation is with Dr. Sindhu, who checks the gums and remaining teeth and explains the options."
       ],
       "steps": [
-        { "title": "Examine", "text": "Gums and remaining teeth are assessed." },
-        { "title": "Measure", "text": "Impressions and bite records are taken over a few visits." },
-        { "title": "Fit", "text": "The denture is fitted and adjusted until it is comfortable." }
+        {
+          "title": "Examine",
+          "text": "Gums and remaining teeth are assessed."
+        },
+        {
+          "title": "Measure",
+          "text": "Impressions and bite records are taken over a few visits."
+        },
+        {
+          "title": "Fit",
+          "text": "The denture is fitted and adjusted until it is comfortable."
+        }
       ],
       "subTreatments": [
-        { "slug": "complete-dentures", "title": "Complete dentures", "summary": "A full set for a jaw with no remaining teeth.", "visits": "Usually 4–5 sittings" },
-        { "slug": "partial-dentures", "title": "Partial dentures", "summary": "Fills gaps while keeping your remaining natural teeth.", "visits": "Usually 3–4 sittings" },
-        { "slug": "flexible-dentures", "title": "Flexible dentures", "summary": "A lighter, bendable base without metal clasps.", "visits": "Usually 3–4 sittings" },
-        { "slug": "denture-repair", "title": "Denture repair and relining", "summary": "Fixes cracks and refits a loose denture.", "visits": "Often 1 visit" }
+        {
+          "slug": "complete-dentures",
+          "title": "Complete dentures",
+          "summary": "A full set for a jaw with no remaining teeth.",
+          "visits": "Usually 4–5 sittings"
+        },
+        {
+          "slug": "partial-dentures",
+          "title": "Partial dentures",
+          "summary": "Fills gaps while keeping your remaining natural teeth.",
+          "visits": "Usually 3–4 sittings"
+        },
+        {
+          "slug": "flexible-dentures",
+          "title": "Flexible dentures",
+          "summary": "A lighter, bendable base without metal clasps.",
+          "visits": "Usually 3–4 sittings"
+        },
+        {
+          "slug": "denture-repair",
+          "title": "Denture repair and relining",
+          "summary": "Fixes cracks and refits a loose denture.",
+          "visits": "Often 1 visit"
+        }
       ],
       "faqs": [
-        { "q": "How long will it take to get used to a new denture?", "a": "Most people adapt within a few weeks. Sore spots are common at first and can be eased with small adjustments." },
-        { "q": "Should I sleep with my denture in?", "a": "It is usually advised to take dentures out at night to rest the gums, and to clean them daily." }
+        {
+          "q": "How long will it take to get used to a new denture?",
+          "a": "Most people adapt within a few weeks. Sore spots are common at first and can be eased with small adjustments."
+        },
+        {
+          "q": "Should I sleep with my denture in?",
+          "a": "It is usually advised to take dentures out at night to rest the gums, and to clean them daily."
+        }
       ],
       "seo": {
         "title": "Dentures in Tadepalli — Complete & Partial",
         "description": "Complete, partial and flexible dentures, repairs and relines at Dr. Sindhu Dental Clinic, Ashramam Road, Tadepalli."
-      }
+      },
+      "image": "treat-dentures"
     },
     {
       "slug": "orthodontics",
@@ -286,7 +638,9 @@
       "shortTitle": "Braces & aligners",
       "icon": "align-center",
       "size": "sm",
-      "doctors": ["periodontist"],
+      "doctors": [
+        "periodontist"
+      ],
       "confirmSpecialist": true,
       "short": "Straighter teeth with braces or clear aligners for children and adults.",
       "intro": [
@@ -294,25 +648,66 @@
         "Start with a consultation with Dr. Sindhu, who checks that the gums are healthy enough for tooth movement and explains the next steps."
       ],
       "steps": [
-        { "title": "Consult", "text": "Teeth, bite and gums are examined." },
-        { "title": "Plan", "text": "Records are taken and the options explained." },
-        { "title": "Treat and retain", "text": "Regular reviews during treatment, then a retainer to hold the result." }
+        {
+          "title": "Consult",
+          "text": "Teeth, bite and gums are examined."
+        },
+        {
+          "title": "Plan",
+          "text": "Records are taken and the options explained."
+        },
+        {
+          "title": "Treat and retain",
+          "text": "Regular reviews during treatment, then a retainer to hold the result."
+        }
       ],
       "subTreatments": [
-        { "slug": "metal-braces", "title": "Metal braces", "summary": "Reliable fixed braces with reviews every 4–6 weeks.", "visits": "Usually 12–24 months" },
-        { "slug": "ceramic-braces", "title": "Ceramic (tooth-coloured) braces", "summary": "Fixed braces that blend in with the teeth.", "visits": "Usually 12–24 months" },
-        { "slug": "clear-aligners", "title": "Clear aligners", "summary": "Removable transparent trays changed every few weeks.", "visits": "Depends on the case" },
-        { "slug": "retainers", "title": "Retainers", "summary": "Keep teeth in place after braces or aligners.", "visits": "1–2 visits to fit" },
-        { "slug": "early-check", "title": "Early orthodontic check for children", "summary": "A bite check from around 7 years of age.", "visits": "Usually 1 visit" }
+        {
+          "slug": "metal-braces",
+          "title": "Metal braces",
+          "summary": "Reliable fixed braces with reviews every 4–6 weeks.",
+          "visits": "Usually 12–24 months"
+        },
+        {
+          "slug": "ceramic-braces",
+          "title": "Ceramic (tooth-coloured) braces",
+          "summary": "Fixed braces that blend in with the teeth.",
+          "visits": "Usually 12–24 months"
+        },
+        {
+          "slug": "clear-aligners",
+          "title": "Clear aligners",
+          "summary": "Removable transparent trays changed every few weeks.",
+          "visits": "Depends on the case"
+        },
+        {
+          "slug": "retainers",
+          "title": "Retainers",
+          "summary": "Keep teeth in place after braces or aligners.",
+          "visits": "1–2 visits to fit"
+        },
+        {
+          "slug": "early-check",
+          "title": "Early orthodontic check for children",
+          "summary": "A bite check from around 7 years of age.",
+          "visits": "Usually 1 visit"
+        }
       ],
       "faqs": [
-        { "q": "Am I too old for braces?", "a": "There is no upper age limit as long as the gums and bone are healthy." },
-        { "q": "Braces or aligners — which is better?", "a": "Both can work well. The choice depends on the type of correction needed, lifestyle and budget, and is discussed at the consultation." }
+        {
+          "q": "Am I too old for braces?",
+          "a": "There is no upper age limit as long as the gums and bone are healthy."
+        },
+        {
+          "q": "Braces or aligners — which is better?",
+          "a": "Both can work well. The choice depends on the type of correction needed, lifestyle and budget, and is discussed at the consultation."
+        }
       ],
       "seo": {
         "title": "Braces & Clear Aligners in Tadepalli",
         "description": "Consultations for metal braces, ceramic braces and clear aligners at Dr. Sindhu Dental Clinic, Ashramam Road, Tadepalli."
-      }
+      },
+      "image": "treat-orthodontics"
     }
   ]
 }

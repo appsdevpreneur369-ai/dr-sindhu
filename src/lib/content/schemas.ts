@@ -69,10 +69,10 @@ export const BrandSchema = z.object({
   status: Status,
   _note: Note,
   colors: z.object({
-    primary: hex, primaryHover: hex, primaryDeep: hex, mint: hex, mintStrong: hex,
-    background: hex, surface: hex, sand: hex, text: hex, textSecondary: hex, border: hex,
-    cta: hex, ctaHover: hex, coralSoft: hex, dark: hex, onDark: hex, onDarkMuted: hex, coralOnDark: hex,
-    success: hex, danger: hex, whatsapp: hex, decorativeCoral: hex, decorativeSage: hex,
+    primary: hex, primaryHover: hex, primaryDeep: hex, navy: hex, sky: hex, skyStrong: hex,
+    green: hex, greenHover: hex, greenSoft: hex, leaf: hex, background: hex, surface: hex, surfaceAlt: hex,
+    text: hex, textSecondary: hex, border: hex, onDark: hex, onDarkMuted: hex, greenOnDark: hex,
+    success: hex, warning: hex, warningText: hex, warningSoft: hex, whatsapp: hex,
   }),
   fonts: z.object({ heading: z.string(), body: z.string() }),
   radius: z.string(),
@@ -130,6 +130,9 @@ export const DoctorSchema = z.object({
   focus: z.array(z.string()),
   consultation: z.array(Consultation).min(1),
   consultationStatus: Status,
+  /** Only from the account owner/clinic; null = not shown. */
+  experienceYears: z.number().int().positive().nullable(),
+  experienceStatus: Status,
 });
 export const DoctorsFileSchema = z.object({
   _note: Note,
@@ -146,6 +149,7 @@ export const CategorySchema = z.object({
   shortTitle: z.string().min(1),
   icon: z.string(),
   size: z.enum(['lg', 'md', 'sm']),
+  image: z.string().min(1),
   doctors: z.array(slug).min(1),
   confirmSpecialist: z.boolean(),
   short: z.string().min(1),
@@ -197,26 +201,36 @@ export const BookingSchema = z.object({
   note: z.string(),
 });
 
-const Chip = z.object({ icon: z.string(), text: z.string(), kind: z.enum(['hours', 'static']) });
+const Chip = z.object({ icon: z.string(), text: z.string(), sub: z.string().optional(), kind: z.enum(['hours', 'static']) });
 const Head = z.object({ eyebrow: z.string(), title: z.string(), lead: z.string().optional() });
 const IconItem = z.object({ icon: z.string(), title: z.string(), text: z.string() });
 
 export const HomeSchema = z.object({
   status: Status,
   hero: z.object({
-    eyebrow: z.string(), title: z.string(), lead: z.string(), image: z.string(), primaryCta: z.string(),
-    secondaryCta: z.object({ label: z.string(), href: sitePath }), chips: z.array(Chip),
+    badge: z.string(), titleLine1: z.string(), titleLine2: z.string(), lead: z.string(), image: z.string(), primaryCta: z.string(),
+    secondaryCta: z.object({ label: z.string(), href: sitePath }), checks: z.array(z.string()), chips: z.array(Chip),
   }),
-  symptoms: Head,
+  stats: z.object({
+    _note: Note,
+    status: Status,
+    items: z.array(z.object({ value: z.string(), label: z.string(), sub: z.string(), icon: z.string(), source: z.string().min(3) })),
+  }),
+  about: z.object({
+    eyebrow: z.string(), title: z.string(), paragraphs: z.array(z.string()).min(1), points: z.array(z.string()), image: z.string(),
+    badgeValue: z.string(), badgeLabel: z.string(), cta: z.object({ label: z.string(), href: sitePath }),
+  }),
   treatments: Head,
-  approach: Head.extend({ points: z.array(IconItem) }),
+  symptoms: Head,
   doctors: Head,
-  booking: Head.extend({ stepsTitle: z.string(), steps: z.array(z.object({ title: z.string(), text: z.string() })) }),
+  why: Head.extend({ points: z.array(IconItem) }),
+  steps: Head.extend({ items: z.array(IconItem) }),
+  booking: z.object({ stepsTitle: z.string(), steps: z.array(z.object({ title: z.string(), text: z.string() })) }),
+  gallery: Head,
   education: Head,
   faq: Head,
   visit: Head,
   cta: z.object({ title: z.string(), lead: z.string(), button: z.string() }),
-  stats: z.object({ _note: Note, status: Status, items: z.array(z.object({ value: z.string(), label: z.string(), source: z.string() })) }),
   beforeAfter: z.object({ _note: Note, status: Status, items: z.array(z.object({ before: z.string(), after: z.string(), caption: z.string(), consent: z.literal(true) })) }),
 });
 
@@ -252,6 +266,7 @@ const ImageRef = z.object({
   height: z.number().int().positive(),
   alt: z.string().min(1),
   status: Status,
+  credit: z.string().optional(),
 });
 export const ImagesSchema = z.object({
   _note: Note,

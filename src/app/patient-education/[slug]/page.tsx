@@ -55,7 +55,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 </ul>
               </nav>
             )}
-            <div className="rounded-brand bg-mint p-5">
+            <div className="rounded-brand bg-sky p-5">
               <p className="font-heading text-lg font-semibold">Worried about your teeth or gums?</p>
               <p className="mt-1 text-[0.95rem] text-textSecondary">A check-up is the quickest way to know.</p>
               <BookButton className="btn-cta mt-4 w-full">Book a check-up</BookButton>
@@ -69,7 +69,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {more.map((x) => (
               <li key={x.meta.slug}>
-                <Link href={`/patient-education/${x.meta.slug}`} className="flex min-h-[44px] items-center justify-between gap-2 rounded-xl px-2 font-medium text-primary hover:bg-mint">
+                <Link href={`/patient-education/${x.meta.slug}`} className="flex min-h-[44px] items-center justify-between gap-2 rounded-xl px-2 font-medium text-primary hover:bg-sky">
                   {x.meta.title} <Icon name="chevron-right" className="h-4 w-4 shrink-0" />
                 </Link>
               </li>

@@ -1,34 +1,33 @@
 {
   "base": "http://localhost:3100",
-  "date": "2026-09-30T11:03:43.089Z",
+  "date": "2026-09-30T12:24:27.076Z",
   "rows": [
     {
       "form": "mobile",
       "path": "/",
-      "performance": 90,
+      "performance": 92,
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcp": "3.4 s",
+      "lcp": "3.2 s",
       "cls": "0",
-      "tbt": "50 ms",
+      "tbt": "0 ms",
       "failing": [
-        "first-contentful-paint (1.9 s)",
-        "largest-contentful-paint (3.4 s)"
+        "largest-contentful-paint (3.2 s)"
       ]
     },
     {
       "form": "mobile",
       "path": "/treatments/gum-care",
-      "performance": 93,
+      "performance": 95,
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcp": "3.1 s",
+      "lcp": "2.8 s",
       "cls": "0",
       "tbt": "40 ms",
       "failing": [
-        "largest-contentful-paint (3.1 s)"
+        "largest-contentful-paint (2.8 s)"
       ]
     },
     {
@@ -48,13 +47,13 @@
     {
       "form": "mobile",
       "path": "/gallery",
-      "performance": 92,
+      "performance": 93,
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
       "lcp": "3.1 s",
       "cls": "0",
-      "tbt": "40 ms",
+      "tbt": "10 ms",
       "failing": [
         "largest-contentful-paint (3.1 s)"
       ]
@@ -62,29 +61,29 @@
     {
       "form": "mobile",
       "path": "/contact",
-      "performance": 96,
+      "performance": 95,
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcp": "2.7 s",
+      "lcp": "2.8 s",
       "cls": "0",
-      "tbt": "20 ms",
+      "tbt": "30 ms",
       "failing": [
-        "largest-contentful-paint (2.7 s)"
+        "largest-contentful-paint (2.8 s)"
       ]
     },
     {
       "form": "mobile",
       "path": "/book",
-      "performance": 93,
+      "performance": 95,
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcp": "3.0 s",
+      "lcp": "2.9 s",
       "cls": "0",
-      "tbt": "20 ms",
+      "tbt": "40 ms",
       "failing": [
-        "largest-contentful-paint (3.0 s)"
+        "largest-contentful-paint (2.9 s)"
       ]
     },
     {
@@ -94,7 +93,7 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcp": "0.6 s",
+      "lcp": "0.7 s",
       "cls": "0",
       "tbt": "0 ms",
       "failing": []
@@ -130,7 +129,7 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcp": "0.7 s",
+      "lcp": "0.6 s",
       "cls": "0",
       "tbt": "0 ms",
       "failing": []
@@ -143,7 +142,7 @@
       "bestPractices": 100,
       "seo": 100,
       "lcp": "0.6 s",
-      "cls": "0",
+      "cls": "0.004",
       "tbt": "0 ms",
       "failing": []
     },
@@ -154,8 +153,8 @@
       "accessibility": 100,
       "bestPractices": 100,
       "seo": 100,
-      "lcp": "0.7 s",
-      "cls": "0",
+      "lcp": "0.6 s",
+      "cls": "0.001",
       "tbt": "0 ms",
       "failing": []
     }

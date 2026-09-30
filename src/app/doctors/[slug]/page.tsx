@@ -29,65 +29,102 @@ export default function DoctorPage({ params }: { params: { slug: string } }) {
   if (!d) notFound();
   const treats = categories.filter((c) => c.doctors.includes(d.id) || c.subTreatments.some((s) => s.doctors?.includes(d.id)));
   const photo = d.photo ? getImage(d.photo) : null;
+  const facts = [
+    { icon: 'badge-check', label: 'Qualification', value: d.qualification },
+    { icon: 'stethoscope', label: 'Speciality', value: d.specialty.replace(/ \(.+\)/, '') },
+    ...(d.experienceYears ? [{ icon: 'award', label: 'Experience', value: `${d.experienceYears}+ years` }] : []),
+    { icon: 'sparkles', label: 'Treatment areas', value: String(treats.length) },
+  ];
   return (
     <>
       <JsonLd data={physicianJsonLd(d)} />
-      <PageHeader title={d.displayName} crumbs={[{ name: 'Doctors', path: '/doctors' }, { name: d.displayName, path: `/doctors/${d.slug}` }]} badge={<DraftBadge status={d.status} />}>
-        <div className="mt-5 flex flex-wrap items-center gap-5">
-          {photo ? <Image src={photo.src} alt={photo.alt} width={224} height={224} className="h-28 w-28 rounded-[38%] object-cover" priority /> : <Avatar initials={d.initials} size="lg" />}
+      <PageHeader title={d.displayName} crumbs={[{ name: 'Doctors', path: '/doctors' }, { name: d.displayName, path: `/doctors/${d.slug}` }]} badge={<DraftBadge status={d.status} onDark />}>
+        <div className="mt-6 flex flex-wrap items-center gap-6 pb-6">
+          {photo ? (
+            <Image src={photo.src} alt={photo.alt} width={256} height={256} className="h-32 w-32 rounded-2xl object-cover" priority />
+          ) : (
+            <Avatar initials={d.initials} size="lg" className="!from-onDark/25 !to-onDark/5 ring-4 ring-onDark/20" />
+          )}
           <div>
-            <p className="text-lg font-semibold text-primaryDeep">
+            <p className="font-heading text-xl font-bold text-onDark">
               {d.qualification} · {d.specialty}
             </p>
-            {d.isHead && <p className="mt-1 inline-flex rounded-full bg-coralSoft px-3 py-0.5 text-sm font-semibold text-ctaHover">{d.role}</p>}
-            <div className="mt-4">
-              <BookButton className="btn-cta" prefill={{ doctor: d.slug }}>
-                <Icon name="calendar-check" /> Book with {d.displayName}
-              </BookButton>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {d.isHead && <span className="rounded-full bg-onDark px-3 py-1 font-heading text-sm font-bold text-primaryDeep">{d.role}</span>}
+              {d.experienceYears && (
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-onDark/15 px-3 py-1 font-heading text-sm font-bold text-onDark">
+                  <Icon name="award" className="h-4 w-4" /> {d.experienceYears}+ years of experience
+                </span>
+              )}
             </div>
+            <BookButton className="btn-light mt-5" prefill={{ doctor: d.slug }}>
+              <Icon name="calendar-check" /> Book with {d.displayName}
+            </BookButton>
           </div>
         </div>
       </PageHeader>
+
+      <section aria-label="At a glance" className="container-site relative z-10 -mt-8">
+        <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {facts.map((f) => (
+            <li key={f.label} className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 shadow-lift">
+              <span className="icon-tile !h-11 !w-11">
+                <Icon name={f.icon} className="h-5 w-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-xs font-medium uppercase tracking-wide text-textSecondary">{f.label}</span>
+                <span className="block font-heading font-bold text-text">{f.value}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="section">
-        <div className="container-site grid gap-12 lg:grid-cols-[1.4fr_1fr]">
-          <div className="prose-site">
-            <h2 className="!mt-0">About {d.displayName}</h2>
-            {d.bio.map((b) => (
-              <p key={b.slice(0, 24)}>{b}</p>
-            ))}
-            <h2>Areas of focus</h2>
-            <ul>
+        <div className="container-site grid gap-12 lg:grid-cols-[1.5fr_1fr]">
+          <div>
+            <p className="eyebrow">About the doctor</p>
+            <h2 className="mt-3">Meet {d.displayName}</h2>
+            <div className="prose-site mt-5">
+              {d.bio.map((b) => (
+                <p key={b.slice(0, 24)}>{b}</p>
+              ))}
+            </div>
+            <h2 className="mt-10 text-2xl">Areas of focus</h2>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {d.focus.map((f) => (
-                <li key={f}>{f}</li>
+                <li key={f} className="flex items-center gap-3 rounded-xl border border-border bg-surfaceAlt px-4 py-3 font-medium">
+                  <Icon name="badge-check" className="h-5 w-5 shrink-0 text-green" /> {f}
+                </li>
               ))}
             </ul>
           </div>
-          <aside className="space-y-5">
-            <div className="card p-6">
-              <h2 className="text-xl">Consultation times</h2>
-              <ul className="mt-3 space-y-1.5 text-textSecondary">
+          <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+            <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-soft">
+              <h2 className="bg-gradient-to-r from-primary to-primaryHover px-6 py-4 text-lg !text-onDark">Consultation times</h2>
+              <ul className="space-y-2 px-6 py-5 text-textSecondary">
                 {d.consultation.map((c, i) => (
-                  <li key={i}>
-                    <span className="font-semibold text-text">
+                  <li key={i} className="flex justify-between gap-3">
+                    <span className="font-heading font-bold text-text">
                       {DAY_SHORT[c.days[0]]}
                       {c.days.length > 1 && `–${DAY_SHORT[c.days[c.days.length - 1]]}`}
-                    </span>{' '}
+                    </span>
                     {formatSession(c)}
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 text-sm text-textSecondary">
-                Times are being confirmed with the clinic. <DraftBadge status={d.consultationStatus} />
+              <p className="border-t border-border px-6 py-3 text-sm text-textSecondary">
+                Being confirmed with the clinic. <DraftBadge status={d.consultationStatus} />
               </p>
             </div>
             {treats.length > 0 && (
-              <div className="card p-6">
-                <h2 className="text-xl">Treatments</h2>
+              <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft">
+                <h2 className="text-lg">Treatments</h2>
                 <ul className="mt-2">
                   {treats.map((c) => (
                     <li key={c.slug}>
-                      <Link href={`/treatments/${c.slug}`} className="flex min-h-[44px] items-center justify-between gap-2 font-medium text-primary hover:underline">
-                        {c.title} <Icon name="chevron-right" className="h-4 w-4" />
+                      <Link href={`/treatments/${c.slug}`} className="flex min-h-[44px] items-center justify-between gap-2 border-b border-border font-medium text-text last:border-0 hover:text-primary">
+                        {c.title} <Icon name="chevron-right" className="h-4 w-4 text-primary" />
                       </Link>
                     </li>
                   ))}

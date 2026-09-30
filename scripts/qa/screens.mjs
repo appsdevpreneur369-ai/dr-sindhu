@@ -17,6 +17,9 @@ for (const p of pages) {
     await page.setViewport({ width: w, height: 800, deviceScaleFactor: 1 });
     await page.goto(base + p, { waitUntil: 'load', timeout: 60000 });
     await new Promise((r) => setTimeout(r, 700));
+    // Scroll through so lazy images load, then back to the top.
+    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 300) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 200)); } window.scrollTo(0, 0); });
+    await new Promise((r) => setTimeout(r, 800));
     await page.evaluate(() => document.querySelectorAll('.reveal').forEach((e) => e.classList.add('is-visible')));
     await new Promise((r) => setTimeout(r, 900));
     const r = await page.evaluate(() => {

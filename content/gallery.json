@@ -1,14 +1,42 @@
 {
-  "_note": "'Our Clinic' photo gallery (website content only — not the ClinicFlow portal gallery). Items reference image ids in images.json. Until real photos arrive every item is an illustration marked placeholder, and the page says so.",
+  "_note": "'Our Clinic' gallery (website content only — not the ClinicFlow portal gallery). Until the clinic supplies its own photos, items are REPRESENTATIVE stock photos, and the page says so.",
   "status": "placeholder",
-  "intro": "A look inside the clinic. Real photographs of the reception, treatment room and sterilisation area are coming soon; the images below are placeholders.",
-  "categories": ["Clinic", "Treatment", "Care"],
+  "intro": "A look at the kind of calm, modern setting we care for you in. These are representative photos — pictures of our own clinic on Ashramam Road are coming soon.",
+  "categories": [
+    "Clinic",
+    "Treatment",
+    "Hygiene"
+  ],
   "items": [
-    { "image": "gallery-reception", "caption": "Reception and waiting area", "category": "Clinic" },
-    { "image": "gallery-chair", "caption": "Treatment room", "category": "Treatment" },
-    { "image": "gallery-sterilisation", "caption": "Sterilisation area", "category": "Care" },
-    { "image": "gallery-xray", "caption": "Digital X-ray", "category": "Treatment" },
-    { "image": "gallery-consult", "caption": "Consultation desk", "category": "Clinic" },
-    { "image": "gallery-kids", "caption": "Children's corner", "category": "Care" }
+    {
+      "image": "gallery-reception",
+      "caption": "Waiting area",
+      "category": "Clinic"
+    },
+    {
+      "image": "gallery-treatment-room",
+      "caption": "Treatment room",
+      "category": "Treatment"
+    },
+    {
+      "image": "gallery-chair",
+      "caption": "Dental chair",
+      "category": "Treatment"
+    },
+    {
+      "image": "gallery-instruments",
+      "caption": "Sterilised instruments",
+      "category": "Hygiene"
+    },
+    {
+      "image": "gallery-xray",
+      "caption": "Digital X-ray",
+      "category": "Treatment"
+    },
+    {
+      "image": "gallery-modern-chair",
+      "caption": "Modern equipment",
+      "category": "Clinic"
+    }
   ]
 }

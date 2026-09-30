@@ -71,7 +71,7 @@ export default function ContactPage() {
             </div>
 
             <div className="card overflow-hidden">
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-mint/60 px-6 py-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-sky/60 px-6 py-4">
                 <h2 className="text-2xl">Timings</h2>
                 <OpenStatus hours={c.hours.days} timeZone={c.timezone} />
               </div>

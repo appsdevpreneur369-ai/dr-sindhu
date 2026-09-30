@@ -84,6 +84,8 @@ export function checkReferences(c: SiteContent, articleRefs: { slug: string; ima
   for (const id of b.generalOption.doctors) need(doctorIds.has(id), `booking.json generalOption: unknown doctor "${id}"`);
   need(imageIds.has(c['home.json'].hero.image), `home.json hero: image "${c['home.json'].hero.image}" not in images.json`);
   need(imageIds.has(c['about.json'].story.image), `about.json story: image not in images.json`);
+  need(imageIds.has(c['home.json'].about.image), `home.json about: image not in images.json`);
+  for (const cat of c['services.json'].categories) need(imageIds.has(cat.image), `services.json ${cat.slug}: image "${cat.image}" not in images.json`);
   for (const g of c['gallery.json'].items) {
     need(imageIds.has(g.image), `gallery.json: image "${g.image}" not in images.json`);
     need(c['gallery.json'].categories.includes(g.category), `gallery.json: unknown category "${g.category}"`);

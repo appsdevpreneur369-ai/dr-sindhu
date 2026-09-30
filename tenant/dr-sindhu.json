@@ -20,18 +20,16 @@
     "themeTokens": null,
     "_enterpriseThemeTokens": {
       "_note": "Not applied on STARTER. Move to clinic.themeTokens on upgrade.",
-      "primaryColor": "#2F6F5E",
-      "primaryHoverColor": "#245848",
-      "primaryPressedColor": "#1C4A3E",
-      "secondaryColor": "#CFE5DA",
-      "accentColor": "#B84A33",
-      "backgroundColor": "#FAF7F2",
+      "primaryColor": "#1463C4",
+      "primaryHoverColor": "#0F52A6",
+      "primaryPressedColor": "#0B3A78",
+      "backgroundColor": "#FFFFFF",
       "surfaceColor": "#FFFFFF",
-      "textColor": "#1F2D28",
-      "textSecondaryColor": "#4E5D57",
-      "borderColor": "#DCE3DE",
-      "fontHeading": "Fraunces",
-      "fontBody": "DM Sans"
+      "textColor": "#0F1F35",
+      "textSecondaryColor": "#4A5B72",
+      "borderColor": "#E1E8F2",
+      "fontHeading": "Roboto",
+      "fontBody": "Montserrat"
     },
     "businessHours": [
       {
@@ -123,7 +121,7 @@
       "mciRegistrationNumber": "PENDING-VERIFICATION-SINDHU",
       "specialization": "Periodontist (Gum Specialist) · Clinic Head",
       "qualification": "MDS",
-      "bio": "Dr. Sindhu holds an MDS in Periodontics and heads the clinic. Her day-to-day work is the health of the gums and the bone that anchors each tooth: bleeding or receding gums, deep cleaning, gum surgery and the regular maintenance visits that keep gum disease from coming back. She also sees patients for routine check-ups, scaling and polishing, and cosmetic concerns. If you are not sure which specialist you need, book with her first and she will guide you.",
+      "bio": "Dr. Sindhu is an MDS periodontist with more than 15 years of experience in dentistry, and she leads the clinic on Ashramam Road. Her speciality is the health of the gums and the bone that anchor each tooth — from bleeding or receding gums and deep cleaning to gum surgery and the long-term maintenance that keeps gum disease from returning. Over the years she has seen how often a healthy mouth begins with healthy gums, so every treatment plan at the clinic starts with a careful gum check. She also sees patients of all ages for routine check-ups, fillings, cleaning and cosmetic care, and coordinates with the clinic's oral surgeon and root canal specialist when a case needs them. Patients value her calm, unhurried manner: she explains what she finds in plain language, shows you the options and the cost before anything begins, and makes sure you are comfortable at every step. If you are not sure whom to see, book with her first and she will guide you.",
       "isOwner": true
     },
     {

@@ -17,14 +17,14 @@ Every record carries `"status": "approved" | "placeholder"`. Build with `NEXT_PU
 | Address, PIN, landmark | `clinic.json` → `address` | `postalCode` must be 6 digits or empty. |
 | Google Maps pin | `clinic.json` → `maps.shareUrl` (share link) and `maps.embedUrl` (Share → Embed a map → the `src` URL) | Until then the Contact page shows a map *search* for Ashramam Road, labelled approximate. |
 | Opening hours / working days | `clinic.json` → `hours.days` | Several sessions per day allowed. Set `daysStatus: "approved"` when the clinic confirms Mon–Sat. |
-| Colours / fonts | `content/brand.json` | Then `npm run contrast` (must pass) and `npm run brand` (re-draws illustrations and icons in the new colours). Fonts must be registered in `src/lib/theme.ts`. |
+| Colours / fonts | `content/brand.json` | Then `npm run contrast` (must pass) and `npm run brand` (icons + share image). Fonts must be registered in `src/lib/theme.ts` (Roboto + Montserrat today). No red colours (owner's rule). |
 | Logo | Replace `images/dr-sindhu-logo.png` (mark), then `npm run brand` | Builds `public/brand/logo-mark.png`, favicon, app icons and the social-share image. Paths live only in `content/images.json`. A logo-with-name is published only if `logo.full` is set — the supplied one says "& Implant Centre" and is intentionally unused; the name is "Dr. Sindhu Dental Clinic". |
-| Any photo | `content/images.json` | Put the file in `public/images/…`, update `src`, `width`, `height`, `alt`, set `status: "approved"`. |
+| Any photo | `content/images.json` | Put the file in `public/images/photos/`, update `src`, `width`, `height`, `alt`, set `status: "approved"` and remove `credit`. `npm run build` pre-generates the WebP sizes automatically. Current photos are representative stock images (credits in `content/photo-credits.json`). |
 | Clinic gallery | `content/gallery.json` (+ `images.json`) | Replace the placeholder illustrations with real photos. |
 | Doctors | `content/doctors.json` | See "Renaming a doctor" below. `photo`: an image id, or `null` for an initials avatar. |
-| Treatments & sub-treatments | `content/services.json` | Visit counts always say "usually". **Never add prices.** `confirmSpecialist: true` shows the "first consultation with Dr. Sindhu" note. |
+| Treatments & sub-treatments | `content/services.json` (each category has an `image` id) | Visit counts always say "usually". **Never add prices.** `confirmSpecialist: true` shows the "first consultation with Dr. Sindhu" note. |
 | "What's troubling you?" chips | `content/routing.json` | Each chip lists doctor ids and a treatment category. |
-| Home page wording | `content/home.json` | `stats` and `beforeAfter` stay empty until real, verifiable data (and consented photos) exist. |
+| Home page wording | `content/home.json` | Every `stats` item must name its `source`. `beforeAfter` stays empty until real, consented photos exist. |
 | About page | `content/about.json` | |
 | FAQs | `content/faqs.json` (general) and each category's `faqs` in `services.json` | `"home": true` also shows it on the home page. `{{hoursSummary}}` is filled in from the hours. |
 | Patient education articles | `content/education/<slug>.md` | Front-matter is validated; the file name must equal the `slug`. `image` is an id in `images.json`, `reviewedBy` a doctor id. |

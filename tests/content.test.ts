@@ -77,7 +77,10 @@ describe('content schema', () => {
 
   it('never publishes prices or invented stats', () => {
     const home = read('home.json');
-    expect(home.stats.items).toEqual([]);
+    // Every stat names its source; the only experience figure is the one the account owner gave (Dr. Sindhu, 15+).
+    for (const s of home.stats.items) expect(s.source.length).toBeGreaterThan(2);
+    const docs = read('doctors.json').doctors;
+    expect(docs.filter((d: { experienceYears: number | null }) => d.experienceYears !== null).map((d: { id: string; experienceYears: number }) => [d.id, d.experienceYears])).toEqual([['periodontist', 15]]);
     expect(home.beforeAfter.items).toEqual([]);
     const services = JSON.stringify(read('services.json'));
     expect(services).not.toMatch(/₹|Rs\.?\s?\d|INR/);

@@ -14,7 +14,7 @@ export default function AboutPage() {
   const a = siteAbout;
   return (
     <>
-      <PageHeader title={p.h1!} intro={p.intro} crumbs={[{ name: 'About', path: '/about' }]} badge={<DraftBadge status={a.status} />} />
+      <PageHeader title={p.h1!} intro={p.intro} image={getImage('about')} crumbs={[{ name: 'About', path: '/about' }]} badge={<DraftBadge status={a.status} />} />
       <section className="section">
         <div className="container-site grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="prose-site">
@@ -26,13 +26,13 @@ export default function AboutPage() {
           <ContentImage img={getImage(a.story.image)} className="shadow-lift" sizes="(min-width:1024px) 45vw, 100vw" />
         </div>
       </section>
-      <section className="section bg-sand/60">
+      <section className="section bg-surfaceAlt/60">
         <div className="container-site">
           <SectionHead title={a.values.title} />
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {a.values.items.map((v) => (
               <li key={v.title} className="reveal card p-6">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-mint text-primary">
+                <span className="icon-tile">
                   <Icon name={v.icon} />
                 </span>
                 <h3 className="mt-4 text-lg">{v.title}</h3>
@@ -46,8 +46,8 @@ export default function AboutPage() {
         <div className="container-site">
           <SectionHead title={a.team.title} lead={a.team.lead} />
           <div className="grid gap-5 md:grid-cols-3">
-            {siteDoctors.map((d) => (
-              <DoctorCard key={d.id} d={d} />
+            {siteDoctors.map((d, i) => (
+              <DoctorCard key={d.id} d={d} index={i} />
             ))}
           </div>
         </div>

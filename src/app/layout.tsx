@@ -13,6 +13,7 @@ import { clinicJsonLd } from '@/lib/jsonld';
 import { channels, generalWhatsappHref, portal } from '@/lib/links';
 import { NOINDEX, SITE_URL } from '@/lib/site';
 import { fontClassNames, themeCss } from '@/lib/theme';
+import { VARS } from '@/lib/vars';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -43,7 +44,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         <JsonLd data={clinicJsonLd()} />
         <BookingProvider config={booking}>
-          <Header logo={<Logo priority />} items={siteNav.header} signInHref={portal('login')} registerHref={portal('register')} callHref={channels.call?.href ?? null} />
+          <Header
+            logo={<Logo priority />}
+            items={siteNav.header}
+            signInHref={portal('login')}
+            registerHref={portal('register')}
+            callHref={channels.call?.href ?? null}
+            callDisplay={channels.call?.display ?? null}
+            whatsappHref={generalWhatsappHref}
+            topLine={`${siteClinic.address.street}, ${siteClinic.address.locality} · ${VARS.hoursShort}`}
+          />
           <main id="main" tabIndex={-1} className="outline-none">
             {children}
           </main>

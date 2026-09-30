@@ -16,6 +16,8 @@ export const VARS: Record<string, string> = {
   clinic: siteClinic.name.value,
   doctorCount: ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'][siteDoctors.length - 1] ?? String(siteDoctors.length),
   categoryCount: ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'][categories.length - 1] ?? String(categories.length),
+  doctorCountNum: String(siteDoctors.length),
+  categoryCountNum: String(categories.length),
   hoursSummary: hoursSummary(siteClinic.hours.days),
   hoursShort: hoursShort(siteClinic.hours.days),
   todayHours: openDay ? shortSessions(openDay.sessions) : '',

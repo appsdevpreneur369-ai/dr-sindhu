@@ -5,11 +5,12 @@ import { PageHeader } from '@/components/layout/PageHeader';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icon } from '@/components/ui/Icon';
 import { Accordion, DraftBadge, TextLink } from '@/components/ui/primitives';
-import { categories, getCategory, getDoctorById, siteServices } from '@/lib/content';
+import { categories, getCategory, getDoctorById, getImage, siteServices } from '@/lib/content';
 import { faqJsonLd, treatmentJsonLd } from '@/lib/jsonld';
 import { pageMetadata } from '@/lib/seo';
 
 export const dynamicParams = false;
+const siteDoctorsIndex = (id: string) => ['periodontist', 'oral-surgeon', 'endodontist'].indexOf(id);
 export const generateStaticParams = () => categories.map((c) => ({ category: c.slug }));
 
 export function generateMetadata({ params }: { params: { category: string } }) {
@@ -27,8 +28,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
   return (
     <>
       <JsonLd data={[treatmentJsonLd(c, path), ...(c.faqs.length ? [faqJsonLd(c.faqs)] : [])]} />
-      <PageHeader title={c.title} intro={c.short} crumbs={[{ name: 'Treatments', path: '/treatments' }, { name: c.shortTitle, path }]} badge={<DraftBadge status={c.status} />}>
-        <BookButton className="btn-cta mt-6" prefill={{ treatment: c.slug }}>
+      <PageHeader title={c.title} intro={c.short} image={getImage(c.image)} crumbs={[{ name: 'Treatments', path: '/treatments' }, { name: c.shortTitle, path }]} badge={<DraftBadge status={c.status} />}>
+        <BookButton className="btn-light mt-7" prefill={{ treatment: c.slug }}>
           <Icon name="calendar-check" /> Book for {c.shortTitle.toLowerCase()}
         </BookButton>
       </PageHeader>
@@ -44,8 +45,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
               ))}
             </div>
             {c.confirmSpecialist && (
-              <p className="mt-2 flex max-w-prose gap-3 rounded-2xl border border-cta/30 bg-coralSoft px-4 py-3 text-[0.95rem]">
-                <Icon name="info" className="mt-0.5 h-5 w-5 shrink-0 text-cta" />
+              <p className="mt-2 flex max-w-prose gap-3 rounded-2xl border border-primary/30 bg-sky px-4 py-3 text-[0.95rem]">
+                <Icon name="info" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 <span>Start with a consultation with Dr. Sindhu, who will examine you and plan the next steps. <DraftBadge status="placeholder" /></span>
               </p>
             )}
@@ -67,7 +68,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
             <ol className="mt-6 space-y-5">
               {c.steps.map((s, i) => (
                 <li key={s.title} className="flex gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint font-heading text-lg font-semibold text-primaryDeep">{i + 1}</span>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sky font-heading text-lg font-semibold text-primaryDeep">{i + 1}</span>
                   <span>
                     <span className="block font-semibold">{s.title}</span>
                     <span className="text-textSecondary">{s.text}</span>
@@ -94,7 +95,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
             </div>
             <h2 className="text-xl">Who treats you</h2>
             {doctors.map((d) => (
-              <DoctorCard key={d.id} d={d} />
+              <DoctorCard key={d.id} d={d} index={siteDoctorsIndex(d.id)} />
             ))}
           </aside>
         </div>

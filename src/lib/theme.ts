@@ -1,16 +1,17 @@
 import 'server-only';
-import { DM_Sans, Fraunces } from 'next/font/google';
+import { Montserrat, Roboto } from 'next/font/google';
 import { siteBrand } from './content';
 
 // next/font must be declared statically; brand.json picks from this registry by name (max 2 fonts).
-// display: 'optional' (decided 30 Sep 2026): the web font is used only if it arrives almost immediately (it is
-// preloaded), otherwise the metric-matched fallback stays for that page view — no text reflow, no layout shift.
-const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'optional', axes: ['opsz'] });
-const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dmsans', display: 'optional' });
+// display: 'swap' so the chosen fonts always appear (redesign, 30 Sep 2026). With 'optional', first-time visitors
+// on slow connections kept the fallback font. next/font preloads both and uses metric-matched fallbacks.
+// Headings and sub-headings: Roboto. Body text: Montserrat (owner's choice, 30 Sep 2026).
+const roboto = Roboto({ subsets: ['latin'], weight: ['500', '700', '900'], variable: '--font-roboto', display: 'swap' });
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-montserrat', display: 'swap' });
 
 const registry: Record<string, { variable: string; cssVar: string; fallback: string }> = {
-  Fraunces: { variable: fraunces.variable, cssVar: '--font-fraunces', fallback: "Georgia, 'Times New Roman', serif" },
-  'DM Sans': { variable: dmSans.variable, cssVar: '--font-dmsans', fallback: "system-ui, 'Segoe UI', Roboto, sans-serif" },
+  Roboto: { variable: roboto.variable, cssVar: '--font-roboto', fallback: "system-ui, 'Segoe UI', Arial, sans-serif" },
+  Montserrat: { variable: montserrat.variable, cssVar: '--font-montserrat', fallback: "system-ui, 'Segoe UI', Arial, sans-serif" },
 };
 
 function font(name: string) {

@@ -16,6 +16,7 @@ async function shoot(url, file, { width, height, full = false, mobile = false, p
   if (popupClosed) await page.evaluateOnNewDocument(() => { try { sessionStorage.setItem('drsdc.bookingPopup', 'closed'); sessionStorage.setItem('smsdc.bookingPopup', 'closed'); } catch {} });
   await page.goto(url, { waitUntil: 'load', timeout: 90000 });
   await wait(1200);
+  if (full) { await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 300) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 200)); } window.scrollTo(0, 0); }); await wait(1000); }
   await page.evaluate(() => document.querySelectorAll('.reveal').forEach((e) => e.classList.add('is-visible')));
   await wait(900);
   if (before) await before(page);

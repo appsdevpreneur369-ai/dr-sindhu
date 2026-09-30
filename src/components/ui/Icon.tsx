@@ -1,5 +1,5 @@
 import {
-  Activity, AlignCenter, Anchor, ArrowRight, Calendar, CalendarCheck, CalendarClock, Check, ChevronDown, ChevronLeft, ChevronRight,
+  Activity, AlignCenter, Anchor, ArrowRight, ArrowUpRight, Award, BadgeCheck, HeartPulse, Users, Calendar, CalendarCheck, CalendarClock, Check, ChevronDown, ChevronLeft, ChevronRight,
   CircleAlert, CircleDashed, ClipboardCheck, Clock, Download, Droplet, ExternalLink, Eye, HandHeart, IndianRupee, Info, Layers, Leaf,
   LoaderCircle, LogIn, Mail, MapPin, Menu, MessageCircle, Navigation, Phone, Puzzle, Scissors, ShieldCheck, Siren, Smile, Snowflake,
   Sparkle, Sparkles, Stethoscope, TriangleAlert, UserPlus, Wind, X, Zap, type LucideIcon,
@@ -7,7 +7,8 @@ import {
 
 // Content refers to icons by kebab-case name. Unknown names fall back to a sparkle.
 const ICONS: Record<string, LucideIcon> = {
-  activity: Activity, 'align-center': AlignCenter, anchor: Anchor, 'arrow-right': ArrowRight, calendar: Calendar,
+  activity: Activity, 'align-center': AlignCenter, anchor: Anchor, 'arrow-right': ArrowRight, 'arrow-up-right': ArrowUpRight, award: Award,
+  'badge-check': BadgeCheck, 'heart-pulse': HeartPulse, users: Users, calendar: Calendar,
   'calendar-check': CalendarCheck, 'calendar-clock': CalendarClock, check: Check, 'chevron-down': ChevronDown,
   'chevron-left': ChevronLeft, 'chevron-right': ChevronRight, 'circle-alert': CircleAlert, 'circle-dashed': CircleDashed,
   'clipboard-check': ClipboardCheck, clock: Clock, download: Download, droplet: Droplet, 'external-link': ExternalLink, eye: Eye,

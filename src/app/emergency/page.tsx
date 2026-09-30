@@ -28,8 +28,8 @@ export default function EmergencyPage() {
       </PageHeader>
       <section className="section">
         <div className="container-site">
-          <div role="note" className="mb-10 flex max-w-3xl gap-3 rounded-brand border-2 border-danger/40 bg-surface p-5">
-            <Icon name="triangle-alert" className="mt-0.5 h-6 w-6 shrink-0 text-danger" />
+          <div role="note" className="mb-10 flex max-w-3xl gap-3 rounded-brand border-2 border-warning/40 bg-surface p-5">
+            <Icon name="triangle-alert" className="mt-0.5 h-6 w-6 shrink-0 text-warning" />
             <div>
               <h2 className="text-xl">When to go to hospital instead</h2>
               <p className="mt-1">{e.hospitalWarning}</p>

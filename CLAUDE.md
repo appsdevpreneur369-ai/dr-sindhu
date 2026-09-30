@@ -11,34 +11,37 @@ Status: **v0.1 built and tested locally (2026-09-30)** — not deployed, no remo
 - **Plan gate:** `content/plan.json` `{ "plan": "starter" }` gates anything beyond Starter. Upgrading to Enterprise must be a config change (see `docs/UPGRADE_TO_ENTERPRISE.md`).
 - **Everything config-driven** from `/content`, zod-validated; every record has `status: approved | placeholder`. No hard-coded copy, colours, images, phones or hours in components. `NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true` shows "Draft" badges.
 - **Placeholders never become dead links.** While phone/WhatsApp/email are placeholders: hide Call/WhatsApp/email buttons (show "Book online"), omit them from JSON-LD, disable the WhatsApp booking fallback (`src/lib/contact.ts`, `selectMode.ts`). Phone + WhatsApp +91 94416 95953 are approved (30 Sep 2026); email is still a placeholder.
-- **Never invent** a phone, email, reviews, ratings, years of experience, awards, patient counts or stats. Initials avatars until real doctor photos. No prices. Cautious medical wording ("linked with", "may help").
-- **Distinct from SMSDC (Suhasini).** Architecture/logic may be reused; visual design and all copy must be new — no sentence copied from SMSDC (duplicate-content risk in the same town). No "Suhasini" text, file or logo anywhere in the repo output (grep the build).
+- **Never invent** a phone, email, reviews, ratings, years of experience, awards, patient counts or stats. (Dr. Sindhu's 15+ years was provided by the account owner on 30 Sep 2026.) Initials avatars until real doctor photos. No prices. Cautious medical wording ("linked with", "may help").
+- **Copy stays original.** The owner asked (30 Sep 2026) for a look like the SMSDC site; layout patterns may match, but no sentence is copied from SMSDC (duplicate-content risk in the same town) and the brand colours/logo are DRSDC's own. No "Suhasini" text, file or logo anywhere in the repo output (grep the build).
 - ClinicFlow login/booking/portal pages keep standard ClinicFlow branding (branding is Enterprise-only) — link to them, don't brand them.
 
 ## Stack
 
-Next.js 14 App Router, TypeScript strict, Tailwind, next/font (Fraunces headings + DM Sans body, `display: 'optional'` — no font-swap layout shift; decided 30 Sep 2026), zod, vitest, lucide-react. English only (SMSDC's Telugu layer is not ported). Mirrors `D:\SMSDC\site` patterns: content layer, `BookingService` (clinicflow → enquiry → whatsapp fallback), popup rules, portal links + redirects, SEO/JSON-LD, contrast script.
+Next.js 14 App Router, TypeScript strict, Tailwind, next/font (Roboto headings + Montserrat body, `display: 'swap'`), zod, vitest, lucide-react. English only (SMSDC's Telugu layer is not ported). Mirrors `D:\SMSDC\site` patterns: content layer, `BookingService` (clinicflow → enquiry → whatsapp fallback), popup rules, portal links + redirects, SEO/JSON-LD, contrast script.
 
-## Brand (content/brand.json)
+## Brand (content/brand.json) — redesign 30 Sep 2026
+
+Owner feedback: professional look in the style of the SMSDC reference site, vivid (not dull) colours, **no red anywhere**, Roboto headings + Montserrat body, nav highlighted with an underline (no pills), real artistic images. Colours come from the clinic's own logo (blue + green) — so the layout is similar to SMSDC but the brand is not.
 
 | Token | Hex | Use | Contrast |
 | --- | --- | --- | --- |
-| primary (sage) | #2F6F5E | links, headings accents, primary buttons | 5.53:1 on bg, white on it 5.91:1 |
-| primaryHover | #245848 | hover | white on it 8.19:1 |
-| primarySoft (mint) | #E3F0EA | tints, chips | primary on it 5.04:1 |
-| background (warm off-white) | #FAF7F2 | page | — |
-| text (forest charcoal) | #1F2D28 | body | 13.42:1 |
-| textSecondary | #4E5D57 | muted text | 6.49:1 |
-| accent CTA (coral, deep) | #B84A33 | CTA buttons (white text) | 5.17:1 |
-| accentSoft (coral light) | #F4A08A | CTA fill with dark text / decoration | text on it 6.99:1 |
-| dark (forest) | #173B32 | footer | #F3EFE7 on it 10.72:1 |
-| decorative only | #F08A6C, #8FC1AE | blobs, dividers — fail AA as text | 2.30 / 1.89 |
+| primary (blue) | #1463C4 | buttons, links, stats | white on it 5.81:1; on white 5.81:1 |
+| primaryHover / primaryDeep | #0F52A6 / #0B3A78 | hover, banners | white 7.56 / 11.11 |
+| navy | #0A2748 | top bar, footer, steps band | white 15.04, onDarkMuted 9.86 |
+| green | #1D7F36 | eyebrows, green buttons, checks | on white 5.07; white on it 5.07 |
+| sky / greenSoft / surfaceAlt | #EAF3FE / #E9F7EA / #F5F9FF | tints, alternate sections | text ≥ 12:1 |
+| text / textSecondary | #0F1F35 / #4A5B72 | body | 16.57 / 6.93 |
+| warning (amber, replaces red) | #A14A07 | closed-now, errors | ≥ 4.5 on white and sky |
+| leaf | #7CC242 | decoration only (2.18:1) | never text |
+
+Fonts: Roboto (headings, 500/700/900) + Montserrat (body, 400/500/600) via next/font, `display: 'swap'` (CLS measured 0).
+Images: representative stock photos (Unsplash License, `content/photo-credits.json`) until the clinic's own photos arrive — never presented as the clinic's doctors (initials avatars). All images are pre-sized WebP (`npm run images`, runs before every build) served by a custom `next/image` loader — the runtime optimiser hung on some photos.
 
 ## Important tasks (checklist)
 
 1. [x] git init, Next.js 14 + Tailwind + vitest + eslint
 2. [x] `/content` (zod-validated, cross-references checked): clinic, brand, plan, portal, social, doctors, services (9 categories), routing, booking, home, about, faqs, emergency, gallery, images, navigation, pages, education/*.md, legal/*.md
-3. [x] Logo from the owner's files in `images/` → `npm run brand` (mark in header + Fraunces wordmark; icons, OG image, placeholder illustrations). Clinic name is **"Dr. Sindhu Dental Clinic"** (no "& Implant Centre", decided 30 Sep 2026); the supplied title-logo artwork shows the longer name and is deliberately NOT published until a corrected one arrives.
+3. [x] Logo from the owner's files in `images/` → `npm run brand` (mark in header + Roboto wordmark; icons, OG image). Clinic name is **"Dr. Sindhu Dental Clinic"** (no "& Implant Centre", decided 30 Sep 2026); the supplied title-logo artwork shows the longer name and is deliberately NOT published until a corrected one arrives.
 4. [x] Layout: glass header condensing on scroll, footer with inert social icons, sticky mobile action bar
 5. [x] All pages incl. 3 doctors, 9 treatment categories, 4 articles, 4 legal drafts, 404
 6. [x] Booking popup + wizard; BookingService clinicflow → enquiry → whatsapp; placeholder-phone rule
@@ -58,7 +61,9 @@ Next.js 14 App Router, TypeScript strict, Tailwind, next/font (Fraunces headings
 | `npm run dev` | Dev server |
 | `npm run build && npm start` | Production build (set env in `.env.production.local`) |
 | `npm run check` | lint + typecheck + tests + contrast + build |
-| `npm run brand` | Re-generate logo sizes, icons, OG image, illustrations from `images/` + `brand.json` |
+| `npm run brand` | Re-generate logo sizes, icons and the OG image from `images/` + `brand.json` |
+| `npm run images` | Pre-generate WebP variants of all photos (also runs automatically before `npm run build`) |
+| `node scripts/fetch-photos.mjs` | Re-download the selected stock photos (only when changing the selection) |
 | `npm run tenant` | Re-generate `tenant/dr-sindhu.json` from `/content` |
 | `node scripts/qa/screens.mjs <base> qa/screens` | Screenshots at 360/768/1280 + overflow/tap-target report |
 | `node scripts/qa/lighthouse.mjs <base> docs/seo-reports/<date>` | Lighthouse mobile + desktop |

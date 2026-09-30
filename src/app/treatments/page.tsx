@@ -1,5 +1,6 @@
-import { TreatmentTile } from '@/components/cards';
+import { TreatmentCard } from '@/components/cards';
 import { PageHeader } from '@/components/layout/PageHeader';
+import { Icon } from '@/components/ui/Icon';
 import { categories, sitePages, siteServices } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo';
 
@@ -12,12 +13,14 @@ export default function TreatmentsPage() {
       <PageHeader title={p.h1!} intro={p.intro} crumbs={[{ name: 'Treatments', path: '/treatments' }]} />
       <section className="section">
         <div className="container-site">
-          <div className="grid gap-4 sm:grid-cols-2 lg:auto-rows-[minmax(190px,auto)] lg:grid-cols-4">
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c, i) => (
-              <TreatmentTile key={c.slug} c={c} index={i} headingLevel="h2" />
+              <li key={c.slug}>
+                <TreatmentCard c={c} headingLevel="h2" priority={i < 3} />
+              </li>
             ))}
-          </div>
-          <p className="mt-8 max-w-2xl text-textSecondary">{siteServices.priceNote}</p>
+          </ul>
+          <p className="mt-10 flex max-w-2xl gap-3 rounded-2xl bg-sky px-5 py-4 text-text"><Icon name="indian-rupee" className="mt-0.5 h-5 w-5 shrink-0 text-primary" /> {siteServices.priceNote}</p>
         </div>
       </section>
     </>

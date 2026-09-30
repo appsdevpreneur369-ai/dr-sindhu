@@ -1,40 +1,108 @@
 {
   "header": [
-    { "label": "Treatments", "href": "/treatments" },
-    { "label": "Doctors", "href": "/doctors" },
-    { "label": "About", "href": "/about" },
-    { "label": "Patient Education", "href": "/patient-education" },
-    { "label": "Contact", "href": "/contact" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Treatments",
+      "href": "/treatments"
+    },
+    {
+      "label": "Doctors",
+      "href": "/doctors"
+    },
+    {
+      "label": "Patient Education",
+      "href": "/patient-education"
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
   ],
   "footer": [
     {
       "title": "Clinic",
       "links": [
-        { "label": "About", "href": "/about" },
-        { "label": "Doctors", "href": "/doctors" },
-        { "label": "Our Clinic", "href": "/gallery" },
-        { "label": "Contact", "href": "/contact" },
-        { "label": "Dental emergency", "href": "/emergency" }
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Doctors",
+          "href": "/doctors"
+        },
+        {
+          "label": "Our Clinic",
+          "href": "/gallery"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        },
+        {
+          "label": "Dental emergency",
+          "href": "/emergency"
+        }
       ]
     },
     {
       "title": "Patients",
       "links": [
-        { "label": "Book an appointment", "href": "/book" },
-        { "label": "Patient Education", "href": "/patient-education" },
-        { "label": "FAQs", "href": "/faqs" },
-        { "label": "Patient sign in", "href": "@portal:login" },
-        { "label": "Create an account", "href": "@portal:register" },
-        { "label": "Staff login", "href": "@portal:staffLogin" }
+        {
+          "label": "Book an appointment",
+          "href": "/book"
+        },
+        {
+          "label": "Patient Education",
+          "href": "/patient-education"
+        },
+        {
+          "label": "FAQs",
+          "href": "/faqs"
+        },
+        {
+          "label": "Patient sign in",
+          "href": "@portal:login"
+        },
+        {
+          "label": "Create an account",
+          "href": "@portal:register"
+        },
+        {
+          "label": "Staff login",
+          "href": "@portal:staffLogin"
+        }
       ]
     },
     {
       "title": "Legal",
       "links": [
-        { "label": "Privacy Policy", "href": "/privacy" },
-        { "label": "Terms of Use", "href": "/terms" },
-        { "label": "Medical Disclaimer", "href": "/disclaimer" },
-        { "label": "Cookie Policy", "href": "/cookies" }
+        {
+          "label": "Privacy Policy",
+          "href": "/privacy"
+        },
+        {
+          "label": "Terms of Use",
+          "href": "/terms"
+        },
+        {
+          "label": "Medical Disclaimer",
+          "href": "/disclaimer"
+        },
+        {
+          "label": "Cookie Policy",
+          "href": "/cookies"
+        }
       ]
     }
   ]

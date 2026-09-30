@@ -13,8 +13,8 @@ Last updated 30 Sep 2026. Everything below is live on the site as a **placeholde
 | 7 | **Doctor photos** | Trust; initials avatars until then | Initials | `images.json` + `doctors.json → photo` |
 | 8 | **Doctors' full names** (surnames) and **State Dental Council registration numbers** | Required on e-prescriptions; shown on doctor pages | "Dr. Sindhu", "Dr. Preethi", "Dr. Naveen Kumar"; `PENDING-VERIFICATION-<NAME>` | `doctors.json` (rename guide in EDITING.md) |
 | 9 | **Implants (prosthetic part), dentures, braces/aligners** — is there a visiting specialist, or does Dr. Sindhu handle them? | Routing and treatment pages | Routed to Dr. Sindhu for a first consultation, with a note | `services.json`, `routing.json` |
-| 10 | **Clinic photos** (exterior with signboard, reception, treatment room, sterilisation, X-ray) | Gallery, About, Google | Illustrations marked "Photo coming soon" | `gallery.json`, `images.json` |
-| 11 | **Doctors' bios** — check and approve the short factual bios | Accuracy | Written from speciality only; no years/awards | `doctors.json → bio` |
+| 10 | **Clinic photos** (exterior with signboard, reception, treatment room, sterilisation, X-ray) | Gallery, About, home hero, Google | Representative stock photos (Unsplash), captioned as representative on the Gallery | `public/images/photos/`, `images.json`, `gallery.json` |
+| 11 | **Doctors' bios** — check and approve | Accuracy | Dr. Sindhu: fuller bio with 15+ years of experience (from the account owner); Dr. Preethi and Dr. Naveen Kumar: short factual bios — send their experience if it should be shown | `doctors.json → bio, experienceYears` |
 | 12 | **Social media profiles** (Instagram, YouTube, X, LinkedIn, Facebook) | Footer, `sameAs` | Greyed-out icons | `social.json` |
 | 13 | **Domain name** | Canonical URLs, sitemap, email | none | `NEXT_PUBLIC_SITE_URL` |
 | 14 | **Legal page review** (Privacy — DPDP Act 2023, Terms, Medical Disclaimer, Cookies) + a named **grievance officer** | Legal compliance | Drafts | `content/legal/*.md` |
@@ -23,4 +23,4 @@ Last updated 30 Sep 2026. Everything below is live on the site as a **placeholde
 | 17 | Confirm the **consent wording** on the booking form | DPDP consent | Draft sentence | `booking.json → consent` |
 | 18 | Google Business Profile items | Local search | see `GBP-Checklist.txt` | — |
 
-Already confirmed: clinic name (as text), Ashramam Road / Tadepalli, session times, phone + WhatsApp **+91 94416 95953** (30 Sep 2026), the three consultants work at the clinic.
+Already confirmed: Dr. Sindhu's 15+ years of experience (30 Sep 2026), clinic name (as text), Ashramam Road / Tadepalli, session times, phone + WhatsApp **+91 94416 95953** (30 Sep 2026), the three consultants work at the clinic.

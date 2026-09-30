@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { IMAGE_WIDTHS } from './src/lib/image-widths.mjs';
 import { buildRedirects } from './src/lib/site-redirects.mjs';
 
 const readJson = (f) => JSON.parse(fs.readFileSync(new URL(`./content/${f}`, import.meta.url), 'utf8'));
@@ -11,7 +12,14 @@ const nextConfig = {
   // Separate build folders for test variants (e.g. NEXT_DIST_DIR=.next-e2e); default .next.
   distDir: process.env.NEXT_DIST_DIR || '.next',
   poweredByHeader: false,
-  images: { formats: ['image/avif', 'image/webp'] },
+  // No runtime image resizing: the optimiser hung on some photos at some widths (local QA, 30 Sep 2026).
+  // WebP variants are pre-generated at build (scripts/build-image-variants.mjs) and served by a custom loader.
+  images: {
+    loader: 'custom',
+    loaderFile: './src/lib/image-loader.ts',
+    deviceSizes: IMAGE_WIDTHS.filter((w) => w >= 640),
+    imageSizes: IMAGE_WIDTHS.filter((w) => w < 640),
+  },
   async redirects() {
     return buildRedirects({ portal: readJson('portal.json'), plan: readJson('plan.json').plan, doctors: readJson('doctors.json').doctors });
   },

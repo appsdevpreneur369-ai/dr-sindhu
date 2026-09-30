@@ -1,5 +1,5 @@
 {
-  "_note": "Doctors. 'id' is a permanent key used by services.json, routing.json and booking.json: never change it. To rename a doctor, edit firstName/lastName/displayName, set a new 'slug', and move the old slug into 'previousSlugs' (the old URL then redirects automatically). Then run `npm run tenant` to refresh tenant/dr-sindhu.json. Names are placeholders given by the account owner (these consultants do work at the clinic). No invented years, awards or stats. photo = image id in images.json, or null for an initials avatar.",
+  "_note": "Doctors. 'id' is a permanent key used by services.json, routing.json and booking.json: never change it. To rename a doctor, edit firstName/lastName/displayName, set a new 'slug', and move the old slug into 'previousSlugs' (the old URL then redirects automatically). Then run `npm run tenant` to refresh tenant/dr-sindhu.json. Names are placeholders given by the account owner (these consultants do work at the clinic). Only facts given by the account owner: Dr. Sindhu's 15+ years of experience was provided on 30 Sep 2026 (experienceStatus approved). No invented awards or stats. photo = image id in images.json, or null for an initials avatar.",
   "consultSlotMinutes": 15,
   "doctors": [
     {
@@ -19,17 +19,49 @@
       "photo": null,
       "registrationNumber": "",
       "clinicflowDoctorId": null,
-      "summary": "Leads the clinic and looks after gums, cleaning, check-ups and smile concerns.",
+      "summary": "Periodontist with over 15 years of experience; leads the clinic and looks after gums, check-ups, cleaning and smile concerns.",
       "bio": [
-        "Dr. Sindhu holds an MDS in Periodontics and heads the clinic. Her day-to-day work is the health of the gums and the bone that anchors each tooth: bleeding or receding gums, deep cleaning, gum surgery and the regular maintenance visits that keep gum disease from coming back.",
-        "She also sees patients for routine check-ups, scaling and polishing, and cosmetic concerns. If you are not sure which specialist you need, book with her first and she will guide you."
+        "Dr. Sindhu is an MDS periodontist with more than 15 years of experience in dentistry, and she leads the clinic on Ashramam Road. Her speciality is the health of the gums and the bone that anchor each tooth — from bleeding or receding gums and deep cleaning to gum surgery and the long-term maintenance that keeps gum disease from returning.",
+        "Over the years she has seen how often a healthy mouth begins with healthy gums, so every treatment plan at the clinic starts with a careful gum check. She also sees patients of all ages for routine check-ups, fillings, cleaning and cosmetic care, and coordinates with the clinic's oral surgeon and root canal specialist when a case needs them.",
+        "Patients value her calm, unhurried manner: she explains what she finds in plain language, shows you the options and the cost before anything begins, and makes sure you are comfortable at every step. If you are not sure whom to see, book with her first and she will guide you."
       ],
-      "focus": ["Gum disease and bleeding gums", "Deep cleaning (scaling and root planing)", "Gum surgery and crown lengthening", "Check-ups and cleaning", "Smile and cosmetic consultations"],
+      "focus": [
+        "Gum disease, bleeding and receding gums",
+        "Deep cleaning (scaling and root planing)",
+        "Gum surgery and crown lengthening",
+        "Dental check-ups, fillings and cleaning",
+        "Smile and cosmetic consultations",
+        "Care planning with the clinic's specialists"
+      ],
       "consultation": [
-        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "10:00", "closes": "14:00" },
-        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "17:00", "closes": "21:00" }
+        {
+          "days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "opens": "10:00",
+          "closes": "14:00"
+        },
+        {
+          "days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "opens": "17:00",
+          "closes": "21:00"
+        }
       ],
-      "consultationStatus": "placeholder"
+      "consultationStatus": "placeholder",
+      "experienceYears": 15,
+      "experienceStatus": "approved"
     },
     {
       "id": "oral-surgeon",
@@ -53,12 +85,42 @@
         "Dr. Preethi is an MDS oral and maxillofacial surgeon. She removes teeth that cannot be saved, including impacted wisdom teeth, and carries out minor oral surgery and the surgical stage of dental implants.",
         "Before any procedure she walks you through what will happen, how long healing usually takes and what to do at home afterwards."
       ],
-      "focus": ["Wisdom tooth removal", "Surgical and difficult extractions", "Minor oral surgery", "Implant placement surgery", "Jaw joint (TMJ) consultations"],
-      "consultation": [
-        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "10:00", "closes": "14:00" },
-        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "17:00", "closes": "21:00" }
+      "focus": [
+        "Wisdom tooth removal",
+        "Surgical and difficult extractions",
+        "Minor oral surgery",
+        "Implant placement surgery",
+        "Jaw joint (TMJ) consultations"
       ],
-      "consultationStatus": "placeholder"
+      "consultation": [
+        {
+          "days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "opens": "10:00",
+          "closes": "14:00"
+        },
+        {
+          "days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "opens": "17:00",
+          "closes": "21:00"
+        }
+      ],
+      "consultationStatus": "placeholder",
+      "experienceYears": null,
+      "experienceStatus": "placeholder"
     },
     {
       "id": "endodontist",
@@ -82,12 +144,42 @@
         "Dr. Naveen Kumar is an MDS endodontist — a specialist in the soft tissue inside the tooth. He treats infected or badly decayed teeth with root canal treatment so that they can stay in the mouth rather than be removed.",
         "He also re-treats earlier root canals that have become painful again and provides pulp therapy for children's milk teeth."
       ],
-      "focus": ["Root canal treatment", "Re-treatment of old root canals", "Pulp therapy for children", "Toothache and dental infection", "Crowns after root canal"],
-      "consultation": [
-        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "10:00", "closes": "14:00" },
-        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "17:00", "closes": "21:00" }
+      "focus": [
+        "Root canal treatment",
+        "Re-treatment of old root canals",
+        "Pulp therapy for children",
+        "Toothache and dental infection",
+        "Crowns after root canal"
       ],
-      "consultationStatus": "placeholder"
+      "consultation": [
+        {
+          "days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "opens": "10:00",
+          "closes": "14:00"
+        },
+        {
+          "days": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "opens": "17:00",
+          "closes": "21:00"
+        }
+      ],
+      "consultationStatus": "placeholder",
+      "experienceYears": null,
+      "experienceStatus": "placeholder"
     }
   ]
 }
