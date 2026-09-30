@@ -1,0 +1,16 @@
+{
+  "_note": "General FAQs (FAQs page + home). Each treatment page has its own FAQs in services.json. {{tokens}} are filled from content (src/lib/vars.ts) so hours and addresses never drift.",
+  "status": "placeholder",
+  "items": [
+    { "q": "What are the clinic timings?", "a": "{{hoursSummary}}. Working days are to be confirmed by the clinic.", "home": true },
+    { "q": "Where exactly is the clinic?", "a": "On Ashramam Road, Tadepalli, Andhra Pradesh. The exact door number and landmark will be added here soon; until then, call us for directions.", "home": true },
+    { "q": "How do I book an appointment?", "a": "Use the Book button on any page. Choose your concern, doctor, day and time, and confirm with a one-time code sent to your mobile. You can also call the clinic.", "home": true },
+    { "q": "Do you publish treatment prices?", "a": "No. The cost depends on what the examination shows, so the dentist explains the plan and the fee before any treatment begins.", "home": true },
+    { "q": "Which doctor should I book?", "a": "If you know your problem, the booking form suggests the right specialist. If you are unsure, book a check-up with Dr. Sindhu and she will guide you." },
+    { "q": "Will I get a reminder before my appointment?", "a": "Yes. Online bookings are confirmed by email, and reminders are sent before the visit." },
+    { "q": "Can I bring my child?", "a": "Yes. Children's check-ups, fluoride, sealants and pulp therapy for milk teeth are all offered." },
+    { "q": "What should I bring to my first visit?", "a": "A list of the medicines you take, any recent dental X-rays and reports, and your reading glasses if you use them for forms." },
+    { "q": "What if I have a dental emergency?", "a": "Call the clinic during opening hours. For heavy bleeding that won't stop, swelling that affects breathing or swallowing, or a facial injury, go to the nearest hospital emergency department.", "home": true },
+    { "q": "Do I need to sign up to book?", "a": "No. You can book as a guest with your mobile number. Patients who prefer can create an account on the clinic's ClinicFlow247 page to see their appointments." }
+  ]
+}

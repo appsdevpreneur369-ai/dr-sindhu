@@ -1,0 +1,18 @@
+{
+  "_note": "Links to this clinic's ClinicFlow247 pages (patient sign-in/registration, staff login, booking page). On STARTER these pages show standard ClinicFlow247 branding; clinic branding and the custom subdomain are ENTERPRISE-only and switch on through content/plan.json (see docs/UPGRADE_TO_ENTERPRISE.md).",
+  "status": "placeholder",
+  "portalBaseUrl": "https://clinicflow247.com",
+  "clinicSlug": "dr-sindhu-dental-clinic",
+  "enterprise": {
+    "_note": "Only used when plan.json says enterprise.",
+    "subdomain": ""
+  },
+  "paths": {
+    "login": "/clinic/{slug}/login",
+    "register": "/clinic/{slug}/register",
+    "forgotPassword": "/clinic/{slug}/forgot-password",
+    "clinicPage": "/clinic/{slug}",
+    "bookingPage": "/book/{slug}",
+    "staffLogin": "/login"
+  }
+}

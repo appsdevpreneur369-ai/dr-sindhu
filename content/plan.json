@@ -1,0 +1,4 @@
+{
+  "_note": "ClinicFlow247 plan this clinic is on. It gates every feature beyond STARTER (src/lib/plan.ts). Upgrading to Enterprise = change this to \"enterprise\" and fill the enterprise-only fields listed in docs/UPGRADE_TO_ENTERPRISE.md.",
+  "plan": "starter"
+}

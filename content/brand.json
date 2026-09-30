@@ -1,0 +1,38 @@
+{
+  "status": "placeholder",
+  "_note": "DRSDC palette: sage/mint green primary, warm off-white background, forest-charcoal text, coral CTA. Colours become CSS variables (src/lib/theme.ts) that feed the Tailwind theme. 'decorative*' colours FAIL WCAG AA as text and may only be used for shapes, blobs and dividers. Run `npm run contrast` after any change.",
+  "colors": {
+    "primary": "#2F6F5E",
+    "primaryHover": "#245848",
+    "primaryDeep": "#1C4A3E",
+    "mint": "#E3F0EA",
+    "mintStrong": "#CFE5DA",
+    "background": "#FAF7F2",
+    "surface": "#FFFFFF",
+    "sand": "#F2ECE2",
+    "text": "#1F2D28",
+    "textSecondary": "#4E5D57",
+    "border": "#DCE3DE",
+    "cta": "#B84A33",
+    "ctaHover": "#9E3D29",
+    "coralSoft": "#FBE3DA",
+    "dark": "#173B32",
+    "onDark": "#F3EFE7",
+    "onDarkMuted": "#B9CFC6",
+    "coralOnDark": "#F4A08A",
+    "success": "#1E6B3A",
+    "danger": "#A8321F",
+    "whatsapp": "#12663A",
+    "decorativeCoral": "#F08A6C",
+    "decorativeSage": "#8FC1AE"
+  },
+  "fonts": {
+    "heading": "Fraunces",
+    "body": "DM Sans"
+  },
+  "radius": "1.5rem",
+  "wordmark": {
+    "primary": "Dr. Sindhu",
+    "secondary": "Dental Clinic"
+  }
+}

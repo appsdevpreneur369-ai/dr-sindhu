@@ -1,0 +1,93 @@
+{
+  "_note": "Doctors. 'id' is a permanent key used by services.json, routing.json and booking.json: never change it. To rename a doctor, edit firstName/lastName/displayName, set a new 'slug', and move the old slug into 'previousSlugs' (the old URL then redirects automatically). Then run `npm run tenant` to refresh tenant/dr-sindhu.json. Names are placeholders given by the account owner (these consultants do work at the clinic). No invented years, awards or stats. photo = image id in images.json, or null for an initials avatar.",
+  "consultSlotMinutes": 15,
+  "doctors": [
+    {
+      "id": "periodontist",
+      "status": "placeholder",
+      "slug": "dr-sindhu",
+      "previousSlugs": [],
+      "firstName": "Sindhu",
+      "lastName": "",
+      "displayName": "Dr. Sindhu",
+      "initials": "S",
+      "qualification": "MDS",
+      "specialty": "Periodontist (Gum Specialist)",
+      "schemaSpecialty": "Periodontics",
+      "role": "Clinic Head",
+      "isHead": true,
+      "photo": null,
+      "registrationNumber": "",
+      "clinicflowDoctorId": null,
+      "summary": "Leads the clinic and looks after gums, cleaning, check-ups and smile concerns.",
+      "bio": [
+        "Dr. Sindhu holds an MDS in Periodontics and heads the clinic. Her day-to-day work is the health of the gums and the bone that anchors each tooth: bleeding or receding gums, deep cleaning, gum surgery and the regular maintenance visits that keep gum disease from coming back.",
+        "She also sees patients for routine check-ups, scaling and polishing, and cosmetic concerns. If you are not sure which specialist you need, book with her first and she will guide you."
+      ],
+      "focus": ["Gum disease and bleeding gums", "Deep cleaning (scaling and root planing)", "Gum surgery and crown lengthening", "Check-ups and cleaning", "Smile and cosmetic consultations"],
+      "consultation": [
+        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "10:00", "closes": "14:00" },
+        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "17:00", "closes": "21:00" }
+      ],
+      "consultationStatus": "placeholder"
+    },
+    {
+      "id": "oral-surgeon",
+      "status": "placeholder",
+      "slug": "dr-preethi",
+      "previousSlugs": [],
+      "firstName": "Preethi",
+      "lastName": "",
+      "displayName": "Dr. Preethi",
+      "initials": "P",
+      "qualification": "MDS",
+      "specialty": "Oral & Maxillofacial Surgeon",
+      "schemaSpecialty": "OralAndMaxillofacialSurgery",
+      "role": "Consultant",
+      "isHead": false,
+      "photo": null,
+      "registrationNumber": "",
+      "clinicflowDoctorId": null,
+      "summary": "Tooth removal, wisdom teeth, minor oral surgery and the surgical stage of implants.",
+      "bio": [
+        "Dr. Preethi is an MDS oral and maxillofacial surgeon. She removes teeth that cannot be saved, including impacted wisdom teeth, and carries out minor oral surgery and the surgical stage of dental implants.",
+        "Before any procedure she walks you through what will happen, how long healing usually takes and what to do at home afterwards."
+      ],
+      "focus": ["Wisdom tooth removal", "Surgical and difficult extractions", "Minor oral surgery", "Implant placement surgery", "Jaw joint (TMJ) consultations"],
+      "consultation": [
+        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "10:00", "closes": "14:00" },
+        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "17:00", "closes": "21:00" }
+      ],
+      "consultationStatus": "placeholder"
+    },
+    {
+      "id": "endodontist",
+      "status": "placeholder",
+      "slug": "dr-naveen-kumar",
+      "previousSlugs": [],
+      "firstName": "Naveen",
+      "lastName": "Kumar",
+      "displayName": "Dr. Naveen Kumar",
+      "initials": "NK",
+      "qualification": "MDS",
+      "specialty": "Root Canal Specialist (Endodontist)",
+      "schemaSpecialty": "Endodontics",
+      "role": "Consultant",
+      "isHead": false,
+      "photo": null,
+      "registrationNumber": "",
+      "clinicflowDoctorId": null,
+      "summary": "Saving natural teeth with root canal treatment, re-treatment and children's pulp therapy.",
+      "bio": [
+        "Dr. Naveen Kumar is an MDS endodontist — a specialist in the soft tissue inside the tooth. He treats infected or badly decayed teeth with root canal treatment so that they can stay in the mouth rather than be removed.",
+        "He also re-treats earlier root canals that have become painful again and provides pulp therapy for children's milk teeth."
+      ],
+      "focus": ["Root canal treatment", "Re-treatment of old root canals", "Pulp therapy for children", "Toothache and dental infection", "Crowns after root canal"],
+      "consultation": [
+        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "10:00", "closes": "14:00" },
+        { "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"], "opens": "17:00", "closes": "21:00" }
+      ],
+      "consultationStatus": "placeholder"
+    }
+  ]
+}

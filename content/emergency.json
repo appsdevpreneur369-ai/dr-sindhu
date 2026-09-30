@@ -1,0 +1,13 @@
+{
+  "status": "placeholder",
+  "title": "Dental emergency?",
+  "lead": "Sudden pain, a knocked-out tooth or swelling can be frightening. Here is what to do right now, and when to go to a hospital instead.",
+  "hospitalWarning": "Go to the nearest hospital emergency department (or call 108) if you have swelling that makes it hard to breathe or swallow, bleeding that will not stop after 20 minutes of firm pressure, a high fever with facial swelling, or an injury to the head or jaw.",
+  "situations": [
+    { "title": "Severe toothache", "steps": ["Rinse with warm salt water.", "Gently floss around the tooth to remove trapped food.", "Take a pain reliever you normally use safely, as directed on the pack.", "Do not place aspirin or clove oil directly on the gum.", "Call the clinic for a same-day visit."] },
+    { "title": "Knocked-out adult tooth", "steps": ["Hold the tooth by the crown (the white part), not the root.", "If dirty, rinse briefly with milk or clean water — do not scrub.", "If you can, push it back into the socket and bite on a clean cloth.", "Otherwise keep it in milk and come to the clinic immediately — minutes matter."] },
+    { "title": "Broken or chipped tooth", "steps": ["Keep any pieces.", "Rinse your mouth and use a cold pack on the cheek for swelling.", "Avoid chewing on that side and call the clinic."] },
+    { "title": "Swelling of the face or gum", "steps": ["Use a cold pack on the outside of the cheek.", "Do not apply heat.", "Call the clinic the same day. If swelling spreads quickly or affects breathing, go to hospital."] },
+    { "title": "Bleeding after an extraction", "steps": ["Bite firmly on a clean folded gauze for 30 minutes.", "Sit upright and avoid rinsing or spitting.", "If bleeding continues, call the clinic."] }
+  ]
+}

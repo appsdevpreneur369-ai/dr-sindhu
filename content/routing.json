@@ -1,0 +1,16 @@
+{
+  "_note": "'What's troubling you?' symptom chips on the home page and the first step of the booking wizard. Each problem routes to doctor ids from doctors.json and links to a treatment category. Routing for implants (prosthetic), dentures and braces is a placeholder: there is no in-house specialist yet, so they go to Dr. Sindhu for a first consultation (DRSDC_PendingItems.md).",
+  "status": "placeholder",
+  "problems": [
+    { "id": "toothache", "label": "Toothache", "icon": "zap", "doctors": ["endodontist", "periodontist"], "category": "root-canal-treatment" },
+    { "id": "bleeding-gums", "label": "Bleeding or swollen gums", "icon": "droplet", "doctors": ["periodontist"], "category": "gum-care" },
+    { "id": "sensitivity", "label": "Sensitive to hot or cold", "icon": "snowflake", "doctors": ["periodontist"], "category": "general-dentistry" },
+    { "id": "broken-tooth", "label": "Broken or decayed tooth", "icon": "puzzle", "doctors": ["endodontist"], "category": "root-canal-treatment" },
+    { "id": "wisdom-tooth", "label": "Wisdom tooth trouble", "icon": "scissors", "doctors": ["oral-surgeon"], "category": "oral-surgery" },
+    { "id": "missing-teeth", "label": "Missing teeth", "icon": "circle-dashed", "doctors": ["periodontist", "oral-surgeon"], "category": "dental-implants" },
+    { "id": "bad-breath", "label": "Bad breath", "icon": "wind", "doctors": ["periodontist"], "category": "oral-hygiene" },
+    { "id": "stained-teeth", "label": "Stained or uneven smile", "icon": "sparkles", "doctors": ["periodontist"], "category": "cosmetic-dentistry" },
+    { "id": "crooked-teeth", "label": "Crooked or gapped teeth", "icon": "align-center", "doctors": ["periodontist"], "category": "orthodontics" },
+    { "id": "check-up", "label": "Routine check-up", "icon": "clipboard-check", "doctors": ["periodontist"], "category": "general-dentistry" }
+  ]
+}

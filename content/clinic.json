@@ -1,0 +1,72 @@
+{
+  "_note": "Clinic identity and contact details. Every field carries its own status. A contact field with status 'placeholder' is never turned into a link: its buttons are hidden, it is left out of JSON-LD, and WhatsApp booking is disabled (see src/lib/contact.ts). Edit guide: docs/EDITING.md.",
+  "name": { "value": "Dr. Sindhu Dental Clinic", "status": "approved" },
+  "shortName": "Dr. Sindhu Dental",
+  "slug": "dr-sindhu-dental-clinic",
+  "tagline": { "value": "Gum-first dental care on Ashramam Road, Tadepalli", "status": "placeholder" },
+  "description": {
+    "value": "A periodontist-led dental clinic on Ashramam Road, Tadepalli, with specialists for gum care, oral surgery and root canal treatment under one roof.",
+    "status": "placeholder"
+  },
+  "address": {
+    "status": "placeholder",
+    "_note": "Street and town are confirmed; door number, landmark and PIN are still to come from the clinic (DRSDC_PendingItems.md).",
+    "doorNumber": "",
+    "street": "Ashramam Road",
+    "landmark": "",
+    "locality": "Tadepalli",
+    "district": "Guntur",
+    "region": "Andhra Pradesh",
+    "postalCode": "",
+    "country": "IN",
+    "countryName": "India"
+  },
+  "phone": {
+    "status": "approved",
+    "_note": "Given by the account owner on 30 Sep 2026. Set status to 'placeholder' to hide every Call button.",
+    "display": "+91 94416 95953",
+    "e164": "+919441695953"
+  },
+  "whatsapp": {
+    "status": "approved",
+    "_note": "Same number as the phone (confirmed 30 Sep 2026). Used for wa.me click-to-chat only: no WhatsApp bot.",
+    "display": "+91 94416 95953",
+    "e164": "+919441695953"
+  },
+  "email": {
+    "status": "placeholder",
+    "value": "email to be confirmed"
+  },
+  "timezone": "Asia/Kolkata",
+  "hours": {
+    "_note": "Session times are approved (10:00 AM – 2:00 PM and 5:00 PM – 9:00 PM). The working days are an assumption (Monday–Saturday, Sunday closed) until the clinic confirms.",
+    "status": "placeholder",
+    "sessionsStatus": "approved",
+    "daysStatus": "placeholder",
+    "days": [
+      { "day": "monday", "sessions": [{ "opens": "10:00", "closes": "14:00" }, { "opens": "17:00", "closes": "21:00" }] },
+      { "day": "tuesday", "sessions": [{ "opens": "10:00", "closes": "14:00" }, { "opens": "17:00", "closes": "21:00" }] },
+      { "day": "wednesday", "sessions": [{ "opens": "10:00", "closes": "14:00" }, { "opens": "17:00", "closes": "21:00" }] },
+      { "day": "thursday", "sessions": [{ "opens": "10:00", "closes": "14:00" }, { "opens": "17:00", "closes": "21:00" }] },
+      { "day": "friday", "sessions": [{ "opens": "10:00", "closes": "14:00" }, { "opens": "17:00", "closes": "21:00" }] },
+      { "day": "saturday", "sessions": [{ "opens": "10:00", "closes": "14:00" }, { "opens": "17:00", "closes": "21:00" }] },
+      { "day": "sunday", "sessions": [] }
+    ]
+  },
+  "maps": {
+    "status": "placeholder",
+    "_note": "No Google Maps pin yet. While shareUrl is empty the site embeds a map SEARCH for 'query' (clearly labelled approximate) and the Directions button opens the same search. Paste the clinic's own share link + embed URL when available.",
+    "query": "Ashramam Road, Tadepalli, Andhra Pradesh",
+    "shareUrl": "",
+    "embedUrl": "",
+    "geo": null
+  },
+  "areaServed": {
+    "status": "placeholder",
+    "places": ["Tadepalli", "Undavalli", "Mangalagiri", "Vijayawada"]
+  },
+  "foundingNote": {
+    "status": "placeholder",
+    "value": "A new clinic in Tadepalli"
+  }
+}

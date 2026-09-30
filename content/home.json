@@ -1,0 +1,81 @@
+{
+  "status": "placeholder",
+  "hero": {
+    "eyebrow": "Dental clinic · Ashramam Road, Tadepalli",
+    "title": "Healthy gums first. A confident smile follows.",
+    "lead": "A periodontist-led clinic in Tadepalli with specialists for gum care, oral surgery and root canal treatment — so most problems can be looked after under one roof.",
+    "image": "hero",
+    "primaryCta": "Book an appointment",
+    "secondaryCta": { "label": "See treatments", "href": "/treatments" },
+    "chips": [
+      { "icon": "clock", "text": "Open today {{todayHours}}", "kind": "hours" },
+      { "icon": "calendar-check", "text": "Book in 60 seconds", "kind": "static" }
+    ]
+  },
+  "symptoms": {
+    "eyebrow": "Start here",
+    "title": "What's troubling you?",
+    "lead": "Pick what you are feeling. We'll suggest the right doctor and open the booking for you."
+  },
+  "treatments": {
+    "eyebrow": "Treatments",
+    "title": "Care for every part of your smile",
+    "lead": "{{categoryCount}} treatment areas, each matched to the doctor best placed to help."
+  },
+  "approach": {
+    "eyebrow": "Why a gum-first clinic",
+    "title": "Strong teeth need healthy foundations",
+    "lead": "Crowns, implants and fillings last longest when the gums and bone around them are healthy. That is why every plan here begins with a gum check.",
+    "points": [
+      { "icon": "leaf", "title": "Specialist-led", "text": "The clinic is headed by a periodontist, with an oral surgeon and a root canal specialist on the team." },
+      { "icon": "message-circle", "title": "Plain explanations", "text": "You see what we see, hear the options in simple words, and know the cost before treatment begins." },
+      { "icon": "shield-check", "title": "Careful hygiene", "text": "Instruments are sterilised and single-use items are used once, every time." },
+      { "icon": "calendar-clock", "title": "Evening sessions", "text": "Open {{hoursShort}}, so a visit can fit around work or college." }
+    ]
+  },
+  "doctors": {
+    "eyebrow": "Your doctors",
+    "title": "Meet the specialists",
+    "lead": "{{doctorCount}} MDS specialists, each focused on one area of dental care."
+  },
+  "booking": {
+    "eyebrow": "Online booking",
+    "title": "Book in a minute, get reminders automatically",
+    "lead": "Choose your concern, doctor and time online. Once booked, reminders reach you so you don't miss the visit.",
+    "stepsTitle": "How booking works",
+    "steps": [
+      { "title": "Tell us the problem", "text": "Pick a symptom or treatment." },
+      { "title": "Choose doctor and time", "text": "See the days and times available." },
+      { "title": "Confirm with your mobile", "text": "A one-time code verifies your number." }
+    ]
+  },
+  "education": {
+    "eyebrow": "Patient education",
+    "title": "Read before you worry",
+    "lead": "Short, practical guides written for patients."
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Asked often"
+  },
+  "visit": {
+    "eyebrow": "Visit us",
+    "title": "Find the clinic on Ashramam Road",
+    "lead": "We are on Ashramam Road in Tadepalli, a short drive from Undavalli, Mangalagiri and Vijayawada."
+  },
+  "cta": {
+    "title": "Your gums will thank you.",
+    "lead": "Book a check-up today — it takes about a minute.",
+    "button": "Book an appointment"
+  },
+  "stats": {
+    "_note": "Counters stay hidden until real, verifiable numbers exist. Never invent them.",
+    "status": "placeholder",
+    "items": []
+  },
+  "beforeAfter": {
+    "_note": "Before/after slider stays hidden until the clinic supplies real, consented patient photos.",
+    "status": "placeholder",
+    "items": []
+  }
+}

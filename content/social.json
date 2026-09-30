@@ -1,0 +1,11 @@
+{
+  "_note": "Footer social icons. An empty url shows the icon greyed out and non-clickable (no dead links). Paste the full profile URL to activate it.",
+  "status": "placeholder",
+  "links": [
+    { "platform": "instagram", "label": "Instagram", "url": "" },
+    { "platform": "youtube", "label": "YouTube", "url": "" },
+    { "platform": "x", "label": "X", "url": "" },
+    { "platform": "linkedin", "label": "LinkedIn", "url": "" },
+    { "platform": "facebook", "label": "Facebook", "url": "" }
+  ]
+}
