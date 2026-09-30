@@ -1,0 +1,26 @@
+// {{token}} values filled into content copy, derived from content so numbers never drift.
+import 'server-only';
+import { categories, siteClinic, siteDoctors } from './content';
+import { hoursShort, hoursSummary, shortSessions } from './hours';
+import { fillTemplate } from './contact';
+
+const a = siteClinic.address;
+export const streetLine = [a.doorNumber, a.street].filter(Boolean).join(', ');
+export const fullAddress = [streetLine, a.landmark && `near ${a.landmark}`, a.locality, a.postalCode ? `${a.region} ${a.postalCode}` : a.region]
+  .filter(Boolean)
+  .join(', ');
+
+const openDay = siteClinic.hours.days.find((d) => d.sessions.length);
+
+export const VARS: Record<string, string> = {
+  clinic: siteClinic.name.value,
+  doctorCount: ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'][siteDoctors.length - 1] ?? String(siteDoctors.length),
+  categoryCount: ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'][categories.length - 1] ?? String(categories.length),
+  hoursSummary: hoursSummary(siteClinic.hours.days),
+  hoursShort: hoursShort(siteClinic.hours.days),
+  todayHours: openDay ? shortSessions(openDay.sessions) : '',
+  area: siteClinic.address.locality,
+  address: fullAddress,
+};
+
+export const fill = (s: string, extra: Record<string, string> = {}) => fillTemplate(s, { ...VARS, ...extra });
