@@ -29,7 +29,7 @@ The clinic starts on **STARTER (₹1,199/month)** plus this free custom website.
 **ClinicFlow (with the owner's approval, on the target environment)**
 
 1. `PATCH /clinics/{id}/plan {"plan":"ENTERPRISE"}` (white-label is derived from the plan).
-2. Upload the logo/favicon (`public/brand/logo-mark.png`, `logo-title.png`) and apply `_enterpriseThemeTokens` as `themeTokens`.
+2. Upload the logo/favicon (`public/brand/logo-mark.png`; a logo-with-name only once a corrected artwork reading "Dr. Sindhu Dental Clinic" exists) and apply `_enterpriseThemeTokens` as `themeTokens`.
 3. Import the treatments (`_upgradeTreatments`) — re-running the importer with the regenerated file is idempotent.
 4. Set up the subdomain (tenant app + load-balancer host rule, per `D:\ClinicFlow\CLAUDE.md`).
 5. Configure the Google review link for review requests.

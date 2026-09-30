@@ -257,9 +257,10 @@ export const ImagesSchema = z.object({
   _note: Note,
   logo: z.object({
     mark: ImageRef,
-    full: ImageRef,
+    /** Logo with the clinic name set in it. Optional: the header uses the mark + a text wordmark. */
+    full: ImageRef.optional(),
     source: z.object({ src: z.string(), _note: Note }),
-    sourceTitle: z.object({ src: z.string() }),
+    sourceTitle: z.object({ src: z.string(), _note: Note }).optional(),
   }),
   images: z.record(z.string(), ImageRef),
 });

@@ -3,8 +3,10 @@ import { DM_Sans, Fraunces } from 'next/font/google';
 import { siteBrand } from './content';
 
 // next/font must be declared statically; brand.json picks from this registry by name (max 2 fonts).
-const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'swap', axes: ['opsz'] });
-const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dmsans', display: 'swap' });
+// display: 'optional' (decided 30 Sep 2026): the web font is used only if it arrives almost immediately (it is
+// preloaded), otherwise the metric-matched fallback stays for that page view — no text reflow, no layout shift.
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'optional', axes: ['opsz'] });
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dmsans', display: 'optional' });
 
 const registry: Record<string, { variable: string; cssVar: string; fallback: string }> = {
   Fraunces: { variable: fraunces.variable, cssVar: '--font-fraunces', fallback: "Georgia, 'Times New Roman', serif" },

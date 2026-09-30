@@ -18,7 +18,7 @@ Every record carries `"status": "approved" | "placeholder"`. Build with `NEXT_PU
 | Google Maps pin | `clinic.json` → `maps.shareUrl` (share link) and `maps.embedUrl` (Share → Embed a map → the `src` URL) | Until then the Contact page shows a map *search* for Ashramam Road, labelled approximate. |
 | Opening hours / working days | `clinic.json` → `hours.days` | Several sessions per day allowed. Set `daysStatus: "approved"` when the clinic confirms Mon–Sat. |
 | Colours / fonts | `content/brand.json` | Then `npm run contrast` (must pass) and `npm run brand` (re-draws illustrations and icons in the new colours). Fonts must be registered in `src/lib/theme.ts`. |
-| Logo | Replace `images/dr-sindhu-logo.png` (mark) and `images/dr-sindhu-logo-title.png`, then `npm run brand` | Builds `public/brand/*`, favicon, app icons and the social-share image. Paths live only in `content/images.json`. |
+| Logo | Replace `images/dr-sindhu-logo.png` (mark), then `npm run brand` | Builds `public/brand/logo-mark.png`, favicon, app icons and the social-share image. Paths live only in `content/images.json`. A logo-with-name is published only if `logo.full` is set — the supplied one says "& Implant Centre" and is intentionally unused; the name is "Dr. Sindhu Dental Clinic". |
 | Any photo | `content/images.json` | Put the file in `public/images/…`, update `src`, `width`, `height`, `alt`, set `status: "approved"`. |
 | Clinic gallery | `content/gallery.json` (+ `images.json`) | Replace the placeholder illustrations with real photos. |
 | Doctors | `content/doctors.json` | See "Renaming a doctor" below. `photo`: an image id, or `null` for an initials avatar. |

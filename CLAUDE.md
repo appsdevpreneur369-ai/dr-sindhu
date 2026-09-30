@@ -17,7 +17,7 @@ Status: **v0.1 built and tested locally (2026-09-30)** — not deployed, no remo
 
 ## Stack
 
-Next.js 14 App Router, TypeScript strict, Tailwind, next/font (Fraunces headings + DM Sans body), zod, vitest, lucide-react. English only (SMSDC's Telugu layer is not ported). Mirrors `D:\SMSDC\site` patterns: content layer, `BookingService` (clinicflow → enquiry → whatsapp fallback), popup rules, portal links + redirects, SEO/JSON-LD, contrast script.
+Next.js 14 App Router, TypeScript strict, Tailwind, next/font (Fraunces headings + DM Sans body, `display: 'optional'` — no font-swap layout shift; decided 30 Sep 2026), zod, vitest, lucide-react. English only (SMSDC's Telugu layer is not ported). Mirrors `D:\SMSDC\site` patterns: content layer, `BookingService` (clinicflow → enquiry → whatsapp fallback), popup rules, portal links + redirects, SEO/JSON-LD, contrast script.
 
 ## Brand (content/brand.json)
 
@@ -38,7 +38,7 @@ Next.js 14 App Router, TypeScript strict, Tailwind, next/font (Fraunces headings
 
 1. [x] git init, Next.js 14 + Tailwind + vitest + eslint
 2. [x] `/content` (zod-validated, cross-references checked): clinic, brand, plan, portal, social, doctors, services (9 categories), routing, booking, home, about, faqs, emergency, gallery, images, navigation, pages, education/*.md, legal/*.md
-3. [x] Logo from the owner's files in `images/` → `npm run brand` (mark in header + Fraunces wordmark; icons, OG image, placeholder illustrations)
+3. [x] Logo from the owner's files in `images/` → `npm run brand` (mark in header + Fraunces wordmark; icons, OG image, placeholder illustrations). Clinic name is **"Dr. Sindhu Dental Clinic"** (no "& Implant Centre", decided 30 Sep 2026); the supplied title-logo artwork shows the longer name and is deliberately NOT published until a corrected one arrives.
 4. [x] Layout: glass header condensing on scroll, footer with inert social icons, sticky mobile action bar
 5. [x] All pages incl. 3 doctors, 9 treatment categories, 4 articles, 4 legal drafts, 404
 6. [x] Booking popup + wizard; BookingService clinicflow → enquiry → whatsapp; placeholder-phone rule

@@ -67,6 +67,14 @@ describe('content schema', () => {
     for (const text of all) expect(text.toLowerCase()).not.toContain('suhasini');
   });
 
+  it('the clinic name is "Dr. Sindhu Dental Clinic" everywhere (no "Implant Centre"), and the mismatched title logo is not published', () => {
+    expect(read('clinic.json').name.value).toBe('Dr. Sindhu Dental Clinic');
+    const all = [...Object.keys(FILES).map((f) => fs.readFileSync(path.join(dir, f), 'utf8')), ...['education', 'legal'].flatMap((s) => fs.readdirSync(path.join(dir, s)).map((f) => fs.readFileSync(path.join(dir, s, f), 'utf8')))];
+    for (const text of all.filter((t) => !t.includes('"sourceTitle"'))) expect(text).not.toMatch(/Implant Cent(re|er)/i);
+    expect(read('images.json').logo.full).toBeUndefined();
+    expect(fs.existsSync(path.join(__dirname, '..', 'public', 'brand', 'logo-title.png'))).toBe(false);
+  });
+
   it('never publishes prices or invented stats', () => {
     const home = read('home.json');
     expect(home.stats.items).toEqual([]);

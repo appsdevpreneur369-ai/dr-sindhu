@@ -1,6 +1,6 @@
 // Builds web assets from the logo masters in images/ and draws placeholder illustrations in brand.json colours.
 // Run: npm run brand   (re-run after replacing the logo files or changing colours)
-// Outputs: public/brand/logo-mark.png, public/brand/logo-title.png, src/app/icon.png, src/app/apple-icon.png,
+// Outputs: public/brand/logo-mark.png, (public/brand/logo-title.png only if logo.full is set), src/app/icon.png, src/app/apple-icon.png,
 //          src/app/favicon.ico, public/images/og.png, public/images/illustrations/*.webp, public/images/gallery/*.webp
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,16 +19,20 @@ const out = (p) => {
 
 // ---------- Logo ----------
 const markSrc = path.join(root, images.logo.source.src);
-const titleSrc = path.join(root, images.logo.sourceTitle.src);
 const mark = sharp(markSrc).trim();
 const markBuf = await mark.png().toBuffer();
 const markMeta = await sharp(markBuf).metadata();
 await sharp(markBuf).resize({ width: 512 }).png({ compressionLevel: 9, palette: false }).toFile(out('public/brand/logo-mark.png'));
 const markOut = await sharp(out('public/brand/logo-mark.png')).metadata();
-const titleBuf = await sharp(titleSrc).trim().png().toBuffer();
-await sharp(titleBuf).png({ compressionLevel: 9 }).toFile(out('public/brand/logo-title.png'));
-const titleOut = await sharp(out('public/brand/logo-title.png')).metadata();
-console.log(`logo-mark ${markOut.width}x${markOut.height} (from ${markMeta.width}x${markMeta.height}); logo-title ${titleOut.width}x${titleOut.height}`);
+console.log(`logo-mark ${markOut.width}x${markOut.height} (from ${markMeta.width}x${markMeta.height})`);
+// The logo-with-name is published only when images.json has logo.full (the supplied artwork shows a different
+// clinic name, so it is deliberately not published). Remove any stale copy.
+if (images.logo.full && images.logo.sourceTitle) {
+  const titleBuf = await sharp(path.join(root, images.logo.sourceTitle.src)).trim().png().toBuffer();
+  await sharp(titleBuf).png({ compressionLevel: 9 }).toFile(out(`public${images.logo.full.src}`));
+} else {
+  fs.rmSync(path.join(root, 'public/brand/logo-title.png'), { force: true });
+}
 
 // Square icons: the mark centred on transparent (icon) or on the warm background (apple-icon, needs opaque).
 async function squareIcon(size, bg, pad) {

@@ -4,8 +4,8 @@ Last updated: 2026-09-30 (local build complete). Data to collect from the clinic
 
 ## A. Decisions for the account owner
 
-- [ ] Official clinic name: "Dr. Sindhu Dental Clinic" (approved) vs "Dr. Sindhu Dental Clinic & Implant Centre" (on the supplied logo). Must match signboard + Google Business Profile.
-- [ ] Body font `display: swap` (as specified) vs `display: optional`: swap causes a small, deterministic layout shift on /contact at Lighthouse's 412 px mobile width (CLS 0.135 → mobile Performance exactly 90). `optional` removes it.
+- [x] Official clinic name: **"Dr. Sindhu Dental Clinic"** (30 Sep 2026). Title-logo artwork with "& Implant Centre" not published; corrected artwork requested (DRSDC_PendingItems #6).
+- [x] Fonts use `display: 'optional'` (30 Sep 2026) — removes the font-swap layout shift.
 - [ ] Palette: the site uses the specified sage/coral palette; the new logo is blue + leaf green. Keep, or tint the palette toward the logo?
 - [ ] Approve deploying a staging site (Cloud Run service, URL, build args) — not done, LOCAL ONLY so far.
 - [ ] Approve onboarding `tenant/dr-sindhu.json` to staging/production and adding the site origin to the API's CORS list.
