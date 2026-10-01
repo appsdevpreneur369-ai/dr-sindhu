@@ -1,6 +1,6 @@
 # Pending tasks — Dr. Sindhu Dental Clinic (DRSDC)
 
-Last updated: 2026-09-30 (local build complete). Data to collect from the clinic is tracked separately in **`DRSDC_PendingItems.md`**.
+Last updated: 2026-10-01 (staging live). Data to collect from the clinic is tracked separately in **`DRSDC_PendingItems.md`**.
 
 ## A. Decisions for the account owner
 
@@ -8,7 +8,8 @@ Last updated: 2026-09-30 (local build complete). Data to collect from the clinic
 - [x] Redesign (30 Sep 2026): SMSDC-style professional layout, logo blue + green palette, no red, Roboto + Montserrat, underline nav, Home/About first, stock photos. Fonts back on `display: 'swap'` so the chosen fonts always show (CLS measured 0).
 - [x] Palette now follows the logo (blue + green).
 - [ ] Replace representative stock photos with the clinic's own (see DRSDC_PendingItems #10).
-- [ ] Approve deploying a staging site (Cloud Run service, URL, build args) — not done, LOCAL ONLY so far.
+- [x] Staging site deployed 2026-10-01: https://drsdc-frontend-staging-1071497363324.asia-south1.run.app (code on GitHub `appsdevpreneur369-ai/dr-sindhu`). Share with Dr. Sindhu for feedback.
+- [ ] Collect Dr. Sindhu's feedback on the staging site and apply it.
 - [ ] Approve onboarding `tenant/dr-sindhu.json` to staging/production and adding the site origin to the API's CORS list.
 
 ## B. After the clinic supplies data (see DRSDC_PendingItems.md)

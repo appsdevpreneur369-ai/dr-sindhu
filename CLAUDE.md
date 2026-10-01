@@ -2,11 +2,11 @@
 
 Public website for **Dr. Sindhu Dental Clinic**, Ashramam Road, Tadepalli (project code DRSDC), a ClinicFlow247 **STARTER** tenant with one extra: this free custom website.
 
-Status: **v0.1 built and tested locally (2026-09-30)** — not deployed, no remote. Open items: `pending_tasks_dr-sindhu.md`; data to collect: `DRSDC_PendingItems.md`.
+Status: **on staging since 2026-10-01** (owner approved the GitHub push and staging deploy) — not in production. Open items: `pending_tasks_dr-sindhu.md`; data to collect: `DRSDC_PendingItems.md`.
 
 ## Hard rules
 
-- **LOCAL ONLY.** No deploy, no `git push`, no remote. Never modify anything under `D:\ClinicFlow` or `D:\SMSDC` (read-only references). Never run the onboarding file against staging or production.
+- **Deploy only when asked.** Staging deploys and pushes to GitHub happen when the owner asks; never production without explicit approval. Never modify anything under `D:\ClinicFlow` or `D:\SMSDC` (read-only references). Never run the onboarding file against staging or production, and never change the ClinicFlow staging API, without the owner's explicit yes.
 - **Starter plan only.** The site must not promise more than Starter (source: `D:\ClinicFlow\clinicflow-frontend\src\components\landing\pricingData.ts`): up to 5 doctors, unlimited appointments, online booking, live queue, digital prescriptions, email confirmations/reminders, WhatsApp 1,000/mo, SMS 1,000/mo. Not advertised/built: analytics, portal gallery, white-label portal, custom subdomain, custom fields, dedicated onboarding, review requests, no-show alerts, win-back, waitlist.
 - **Plan gate:** `content/plan.json` `{ "plan": "starter" }` gates anything beyond Starter. Upgrading to Enterprise must be a config change (see `docs/UPGRADE_TO_ENTERPRISE.md`).
 - **Everything config-driven** from `/content`, zod-validated; every record has `status: approved | placeholder`. No hard-coded copy, colours, images, phones or hours in components. `NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true` shows "Draft" badges.
@@ -82,3 +82,34 @@ In Git Bash prefix scripts that take `/paths` with `MSYS_NO_PATHCONV=1`.
 ## Checks before calling anything done
 
 `npm run lint`, `npx tsc --noEmit`, `npm test`, `npm run build`, `npm run contrast` all pass; pages checked at 360/768/1280 px; `grep -ri suhasini .next public content src` returns nothing.
+
+## Deployments
+
+Manual, same approach as the SMSDC site and ClinicFlow247 (no CI/CD): build the image locally, push to Artifact Registry, `gcloud run deploy`. Never touch other services, `clinicflow-lb`, certs, DNS or the ClinicFlow API.
+
+| Item | Value |
+| --- | --- |
+| Repo | https://github.com/appsdevpreneur369-ai/dr-sindhu (`main`, pushed over HTTPS) |
+| GCP | project `sincere-stock-499113-f1`, region `asia-south1` |
+| Image | `asia-south1-docker.pkg.dev/sincere-stock-499113-f1/clinicflow/drsdc-frontend:<git short SHA>` |
+| Staging service | `drsdc-frontend-staging` — 256Mi, 1 CPU, min-instances 0, unauthenticated, port 3000 |
+| Staging URL | https://drsdc-frontend-staging-1071497363324.asia-south1.run.app |
+| Staging build args | `NEXT_PUBLIC_SITE_ENV=staging` (noindex header + robots Disallow + meta noindex), `NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true`, `NEXT_PUBLIC_NOINDEX=true`, `NEXT_PUBLIC_SITE_URL=<staging URL>`. No ClinicFlow API args: the clinic is **not** onboarded on the staging API, so booking runs in **WhatsApp mode** (messages go to the clinic's real number +91 94416 95953). |
+
+History (staging):
+
+| Date | Commit / image tag | Revision | Notes |
+| --- | --- | --- | --- |
+| 2026-10-01 | `9f5d400` | `drsdc-frontend-staging-00001-5rv` | First deploy (redesign: blue/green, Roboto + Montserrat, stock photos). Live-verified: 20 URLs 200/307/404 as expected, noindex, 129 images 0 broken, popup in WhatsApp mode, no ERROR logs. **Current.** |
+
+Redeploy staging (all NEXT_PUBLIC_* values are baked in at build time):
+
+```bash
+SHA=$(git rev-parse --short HEAD)
+IMG=asia-south1-docker.pkg.dev/sincere-stock-499113-f1/clinicflow/drsdc-frontend:$SHA
+docker build   --build-arg NEXT_PUBLIC_SITE_ENV=staging   --build-arg NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true   --build-arg NEXT_PUBLIC_NOINDEX=true   --build-arg NEXT_PUBLIC_SITE_URL=https://drsdc-frontend-staging-1071497363324.asia-south1.run.app   -t $IMG .
+docker push $IMG
+gcloud run deploy drsdc-frontend-staging --project sincere-stock-499113-f1 --region asia-south1 --image $IMG
+```
+
+Then: curl the main pages, `/login` (307 to the portal), `/robots.txt` (Disallow), check the `x-robots-tag` header and zero ERROR logs for the new revision. To enable live booking later: onboard `tenant/dr-sindhu.json` on staging, set the clinic ACTIVE + doctor schedules, add this origin to the staging API's `APP_CORS_ALLOWEDORIGINS`, then rebuild with `NEXT_PUBLIC_CLINICFLOW_API_URL`, `NEXT_PUBLIC_CLINICFLOW_CLINIC_SLUG=dr-sindhu-dental-clinic` and `NEXT_PUBLIC_BOOKING_OTP_HINT=123456` (all need the owner's yes).
