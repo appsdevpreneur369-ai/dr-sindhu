@@ -239,6 +239,7 @@ export const HomeSchema = z.object({
 export const AboutSchema = z.object({
   status: Status,
   story: z.object({ title: z.string(), paragraphs: z.array(z.string()).min(1), image: z.string() }),
+  clinicHead: z.object({ eyebrow: z.string(), title: z.string(), lead: z.string(), bookLabel: z.string(), profileLabel: z.string() }),
   values: z.object({ title: z.string(), items: z.array(IconItem) }),
   team: z.object({ title: z.string(), lead: z.string() }),
   starterFeatures: z.object({ title: z.string(), lead: z.string(), _note: Note }),
@@ -269,6 +270,8 @@ const ImageRef = z.object({
   alt: z.string().min(1),
   status: Status,
   credit: z.string().optional(),
+  /** CSS object-position focal point for cropped displays, e.g. "50% 18%" (keeps a face or signage in frame). */
+  objectPosition: z.string().regex(/^\d{1,3}% \d{1,3}%$/).optional(),
 });
 export const ImagesSchema = z.object({
   _note: Note,

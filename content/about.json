@@ -9,6 +9,13 @@
     ],
     "image": "clinic-consultation-room"
   },
+  "clinicHead": {
+    "eyebrow": "Clinic head",
+    "title": "Meet Dr. Sindhu",
+    "lead": "The periodontist who leads the clinic and plans your care.",
+    "bookLabel": "Book with Dr. Sindhu",
+    "profileLabel": "Read her full profile"
+  },
   "values": {
     "title": "What you can expect",
     "items": [

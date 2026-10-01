@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { Icon } from '@/components/ui/Icon';
 import { Avatar, DraftBadge } from '@/components/ui/primitives';
 import { categories, getDoctor, getImage, siteDoctors } from '@/lib/content';
-import { DAY_SHORT, formatSession } from '@/lib/hours';
+import { DAY_SHORT, formatSession, sessionLabel } from '@/lib/hours';
 import { physicianJsonLd } from '@/lib/jsonld';
 import { pageMetadata } from '@/lib/seo';
 
@@ -39,13 +39,15 @@ export default function DoctorPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <JsonLd data={physicianJsonLd(d)} />
-      <PageHeader title={d.displayName} crumbs={[{ name: 'Doctors', path: '/doctors' }, { name: d.displayName, path: `/doctors/${d.slug}` }]} badge={<DraftBadge status={d.status} onDark />}>
+      <PageHeader
+        title={d.displayName}
+        image={photo ?? undefined}
+        imageLayout="portrait"
+        crumbs={[{ name: 'Doctors', path: '/doctors' }, { name: d.displayName, path: `/doctors/${d.slug}` }]}
+        badge={<DraftBadge status={d.status} onDark />}
+      >
         <div className="mt-6 flex flex-wrap items-center gap-6 pb-6">
-          {photo ? (
-            <Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} sizes="176px" className="h-44 w-44 rounded-2xl object-cover object-[50%_30%] ring-4 ring-onDark/25" priority />
-          ) : (
-            <Avatar initials={d.initials} size="lg" className="!from-onDark/25 !to-onDark/5 ring-4 ring-onDark/20" />
-          )}
+          {!photo && <Avatar initials={d.initials} size="lg" className="!from-onDark/25 !to-onDark/5 ring-4 ring-onDark/20" />}
           <div>
             <p className="font-heading text-xl font-bold text-onDark">
               {d.qualification} · {d.specialty}
@@ -103,7 +105,7 @@ export default function DoctorPage({ params }: { params: { slug: string } }) {
           <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
             {photo2 && (
               <figure className="overflow-hidden rounded-2xl border border-border bg-surface shadow-soft">
-                <Image src={photo2.src} alt={photo2.alt} width={photo2.width} height={photo2.height} sizes="(min-width:1024px) 30vw, 100vw" className="aspect-[4/5] w-full object-cover object-top" />
+                <Image src={photo2.src} alt={photo2.alt} width={photo2.width} height={photo2.height} sizes="(min-width:1024px) 30vw, 100vw" className="aspect-[4/5] w-full object-cover" style={{ objectPosition: photo2.objectPosition ?? '50% 20%' }} />
                 <figcaption className="px-5 py-3 font-heading text-sm font-bold">{d.displayName} in the clinic</figcaption>
               </figure>
             )}
@@ -116,7 +118,9 @@ export default function DoctorPage({ params }: { params: { slug: string } }) {
                       {DAY_SHORT[c.days[0]]}
                       {c.days.length > 1 && `–${DAY_SHORT[c.days[c.days.length - 1]]}`}
                     </span>
-                    {formatSession(c)}
+                    <span className="text-right">
+                      {sessionLabel(c)} {formatSession(c)}
+                    </span>
                   </li>
                 ))}
               </ul>

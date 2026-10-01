@@ -1,0 +1,84 @@
+{
+  "base": "http://localhost:3100",
+  "date": "2026-10-01T07:35:22.804Z",
+  "rows": [
+    {
+      "form": "mobile",
+      "path": "/",
+      "performance": 92,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "3.2 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": [
+        "largest-contentful-paint (3.2 s)"
+      ]
+    },
+    {
+      "form": "mobile",
+      "path": "/about",
+      "performance": 92,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "3.2 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": [
+        "largest-contentful-paint (3.2 s)"
+      ]
+    },
+    {
+      "form": "mobile",
+      "path": "/doctors/dr-sindhu",
+      "performance": 95,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "2.9 s",
+      "cls": "0",
+      "tbt": "10 ms",
+      "failing": [
+        "largest-contentful-paint (2.9 s)"
+      ]
+    },
+    {
+      "form": "desktop",
+      "path": "/",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.7 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": []
+    },
+    {
+      "form": "desktop",
+      "path": "/about",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.6 s",
+      "cls": "0.004",
+      "tbt": "0 ms",
+      "failing": []
+    },
+    {
+      "form": "desktop",
+      "path": "/doctors/dr-sindhu",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.6 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "failing": []
+    }
+  ]
+}

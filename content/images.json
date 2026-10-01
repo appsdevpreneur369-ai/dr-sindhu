@@ -156,7 +156,8 @@
       "width": 1600,
       "height": 668,
       "alt": "Front office and reception area at Dr. Sindhu Dental Clinic",
-      "status": "approved"
+      "status": "approved",
+      "objectPosition": "100% 45%"
     },
     "clinic-reception-desk": {
       "src": "/images/photos/clinic-reception-desk.jpg",
@@ -228,19 +229,20 @@
       "alt": "Consultation room with a desk and a floral painting",
       "status": "approved"
     },
-    "doctor-dr-sindhu": {
-      "src": "/images/photos/doctor-dr-sindhu.jpg",
-      "width": 1200,
-      "height": 1026,
-      "alt": "Dr. Sindhu, MDS, periodontist and clinic head, at her desk",
-      "status": "approved"
-    },
     "doctor-dr-sindhu-desk": {
       "src": "/images/photos/doctor-dr-sindhu-desk.jpg",
       "width": 1200,
       "height": 1600,
       "alt": "Dr. Sindhu in her consultation room at the clinic",
       "status": "approved"
+    },
+    "doctor-dr-sindhu-portrait": {
+      "src": "/images/photos/dr-sindhu-periodontist-tadepalli.jpg",
+      "width": 677,
+      "height": 752,
+      "alt": "Dr. Sindhu, MDS, Periodontist and Clinic Head at Dr. Sindhu Dental Clinic, Tadepalli",
+      "status": "approved",
+      "objectPosition": "50% 18%"
     }
   }
 }
