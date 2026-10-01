@@ -100,7 +100,8 @@ History (staging):
 
 | Date | Commit / image tag | Revision | Notes |
 | --- | --- | --- | --- |
-| 2026-10-01 | `9f5d400` | `drsdc-frontend-staging-00001-5rv` | First deploy (redesign: blue/green, Roboto + Montserrat, stock photos). Live-verified: 20 URLs 200/307/404 as expected, noindex, 129 images 0 broken, popup in WhatsApp mode, no ERROR logs. **Current.** |
+| 2026-10-01 | `9f5d400` | `drsdc-frontend-staging-00001-5rv` | First deploy (redesign: blue/green, Roboto + Montserrat, stock photos). Live-verified: 20 URLs 200/307/404 as expected, noindex, 129 images 0 broken, popup in WhatsApp mode, no ERROR logs. |
+| 2026-10-01 | `d9f2984` | `drsdc-frontend-staging-00002-zj5` | Clinic's own photos: 15-photo gallery, Dr. Sindhu's photo on her card/profile, real photos on About/Contact/home. Live-verified: pages 200, noindex, 162 images 0 broken, no ERROR logs. **Current.** |
 
 Redeploy staging (all NEXT_PUBLIC_* values are baked in at build time):
 
