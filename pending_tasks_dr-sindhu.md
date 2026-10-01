@@ -31,7 +31,7 @@ Last updated: 2026-09-30 (local build complete). Data to collect from the clinic
 ## D. Core (ClinicFlow) observations from local testing — for the ClinicFlow team, not this repo
 
 - [ ] `GALLERY_NOT_ENTITLED` message says "upgrade to Starter or above" but the gate is Pro+ since 21 Aug 2026 (`ErrorCode.java` text is stale).
-- [ ] `onboard_tenant.py` doesn't set clinic status ACTIVE; `D:\ClinicFlow\CLAUDE.md` lists seeded super-admin (seeded login), but migration V9 seeds (seeded login, not repeated here).
+- [ ] `onboard_tenant.py` doesn't set clinic status ACTIVE; `D:\ClinicFlow\CLAUDE.md` lists a seeded super-admin login that differs from migration V9 (credentials not repeated here); check staging does not still accept the default seed password.
 - [ ] Guest booking with an email that already has a patient login fails with `AUTH_EMAIL_ALREADY_EXISTS` — consider attaching the booking to the existing patient instead.
 
 ## E. Later
