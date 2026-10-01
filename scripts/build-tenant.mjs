@@ -17,12 +17,14 @@ const portal = read('portal.json');
 
 const approved = (f) => f.status === 'approved';
 const DAY = { monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday' };
-const fmt = (t) => {
-  const [h, m] = t.split(':').map(Number);
-  return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`;
-};
 const byId = Object.fromEntries(doctors.map((d) => [d.id, d]));
-const hoursText = 'Monday to Saturday, 10:00 AM – 2:00 PM and 5:00 PM – 9:00 PM. Closed on Sunday (working days to be confirmed).';
+// Same wording as the website's formatter (src/lib/hours.ts → hoursSummary/formatSessions), computed from content.
+const t12 = (t) => { const [h, m] = t.split(':').map(Number); return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`; };
+const part = (t) => (Number(t.slice(0, 2)) < 12 ? 'Morning' : Number(t.slice(0, 2)) < 17 ? 'Afternoon' : 'Evening');
+const sessionsText = (ss) => ss.map((x) => `${part(x.opens)} ${t12(x.opens)} – ${t12(x.closes)}`).join(' & ');
+const openDays = clinic.hours.days.filter((d) => d.sessions.length);
+const closedDays = clinic.hours.days.filter((d) => !d.sessions.length);
+const hoursText = `${DAY[openDays[0].day]}–${DAY[openDays[openDays.length - 1].day]}, ${sessionsText(openDays[0].sessions)}; ${closedDays.map((d) => DAY[d.day]).join(', ')} closed`;
 const address = [clinic.address.doorNumber, clinic.address.street, clinic.address.landmark && `near ${clinic.address.landmark}`, clinic.address.locality, `${clinic.address.region}${clinic.address.postalCode ? ` ${clinic.address.postalCode}` : ''}`]
   .filter(Boolean)
   .join(', ');

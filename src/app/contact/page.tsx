@@ -5,7 +5,7 @@ import { Icon, WhatsAppIcon } from '@/components/ui/Icon';
 import { OpenStatus } from '@/components/ui/OpenStatus';
 import { DraftBadge } from '@/components/ui/primitives';
 import { getImage, siteClinic, sitePages } from '@/lib/content';
-import { DAY_LABEL, formatSession } from '@/lib/hours';
+import { DAY_LABEL, formatSessions } from '@/lib/hours';
 import { channels, directionsHref, generalWhatsappHref, mapEmbedSrc, mapsApproximate } from '@/lib/links';
 import { pageMetadata } from '@/lib/seo';
 import { fullAddress } from '@/lib/vars';
@@ -89,7 +89,7 @@ export default function ContactPage() {
                       <th scope="row" className="px-6 py-3 font-semibold">
                         {DAY_LABEL[d.day]}
                       </th>
-                      <td className="px-6 py-3 text-textSecondary">{d.sessions.length ? d.sessions.map(formatSession).join(' · ') : 'Closed'}</td>
+                      <td className="px-6 py-3 text-textSecondary">{d.sessions.length ? formatSessions(d.sessions) : 'Closed'}</td>
                     </tr>
                   ))}
                 </tbody>

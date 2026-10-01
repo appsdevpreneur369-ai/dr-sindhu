@@ -19,14 +19,16 @@ export function formatTime(t: string): string {
   const h12 = h % 12 === 0 ? 12 : h % 12;
   return `${h12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`;
 }
-/** Compact "10–2" style used in chips: drops :00 and AM/PM. */
-export function shortTime(t: string): string {
-  const [h, m] = t.split(':').map(Number);
-  const h12 = h % 12 === 0 ? 12 : h % 12;
-  return m ? `${h12}:${String(m).padStart(2, '0')}` : String(h12);
-}
 export const formatSession = (s: Session) => `${formatTime(s.opens)} – ${formatTime(s.closes)}`;
-export const shortSessions = (ss: Session[]) => ss.map((s) => `${shortTime(s.opens)}–${shortTime(s.closes)}`).join(' & ');
+
+/** Part of day for a session, from its start time: Morning (< 12:00), Afternoon (< 17:00), Evening. */
+export const sessionLabel = (s: Session) => (toMin(s.opens) < 12 * 60 ? 'Morning' : toMin(s.opens) < 17 * 60 ? 'Afternoon' : 'Evening');
+
+/**
+ * THE timings formatter for all human-readable hours on the site:
+ * "Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM". Built only from content (clinic.json hours).
+ */
+export const formatSessions = (ss: Session[]) => ss.map((s) => `${sessionLabel(s)} ${formatSession(s)}`).join(' & ');
 
 /** Consecutive days with identical sessions: [Mon..Sat], [Sun]. */
 export function groupDays(hours: DayHours[]): { days: Day[]; sessions: Session[] }[] {
@@ -41,17 +43,19 @@ export function groupDays(hours: DayHours[]): { days: Day[]; sessions: Session[]
 
 const range = (days: Day[], labels: Record<Day, string>) => (days.length > 1 ? `${labels[days[0]]}–${labels[days[days.length - 1]]}` : labels[days[0]]);
 
-/** "Monday–Saturday 10:00 AM – 2:00 PM and 5:00 PM – 9:00 PM; Sunday closed" */
+/** "Monday–Saturday, Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM; Sunday closed" */
 export function hoursSummary(hours: DayHours[]): string {
   return groupDays(hours)
-    .map((g) => `${range(g.days, DAY_LABEL)} ${g.sessions.length ? g.sessions.map(formatSession).join(' and ') : 'closed'}`)
+    .map((g) => (g.sessions.length ? `${range(g.days, DAY_LABEL)}, ${formatSessions(g.sessions)}` : `${range(g.days, DAY_LABEL)} closed`))
     .join('; ');
 }
-/** "Mon–Sat 10–2 & 5–9" (first open group). */
+/** Top-bar form, first open group: "Mon–Sat, Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM". */
 export function hoursShort(hours: DayHours[]): string {
   const g = groupDays(hours).find((x) => x.sessions.length);
-  return g ? `${range(g.days, DAY_SHORT)} ${shortSessions(g.sessions)}` : '';
+  return g ? `${range(g.days, DAY_SHORT)}, ${formatSessions(g.sessions)}` : '';
 }
+/** Day label for a group of days, e.g. "Mon – Sat" / "Sun" (timings tables). */
+export const dayRangeShort = (days: Day[]) => (days.length > 1 ? `${DAY_SHORT[days[0]]} – ${DAY_SHORT[days[days.length - 1]]}` : DAY_SHORT[days[0]]);
 
 export function nowInZone(timeZone: string, date = new Date()): { day: Day; minutes: number } {
   const parts = new Intl.DateTimeFormat('en-US', { timeZone, weekday: 'long', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(date);
@@ -85,4 +89,21 @@ export function openStatusText(s: OpenStatus): string {
   if (!s.nextOpen) return 'Closed';
   const when = s.nextOpen.isToday ? 'today' : s.nextOpen.isTomorrow ? 'tomorrow' : DAY_LABEL[s.nextOpen.day];
   return `Closed · opens ${when} ${formatTime(s.nextOpen.time)}`;
+}
+
+/**
+ * Home hero chip: "Open today Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM" on a working day,
+ * "Closed today · Opens Monday 10:00 AM" on a closed day (Asia/Kolkata by default).
+ */
+export function todayHoursText(hours: DayHours[], timeZone: string, date = new Date()): string {
+  const { day } = nowInZone(timeZone, date);
+  const today = hours.find((h) => h.day === day);
+  if (today?.sessions.length) return `Open today ${formatSessions(today.sessions)}`;
+  const idx = DAYS.indexOf(day);
+  for (let i = 1; i <= 7; i++) {
+    const d = DAYS[(idx + i) % 7];
+    const h = hours.find((x) => x.day === d);
+    if (h?.sessions.length) return `Closed today · Opens ${DAY_LABEL[d]} ${formatTime(h.sessions[0].opens)}`;
+  }
+  return 'Closed today';
 }

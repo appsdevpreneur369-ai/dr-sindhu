@@ -7,7 +7,7 @@ import { Icon, WhatsAppIcon } from '@/components/ui/Icon';
 import { OpenStatus } from '@/components/ui/OpenStatus';
 import { Accordion, DraftBadge, SectionHead } from '@/components/ui/primitives';
 import { articles, categories, getImage, siteClinic, siteDoctors, siteFaqs, siteGallery, siteHome, sitePages, sitePlan, siteRouting } from '@/lib/content';
-import { DAY_SHORT, formatSession, groupDays } from '@/lib/hours';
+import { dayRangeShort, formatSessions, groupDays } from '@/lib/hours';
 import { channels, directionsHref, generalWhatsappHref } from '@/lib/links';
 import { patientBenefits } from '@/lib/plan';
 import { pageMetadata } from '@/lib/seo';
@@ -66,8 +66,8 @@ export default function HomePage() {
               <span className="icon-tile !h-10 !w-10">
                 <Icon name={hoursChip.icon} className="h-5 w-5" />
               </span>
-              <span className="text-sm font-semibold text-text">
-                <HeroHoursChip template={hoursChip.text} hours={siteClinic.hours.days} timeZone={siteClinic.timezone} fallback={fill(hoursChip.text)} />
+              <span className="text-[0.74rem] font-semibold leading-snug text-text xs:text-[0.8rem] sm:text-sm">
+                <HeroHoursChip hours={siteClinic.hours.days} timeZone={siteClinic.timezone} fallback={fill(hoursChip.text)} />
               </span>
             </div>
             <div className="absolute -right-3 top-1/2 flex items-center gap-3 rounded-2xl bg-surface px-4 py-3 shadow-lift sm:-right-8">
@@ -322,8 +322,8 @@ export default function HomePage() {
               <dl className="divide-y divide-border px-6">
                 {groupDays(siteClinic.hours.days).map((g) => (
                   <div key={g.days[0]} className="flex flex-wrap justify-between gap-2 py-3.5">
-                    <dt className="font-heading font-bold">{g.days.length > 1 ? `${DAY_SHORT[g.days[0]]} – ${DAY_SHORT[g.days[g.days.length - 1]]}` : DAY_SHORT[g.days[0]]}</dt>
-                    <dd className="text-textSecondary">{g.sessions.length ? g.sessions.map(formatSession).join(', ') : 'Closed'}</dd>
+                    <dt className="font-heading font-bold">{dayRangeShort(g.days)}</dt>
+                    <dd className="text-textSecondary sm:text-right">{g.sessions.length ? formatSessions(g.sessions) : 'Closed'}</dd>
                   </div>
                 ))}
               </dl>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { hoursShort, hoursSummary, openStatus, openStatusText } from '@/lib/hours';
+import { formatSessions, hoursShort, hoursSummary, openStatus, openStatusText, sessionLabel, todayHoursText } from '@/lib/hours';
 import { hasFeature, patientBenefits } from '@/lib/plan';
 import { buildRedirects, portalBase, portalUrl } from '@/lib/site-redirects.mjs';
 import { content } from './fixtures';
@@ -51,9 +51,22 @@ describe('portal links + redirects', () => {
 describe('hours (Asia/Kolkata)', () => {
   const days = content.clinic.hours.days;
   const at = (iso: string) => openStatus(days, 'Asia/Kolkata', new Date(iso));
-  it('summaries', () => {
-    expect(hoursSummary(days)).toBe('Monday–Saturday 10:00 AM – 2:00 PM and 5:00 PM – 9:00 PM; Sunday closed');
-    expect(hoursShort(days)).toBe('Mon–Sat 10–2 & 5–9');
+  it('one formatter for all human-readable timings (full times, Morning/Evening labels)', () => {
+    expect(formatSessions(days[0].sessions)).toBe('Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM');
+    expect(hoursShort(days)).toBe('Mon–Sat, Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM');
+    expect(hoursSummary(days)).toBe('Monday–Saturday, Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM; Sunday closed');
+    expect(sessionLabel({ opens: '14:00', closes: '16:00' })).toBe('Afternoon');
+  });
+  it('a timing change in content flows through the formatter', () => {
+    const changed = days.map((d: { day: string; sessions: unknown[] }) => (d.sessions.length ? { ...d, sessions: [{ opens: '09:30', closes: '13:00' }, { opens: '18:00', closes: '20:30' }] } : d));
+    expect(hoursShort(changed)).toBe('Mon–Sat, Morning 9:30 AM – 1:00 PM & Evening 6:00 PM – 8:30 PM');
+  });
+  it('hero chip: open day vs Sunday (Asia/Kolkata)', () => {
+    expect(todayHoursText(days, 'Asia/Kolkata', new Date('2026-10-05T03:00:00Z'))).toBe('Open today Morning 10:00 AM – 2:00 PM & Evening 5:00 PM – 9:00 PM'); // Mon 08:30 IST
+    expect(todayHoursText(days, 'Asia/Kolkata', new Date('2026-10-11T06:00:00Z'))).toBe('Closed today · Opens Monday 10:00 AM'); // Sun 11:30 IST
+    expect(todayHoursText(days, 'Asia/Kolkata', new Date('2026-10-10T19:00:00Z'))).toBe('Closed today · Opens Monday 10:00 AM'); // Sun 00:30 IST (still Sat in UTC)
+    const wedClosed = days.map((d: { day: string }) => (d.day === 'wednesday' ? { ...d, sessions: [] } : d));
+    expect(todayHoursText(wedClosed, 'Asia/Kolkata', new Date('2026-10-07T06:00:00Z'))).toBe('Closed today · Opens Thursday 10:00 AM');
   });
   it('open / lunch break / evening / Sunday', () => {
     expect(at('2026-10-05T05:00:00Z')).toEqual({ open: true, closesAt: '14:00' }); // Mon 10:30 IST

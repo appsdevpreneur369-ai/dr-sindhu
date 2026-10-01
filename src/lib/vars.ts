@@ -1,7 +1,7 @@
 // {{token}} values filled into content copy, derived from content so numbers never drift.
 import 'server-only';
 import { categories, siteClinic, siteDoctors } from './content';
-import { hoursShort, hoursSummary, shortSessions } from './hours';
+import { formatSessions, hoursShort, hoursSummary } from './hours';
 import { fillTemplate } from './contact';
 
 const a = siteClinic.address;
@@ -20,7 +20,7 @@ export const VARS: Record<string, string> = {
   categoryCountNum: String(categories.length),
   hoursSummary: hoursSummary(siteClinic.hours.days),
   hoursShort: hoursShort(siteClinic.hours.days),
-  todayHours: openDay ? shortSessions(openDay.sessions) : '',
+  todayHours: openDay ? formatSessions(openDay.sessions) : '',
   area: siteClinic.address.locality,
   address: fullAddress,
 };
