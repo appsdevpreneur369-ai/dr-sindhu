@@ -39,24 +39,25 @@ export function Header({
 
   return (
     <>
-      <div className="on-dark hidden bg-navy text-[0.85rem] text-onDarkMuted md:block">
-        <div className="container-site flex items-center justify-between gap-4">
-          <p className="flex items-center gap-2">
-            <Icon name="map-pin" className="h-4 w-4 text-greenOnDark" /> {topLine}
+      <div className="on-dark hidden bg-navy text-[0.84rem] text-onDarkMuted md:block">
+        <div className="container-site flex flex-wrap items-center justify-between gap-x-6 gap-y-0 py-1 lg:flex-nowrap lg:gap-x-4 lg:py-0 lg:max-xl:text-[0.78rem] xl:gap-x-6">
+          <p className="flex min-w-0 items-center gap-2 py-1.5 lg:whitespace-nowrap lg:py-0">
+            <Icon name="map-pin" className="h-4 w-4 shrink-0 text-greenOnDark" /> <span>{topLine}</span>
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex shrink-0 items-center gap-4 lg:max-xl:gap-3 xl:gap-5">
             {callHref && (
-              <a href={callHref} className="inline-flex min-h-[44px] items-center gap-2 font-medium text-onDark hover:text-greenOnDark">
+              <a href={callHref} className="inline-flex min-h-[44px] items-center gap-2 whitespace-nowrap font-medium text-onDark hover:text-greenOnDark">
                 <Icon name="phone" className="h-4 w-4" /> {callDisplay}
               </a>
             )}
             {whatsappHref && (
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-2 font-medium text-onDark hover:text-greenOnDark">
-                <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-2 whitespace-nowrap font-medium text-onDark hover:text-greenOnDark">
+                <WhatsAppIcon className="h-4 w-4" /> <span className="lg:max-xl:sr-only">WhatsApp</span>
               </a>
             )}
-            <a href={signInHref} className="inline-flex min-h-[44px] items-center gap-2 border-l border-onDark/20 pl-5 font-medium text-onDark hover:text-greenOnDark">
-              <Icon name="log-in" className="h-4 w-4" /> Patient sign in
+            <a href={signInHref} className="inline-flex min-h-[44px] items-center gap-2 whitespace-nowrap border-l border-onDark/20 pl-4 font-medium text-onDark hover:text-greenOnDark xl:pl-5">
+              <Icon name="log-in" className="h-4 w-4" /> <span className="lg:max-xl:hidden">Patient sign in</span>
+              <span className="hidden lg:max-xl:inline">Sign in</span>
             </a>
           </div>
         </div>
@@ -95,11 +96,7 @@ export function Header({
           <ul className="container-site grid gap-0.5 py-3">
             {items.map((it) => (
               <li key={it.href}>
-                <Link
-                  href={it.href}
-                  aria-current={active(it.href) ? 'page' : undefined}
-                  className={cn('flex min-h-[48px] items-center justify-between border-l-[3px] px-3 font-heading text-lg font-medium', active(it.href) ? 'border-primary text-primary' : 'border-transparent text-text hover:text-primary')}
-                >
+                <Link href={it.href} aria-current={active(it.href) ? 'page' : undefined} className="mobile-nav-link">
                   {it.label} <Icon name="chevron-right" className="h-5 w-5 text-textSecondary" />
                 </Link>
               </li>

@@ -57,6 +57,17 @@
   .nav-link::after { content: ''; @apply absolute bottom-2 left-1 right-1 h-0.5 origin-left scale-x-0 rounded-full bg-primary transition-transform duration-300; }
   .nav-link:hover::after, .nav-link[aria-current='page']::after { @apply scale-x-100; }
   .nav-link[aria-current='page'] { @apply text-primary; }
+  /* Nav items never get a box: the global :focus-visible outline is removed here. A link keeps focus after a
+     click (the header persists across client-side navigation), so the outline used to sit on the active item.
+     Keyboard focus is shown with the same underline, thicker, plus darker text. */
+  .nav-link:focus, .nav-link:focus-visible { outline: none; box-shadow: none; }
+  .nav-link:focus-visible { @apply text-primaryDeep; }
+  .nav-link:focus-visible::after { @apply bottom-1.5 h-[3px] scale-x-100 bg-primaryDeep; }
+  /* Mobile menu items: left bar marks the active page; keyboard focus thickens the bar + tints the row. */
+  .mobile-nav-link { @apply flex min-h-[48px] items-center justify-between border-l-[3px] border-transparent px-3 font-heading text-lg font-medium text-text hover:text-primary; }
+  .mobile-nav-link[aria-current='page'] { @apply border-primary text-primary; }
+  .mobile-nav-link:focus, .mobile-nav-link:focus-visible { outline: none; box-shadow: none; }
+  .mobile-nav-link:focus-visible { @apply border-l-[6px] border-primaryDeep bg-sky text-primaryDeep; }
   .icon-tile { @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky text-primary; }
   .prose-site { @apply max-w-prose text-text; }
   .prose-site h2 { @apply mb-3 mt-10 text-2xl; }
