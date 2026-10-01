@@ -1,5 +1,5 @@
 {
-  "_note": "Every image the site uses, by id. Components never reference /public paths directly. Photos are REPRESENTATIVE stock images (Unsplash License, credits in content/photo-credits.json) — not photos of this clinic or its doctors — until the clinic supplies its own. Replace src/width/height/alt and set status approved.",
+  "_note": "Every image the site uses, by id. Components never reference /public paths directly. 'clinic-*' and 'doctor-*' are the clinic's OWN photos (supplied 1 Oct 2026, EXIF/GPS stripped; status approved). Hero, treatment and article photos are REPRESENTATIVE stock images (Unsplash License, credits in content/photo-credits.json, field 'credit') until replaced.",
   "logo": {
     "mark": {
       "src": "/brand/logo-mark.png",
@@ -25,14 +25,6 @@
       "alt": "Smiling young woman at a dental clinic",
       "status": "placeholder",
       "credit": "Photo: Shedrack Salami / Unsplash"
-    },
-    "about": {
-      "src": "/images/photos/about.jpg",
-      "width": 1400,
-      "height": 1050,
-      "alt": "Bright, modern dental treatment room",
-      "status": "placeholder",
-      "credit": "Photo: Benyamin Bohlouli / Unsplash"
     },
     "og": {
       "src": "/images/og.png",
@@ -113,54 +105,6 @@
       "status": "placeholder",
       "credit": "Photo: Katarzyna Zygnerska / Unsplash"
     },
-    "gallery-reception": {
-      "src": "/images/photos/gallery-reception.jpg",
-      "width": 1200,
-      "height": 900,
-      "alt": "Representative photo: dental clinic waiting area",
-      "status": "placeholder",
-      "credit": "Photo: Benyamin Bohlouli / Unsplash"
-    },
-    "gallery-treatment-room": {
-      "src": "/images/photos/gallery-treatment-room.jpg",
-      "width": 1200,
-      "height": 900,
-      "alt": "Representative photo: dental treatment room",
-      "status": "placeholder",
-      "credit": "Photo: Benyamin Bohlouli / Unsplash"
-    },
-    "gallery-chair": {
-      "src": "/images/photos/gallery-chair.jpg",
-      "width": 1200,
-      "height": 900,
-      "alt": "Representative photo: dental chair and treatment unit",
-      "status": "placeholder",
-      "credit": "Photo: Ozkan Guner / Unsplash"
-    },
-    "gallery-instruments": {
-      "src": "/images/photos/gallery-instruments.jpg",
-      "width": 1200,
-      "height": 900,
-      "alt": "Representative photo: sterilised dental instruments",
-      "status": "placeholder",
-      "credit": "Photo: Ozkan Guner / Unsplash"
-    },
-    "gallery-xray": {
-      "src": "/images/photos/gallery-xray.jpg",
-      "width": 1200,
-      "height": 900,
-      "alt": "Representative photo: digital dental X-ray on a monitor",
-      "status": "placeholder",
-      "credit": "Photo: Fr0ggy5 / Unsplash"
-    },
-    "gallery-modern-chair": {
-      "src": "/images/photos/gallery-modern-chair.jpg",
-      "width": 1200,
-      "height": 900,
-      "alt": "Representative photo: modern dental chair",
-      "status": "placeholder",
-      "credit": "Photo: Kari Bjorn Photography / Unsplash"
-    },
     "article-gums-heart": {
       "src": "/images/photos/article-gums-heart.jpg",
       "width": 1200,
@@ -192,6 +136,111 @@
       "alt": "Clean teeth and healthy gums after a professional clean",
       "status": "placeholder",
       "credit": "Photo: Ozkan Guner / Unsplash"
+    },
+    "clinic-front": {
+      "src": "/images/photos/clinic-front.jpg",
+      "width": 1600,
+      "height": 878,
+      "alt": "Front of Dr. Sindhu Dental Clinic on Ashramam Road, Tadepalli, with the Telugu signboard",
+      "status": "approved"
+    },
+    "clinic-entrance": {
+      "src": "/images/photos/clinic-entrance.jpg",
+      "width": 1600,
+      "height": 720,
+      "alt": "Glass entrance doors with the Sindhu Dental logo",
+      "status": "approved"
+    },
+    "clinic-front-office": {
+      "src": "/images/photos/clinic-front-office.jpg",
+      "width": 1600,
+      "height": 668,
+      "alt": "Front office and reception area at Dr. Sindhu Dental Clinic",
+      "status": "approved"
+    },
+    "clinic-reception-desk": {
+      "src": "/images/photos/clinic-reception-desk.jpg",
+      "width": 1600,
+      "height": 721,
+      "alt": "Reception desk with the clinic's patient information poster",
+      "status": "approved"
+    },
+    "clinic-reception-decor": {
+      "src": "/images/photos/clinic-reception-decor.jpg",
+      "width": 675,
+      "height": 874,
+      "alt": "Brass Ganesha idol on a cabinet in the reception area",
+      "status": "approved"
+    },
+    "clinic-examination-room": {
+      "src": "/images/photos/clinic-examination-room.jpg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Examination room with a couch and cabinets",
+      "status": "approved"
+    },
+    "clinic-treatment-area": {
+      "src": "/images/photos/clinic-treatment-area.jpg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Treatment area with two modern dental chairs",
+      "status": "approved"
+    },
+    "clinic-dental-chair": {
+      "src": "/images/photos/clinic-dental-chair.jpg",
+      "width": 1600,
+      "height": 1200,
+      "alt": "Dental chair with its treatment unit and dentist's stool",
+      "status": "approved"
+    },
+    "clinic-treatment-unit": {
+      "src": "/images/photos/clinic-treatment-unit.jpg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Dental treatment unit with a patient display screen",
+      "status": "approved"
+    },
+    "clinic-treatment-room": {
+      "src": "/images/photos/clinic-treatment-room.jpg",
+      "width": 721,
+      "height": 1179,
+      "alt": "Bright treatment room with a dental chair and ceiling light",
+      "status": "approved"
+    },
+    "clinic-chair-side": {
+      "src": "/images/photos/clinic-chair-side.jpg",
+      "width": 721,
+      "height": 1099,
+      "alt": "Dental chair seen from the side, under the operating light",
+      "status": "approved"
+    },
+    "clinic-chair-light": {
+      "src": "/images/photos/clinic-chair-light.jpg",
+      "width": 721,
+      "height": 1241,
+      "alt": "Dental chair under the square ceiling light",
+      "status": "approved"
+    },
+    "clinic-consultation-room": {
+      "src": "/images/photos/clinic-consultation-room.jpg",
+      "width": 1358,
+      "height": 720,
+      "alt": "Consultation room with a desk and a floral painting",
+      "status": "approved"
+    },
+    "doctor-dr-sindhu": {
+      "src": "/images/photos/doctor-dr-sindhu.jpg",
+      "width": 1200,
+      "height": 1026,
+      "alt": "Dr. Sindhu, MDS, periodontist and clinic head, at her desk",
+      "status": "approved"
+    },
+    "doctor-dr-sindhu-desk": {
+      "src": "/images/photos/doctor-dr-sindhu-desk.jpg",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Dr. Sindhu in her consultation room at the clinic",
+      "status": "approved"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:3100",
-  "date": "2026-09-30T12:24:27.516Z",
+  "date": "2026-10-01T06:51:04.236Z",
   "rows": [
     {
       "path": "/",
@@ -263,7 +263,7 @@
       "path": "/gallery",
       "title": "Our Clinic — Photos | Dr. Sindhu Dental, Tadepalli",
       "titleLength": 50,
-      "descriptionLength": 137,
+      "descriptionLength": 139,
       "h1": 1,
       "jsonLdTypes": [
         "Dentist",
@@ -422,6 +422,6 @@
       "issues": []
     }
   ],
-  "sitemapImages": 13,
+  "sitemapImages": 26,
   "brokenImages": 0
 }

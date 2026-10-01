@@ -29,6 +29,7 @@ export default function DoctorPage({ params }: { params: { slug: string } }) {
   if (!d) notFound();
   const treats = categories.filter((c) => c.doctors.includes(d.id) || c.subTreatments.some((s) => s.doctors?.includes(d.id)));
   const photo = d.photo ? getImage(d.photo) : null;
+  const photo2 = d.photoSecondary ? getImage(d.photoSecondary) : null;
   const facts = [
     { icon: 'badge-check', label: 'Qualification', value: d.qualification },
     { icon: 'stethoscope', label: 'Speciality', value: d.specialty.replace(/ \(.+\)/, '') },
@@ -41,7 +42,7 @@ export default function DoctorPage({ params }: { params: { slug: string } }) {
       <PageHeader title={d.displayName} crumbs={[{ name: 'Doctors', path: '/doctors' }, { name: d.displayName, path: `/doctors/${d.slug}` }]} badge={<DraftBadge status={d.status} onDark />}>
         <div className="mt-6 flex flex-wrap items-center gap-6 pb-6">
           {photo ? (
-            <Image src={photo.src} alt={photo.alt} width={256} height={256} className="h-32 w-32 rounded-2xl object-cover" priority />
+            <Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} sizes="176px" className="h-44 w-44 rounded-2xl object-cover object-[50%_30%] ring-4 ring-onDark/25" priority />
           ) : (
             <Avatar initials={d.initials} size="lg" className="!from-onDark/25 !to-onDark/5 ring-4 ring-onDark/20" />
           )}
@@ -100,6 +101,12 @@ export default function DoctorPage({ params }: { params: { slug: string } }) {
             </ul>
           </div>
           <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+            {photo2 && (
+              <figure className="overflow-hidden rounded-2xl border border-border bg-surface shadow-soft">
+                <Image src={photo2.src} alt={photo2.alt} width={photo2.width} height={photo2.height} sizes="(min-width:1024px) 30vw, 100vw" className="aspect-[4/5] w-full object-cover object-top" />
+                <figcaption className="px-5 py-3 font-heading text-sm font-bold">{d.displayName} in the clinic</figcaption>
+              </figure>
+            )}
             <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-soft">
               <h2 className="bg-gradient-to-r from-primary to-primaryHover px-6 py-4 text-lg !text-onDark">Consultation times</h2>
               <ul className="space-y-2 px-6 py-5 text-textSecondary">

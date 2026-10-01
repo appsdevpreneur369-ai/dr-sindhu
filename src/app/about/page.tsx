@@ -14,7 +14,7 @@ export default function AboutPage() {
   const a = siteAbout;
   return (
     <>
-      <PageHeader title={p.h1!} intro={p.intro} image={getImage('about')} crumbs={[{ name: 'About', path: '/about' }]} badge={<DraftBadge status={a.status} />} />
+      <PageHeader title={p.h1!} intro={p.intro} image={getImage('clinic-front-office')} crumbs={[{ name: 'About', path: '/about' }]} badge={<DraftBadge status={a.status} />} />
       <section className="section">
         <div className="container-site grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="prose-site">

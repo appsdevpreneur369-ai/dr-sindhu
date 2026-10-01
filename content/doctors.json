@@ -1,5 +1,5 @@
 {
-  "_note": "Doctors. 'id' is a permanent key used by services.json, routing.json and booking.json: never change it. To rename a doctor, edit firstName/lastName/displayName, set a new 'slug', and move the old slug into 'previousSlugs' (the old URL then redirects automatically). Then run `npm run tenant` to refresh tenant/dr-sindhu.json. Names are placeholders given by the account owner (these consultants do work at the clinic). Only facts given by the account owner: Dr. Sindhu's 15+ years of experience was provided on 30 Sep 2026 (experienceStatus approved). No invented awards or stats. photo = image id in images.json, or null for an initials avatar.",
+  "_note": "Doctors. 'id' is a permanent key used by services.json, routing.json and booking.json: never change it. To rename a doctor, edit firstName/lastName/displayName, set a new 'slug', and move the old slug into 'previousSlugs' (the old URL then redirects automatically). Then run `npm run tenant` to refresh tenant/dr-sindhu.json. Names are placeholders given by the account owner (these consultants do work at the clinic). Only facts given by the account owner: Dr. Sindhu's 15+ years of experience was provided on 30 Sep 2026 (experienceStatus approved). No invented awards or stats. photo / photoSecondary = image ids in images.json (the doctor's OWN photos only — never stock), or null for an initials avatar.",
   "consultSlotMinutes": 15,
   "doctors": [
     {
@@ -16,7 +16,7 @@
       "schemaSpecialty": "Periodontics",
       "role": "Clinic Head",
       "isHead": true,
-      "photo": null,
+      "photo": "doctor-dr-sindhu",
       "registrationNumber": "",
       "clinicflowDoctorId": null,
       "summary": "Periodontist with over 15 years of experience; leads the clinic and looks after gums, check-ups, cleaning and smile concerns.",
@@ -61,7 +61,8 @@
       ],
       "consultationStatus": "placeholder",
       "experienceYears": 15,
-      "experienceStatus": "approved"
+      "experienceStatus": "approved",
+      "photoSecondary": "doctor-dr-sindhu-desk"
     },
     {
       "id": "oral-surgeon",
@@ -120,7 +121,8 @@
       ],
       "consultationStatus": "placeholder",
       "experienceYears": null,
-      "experienceStatus": "placeholder"
+      "experienceStatus": "placeholder",
+      "photoSecondary": null
     },
     {
       "id": "endodontist",
@@ -179,7 +181,8 @@
       ],
       "consultationStatus": "placeholder",
       "experienceYears": null,
-      "experienceStatus": "placeholder"
+      "experienceStatus": "placeholder",
+      "photoSecondary": null
     }
   ]
 }

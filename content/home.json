@@ -7,22 +7,67 @@
     "lead": "Specialist dental care for the whole family — gum treatment, root canals, wisdom teeth, implants and everyday check-ups — led by Dr. Sindhu, a periodontist with over 15 years of experience.",
     "image": "hero",
     "primaryCta": "Book Appointment",
-    "secondaryCta": { "label": "Explore Treatments", "href": "/treatments" },
-    "checks": ["3 MDS specialists", "Evening appointments", "Costs explained first"],
+    "secondaryCta": {
+      "label": "Explore Treatments",
+      "href": "/treatments"
+    },
+    "checks": [
+      "3 MDS specialists",
+      "Evening appointments",
+      "Costs explained first"
+    ],
     "chips": [
-      { "icon": "clock", "text": "Open today {{todayHours}}", "kind": "hours" },
-      { "icon": "award", "text": "15+ years of experience", "sub": "Dr. Sindhu, Periodontist", "kind": "static" },
-      { "icon": "calendar-check", "text": "Book in 60 seconds", "sub": "Online, any time", "kind": "static" }
+      {
+        "icon": "clock",
+        "text": "Open today {{todayHours}}",
+        "kind": "hours"
+      },
+      {
+        "icon": "award",
+        "text": "15+ years of experience",
+        "sub": "Dr. Sindhu, Periodontist",
+        "kind": "static"
+      },
+      {
+        "icon": "calendar-check",
+        "text": "Book in 60 seconds",
+        "sub": "Online, any time",
+        "kind": "static"
+      }
     ]
   },
   "stats": {
     "_note": "Only real, verifiable facts: 15+ years (given by the account owner, 30 Sep 2026), counts derived from content, and the approved hours.",
     "status": "approved",
     "items": [
-      { "value": "15+", "label": "Years of experience", "sub": "Dr. Sindhu, clinic head", "icon": "award", "source": "account owner, 30 Sep 2026" },
-      { "value": "{{doctorCountNum}}", "label": "MDS specialists", "sub": "Gums, surgery, root canals", "icon": "stethoscope", "source": "doctors.json" },
-      { "value": "{{categoryCountNum}}", "label": "Treatment areas", "sub": "Under one roof", "icon": "sparkles", "source": "services.json" },
-      { "value": "6", "label": "Days a week", "sub": "Morning & evening sessions", "icon": "calendar-clock", "source": "clinic.json hours" }
+      {
+        "value": "15+",
+        "label": "Years of experience",
+        "sub": "Dr. Sindhu, clinic head",
+        "icon": "award",
+        "source": "account owner, 30 Sep 2026"
+      },
+      {
+        "value": "{{doctorCountNum}}",
+        "label": "MDS specialists",
+        "sub": "Gums, surgery, root canals",
+        "icon": "stethoscope",
+        "source": "doctors.json"
+      },
+      {
+        "value": "{{categoryCountNum}}",
+        "label": "Treatment areas",
+        "sub": "Under one roof",
+        "icon": "sparkles",
+        "source": "services.json"
+      },
+      {
+        "value": "6",
+        "label": "Days a week",
+        "sub": "Morning & evening sessions",
+        "icon": "calendar-clock",
+        "source": "clinic.json hours"
+      }
     ]
   },
   "about": {
@@ -32,11 +77,18 @@
       "Dr. Sindhu Dental Clinic on Ashramam Road, Tadepalli, is led by Dr. Sindhu, MDS — a periodontist with over 15 years of experience. Gum health is the foundation of every plan here, because fillings, crowns and implants last longest on healthy gums and bone.",
       "An oral and maxillofacial surgeon and a root canal specialist complete the team, so most problems can be treated at one clinic by the doctor trained for them."
     ],
-    "points": ["Specialist-led care for every age", "Clear explanations and costs before treatment", "Sterilised instruments, every patient, every time"],
-    "image": "about",
+    "points": [
+      "Specialist-led care for every age",
+      "Clear explanations and costs before treatment",
+      "Sterilised instruments, every patient, every time"
+    ],
+    "image": "clinic-treatment-area",
     "badgeValue": "15+",
     "badgeLabel": "Years of experience",
-    "cta": { "label": "More about us", "href": "/about" }
+    "cta": {
+      "label": "More about us",
+      "href": "/about"
+    }
   },
   "treatments": {
     "eyebrow": "Our treatments",
@@ -57,36 +109,85 @@
     "eyebrow": "Why patients choose us",
     "title": "Care that feels easy from the first visit",
     "points": [
-      { "icon": "award", "title": "Over 15 years of experience", "text": "Dr. Sindhu brings more than 15 years in dentistry to planning your care." },
-      { "icon": "leaf", "title": "Gum-first approach", "text": "Every plan begins with a gum check, so other treatment rests on a healthy base." },
-      { "icon": "stethoscope", "title": "The right specialist", "text": "Gum care, oral surgery and root canals are each handled by an MDS specialist." },
-      { "icon": "message-circle", "title": "No surprises", "text": "You see what we see, hear the options in simple words and know the cost first." },
-      { "icon": "shield-check", "title": "Strict sterilisation", "text": "Instruments are sterilised between patients; single-use items are used once." },
-      { "icon": "calendar-clock", "title": "Evening sessions", "text": "Open {{hoursShort}}, so a visit fits around work or college." }
+      {
+        "icon": "award",
+        "title": "Over 15 years of experience",
+        "text": "Dr. Sindhu brings more than 15 years in dentistry to planning your care."
+      },
+      {
+        "icon": "leaf",
+        "title": "Gum-first approach",
+        "text": "Every plan begins with a gum check, so other treatment rests on a healthy base."
+      },
+      {
+        "icon": "stethoscope",
+        "title": "The right specialist",
+        "text": "Gum care, oral surgery and root canals are each handled by an MDS specialist."
+      },
+      {
+        "icon": "message-circle",
+        "title": "No surprises",
+        "text": "You see what we see, hear the options in simple words and know the cost first."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Strict sterilisation",
+        "text": "Instruments are sterilised between patients; single-use items are used once."
+      },
+      {
+        "icon": "calendar-clock",
+        "title": "Evening sessions",
+        "text": "Open {{hoursShort}}, so a visit fits around work or college."
+      }
     ]
   },
   "steps": {
     "eyebrow": "How it works",
     "title": "Your visit in four simple steps",
     "items": [
-      { "icon": "calendar-check", "title": "Book online", "text": "Pick your concern, doctor and time — or call the clinic." },
-      { "icon": "stethoscope", "title": "Examination", "text": "A careful check-up, with X-rays only when they help." },
-      { "icon": "clipboard-check", "title": "Clear plan", "text": "Options, number of visits and cost explained. You decide." },
-      { "icon": "smile", "title": "Treatment & aftercare", "text": "Comfortable treatment, written aftercare and reminders." }
+      {
+        "icon": "calendar-check",
+        "title": "Book online",
+        "text": "Pick your concern, doctor and time — or call the clinic."
+      },
+      {
+        "icon": "stethoscope",
+        "title": "Examination",
+        "text": "A careful check-up, with X-rays only when they help."
+      },
+      {
+        "icon": "clipboard-check",
+        "title": "Clear plan",
+        "text": "Options, number of visits and cost explained. You decide."
+      },
+      {
+        "icon": "smile",
+        "title": "Treatment & aftercare",
+        "text": "Comfortable treatment, written aftercare and reminders."
+      }
     ]
   },
   "booking": {
     "stepsTitle": "Booking takes a minute",
     "steps": [
-      { "title": "Tell us the problem", "text": "Pick a symptom or treatment." },
-      { "title": "Choose doctor and time", "text": "See the days and times available." },
-      { "title": "Confirm with your mobile", "text": "A one-time code verifies your number." }
+      {
+        "title": "Tell us the problem",
+        "text": "Pick a symptom or treatment."
+      },
+      {
+        "title": "Choose doctor and time",
+        "text": "See the days and times available."
+      },
+      {
+        "title": "Confirm with your mobile",
+        "text": "A one-time code verifies your number."
+      }
     ]
   },
   "gallery": {
     "eyebrow": "Gallery",
-    "title": "A calm, modern setting",
-    "lead": "Representative photos — pictures of our own clinic are coming soon."
+    "title": "Inside our clinic",
+    "lead": "A look around Dr. Sindhu Dental Clinic on Ashramam Road."
   },
   "education": {
     "eyebrow": "Patient education",

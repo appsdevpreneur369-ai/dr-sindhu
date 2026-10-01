@@ -7,7 +7,8 @@ Last updated: 2026-10-01 (staging live). Data to collect from the clinic is trac
 - [x] Official clinic name: **"Dr. Sindhu Dental Clinic"** (30 Sep 2026). Title-logo artwork with "& Implant Centre" not published; corrected artwork requested (DRSDC_PendingItems #6).
 - [x] Redesign (30 Sep 2026): SMSDC-style professional layout, logo blue + green palette, no red, Roboto + Montserrat, underline nav, Home/About first, stock photos. Fonts back on `display: 'swap'` so the chosen fonts always show (CLS measured 0).
 - [x] Palette now follows the logo (blue + green).
-- [ ] Replace representative stock photos with the clinic's own (see DRSDC_PendingItems #10).
+- [x] Clinic's own photos (15, from `images/good_images`) used in the Gallery, About, Contact and home; Dr. Sindhu's photo on her card and profile (1 Oct 2026). EXIF/GPS stripped.
+- [ ] Hero, treatment and article photos are still representative stock — replace if the clinic has suitable ones.
 - [x] Staging site deployed 2026-10-01: https://drsdc-frontend-staging-1071497363324.asia-south1.run.app (code on GitHub `appsdevpreneur369-ai/dr-sindhu`). Share with Dr. Sindhu for feedback.
 - [ ] Collect Dr. Sindhu's feedback on the staging site and apply it.
 - [ ] Approve onboarding `tenant/dr-sindhu.json` to staging/production and adding the site origin to the API's CORS list.

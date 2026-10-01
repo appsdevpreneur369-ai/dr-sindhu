@@ -42,11 +42,11 @@ export function DoctorCard({ d, index = 0, headingLevel: H = 'h3', className }: 
   const photo = d.photo ? getImage(d.photo) : null;
   return (
     <article className={cn('reveal group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift', className)}>
-      <div className={cn('relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br', DOCTOR_GRADIENTS[index % DOCTOR_GRADIENTS.length])}>
+      <div className={cn('relative flex h-56 items-center justify-center overflow-hidden bg-gradient-to-br', DOCTOR_GRADIENTS[index % DOCTOR_GRADIENTS.length])}>
         <span aria-hidden="true" className="absolute -left-8 -top-8 h-32 w-32 rounded-full bg-onDark/10" />
         <span aria-hidden="true" className="absolute -bottom-10 -right-6 h-36 w-36 rounded-full bg-leaf/25" />
         {photo ? (
-          <Image src={photo.src} alt={photo.alt} fill sizes="400px" className="object-cover" />
+          <Image src={photo.src} alt={photo.alt} fill sizes="(min-width:768px) 33vw, 85vw" className="object-cover object-[50%_30%]" />
         ) : (
           <span aria-hidden="true" className="relative flex h-24 w-24 items-center justify-center rounded-full border-4 border-onDark/30 bg-onDark/15 font-heading text-4xl font-black text-onDark backdrop-blur">
             {d.initials}

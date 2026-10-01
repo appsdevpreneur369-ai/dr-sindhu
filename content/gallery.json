@@ -1,42 +1,87 @@
 {
-  "_note": "'Our Clinic' gallery (website content only — not the ClinicFlow portal gallery). Until the clinic supplies its own photos, items are REPRESENTATIVE stock photos, and the page says so.",
-  "status": "placeholder",
-  "intro": "A look at the kind of calm, modern setting we care for you in. These are representative photos — pictures of our own clinic on Ashramam Road are coming soon.",
+  "_note": "'Our Clinic' gallery (website content only — not the ClinicFlow portal gallery). All photos are the clinic's own (supplied 1 Oct 2026).",
+  "status": "approved",
+  "intro": "Step inside Dr. Sindhu Dental Clinic on Ashramam Road, Tadepalli — from the front office to our treatment rooms.",
   "categories": [
     "Clinic",
-    "Treatment",
-    "Hygiene"
+    "Treatment rooms",
+    "Our doctor"
   ],
   "items": [
     {
-      "image": "gallery-reception",
-      "caption": "Waiting area",
+      "image": "clinic-front",
+      "caption": "Clinic front on Ashramam Road",
       "category": "Clinic"
     },
     {
-      "image": "gallery-treatment-room",
+      "image": "clinic-treatment-area",
+      "caption": "Treatment area with two dental chairs",
+      "category": "Treatment rooms"
+    },
+    {
+      "image": "doctor-dr-sindhu",
+      "caption": "Dr. Sindhu, periodontist and clinic head",
+      "category": "Our doctor"
+    },
+    {
+      "image": "clinic-front-office",
+      "caption": "Front office and reception",
+      "category": "Clinic"
+    },
+    {
+      "image": "clinic-dental-chair",
+      "caption": "Dental chair and treatment unit",
+      "category": "Treatment rooms"
+    },
+    {
+      "image": "clinic-entrance",
+      "caption": "Entrance",
+      "category": "Clinic"
+    },
+    {
+      "image": "clinic-examination-room",
+      "caption": "Examination room",
+      "category": "Treatment rooms"
+    },
+    {
+      "image": "clinic-consultation-room",
+      "caption": "Consultation room",
+      "category": "Clinic"
+    },
+    {
+      "image": "doctor-dr-sindhu-desk",
+      "caption": "Dr. Sindhu in her consultation room",
+      "category": "Our doctor"
+    },
+    {
+      "image": "clinic-treatment-unit",
+      "caption": "Treatment unit with patient display",
+      "category": "Treatment rooms"
+    },
+    {
+      "image": "clinic-reception-desk",
+      "caption": "Reception desk",
+      "category": "Clinic"
+    },
+    {
+      "image": "clinic-treatment-room",
       "caption": "Treatment room",
-      "category": "Treatment"
+      "category": "Treatment rooms"
     },
     {
-      "image": "gallery-chair",
-      "caption": "Dental chair",
-      "category": "Treatment"
-    },
-    {
-      "image": "gallery-instruments",
-      "caption": "Sterilised instruments",
-      "category": "Hygiene"
-    },
-    {
-      "image": "gallery-xray",
-      "caption": "Digital X-ray",
-      "category": "Treatment"
-    },
-    {
-      "image": "gallery-modern-chair",
-      "caption": "Modern equipment",
+      "image": "clinic-reception-decor",
+      "caption": "Reception décor",
       "category": "Clinic"
+    },
+    {
+      "image": "clinic-chair-side",
+      "caption": "Dental chair — side view",
+      "category": "Treatment rooms"
+    },
+    {
+      "image": "clinic-chair-light",
+      "caption": "Dental chair under the operating light",
+      "category": "Treatment rooms"
     }
   ]
 }

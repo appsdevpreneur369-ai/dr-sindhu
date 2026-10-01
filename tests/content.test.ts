@@ -36,6 +36,19 @@ describe('content schema', () => {
     expect(checkReferences(ok)).toEqual([]);
   });
 
+  it("doctor photos must be the clinic's own (a stock photo with a credit is rejected)", () => {
+    const c = parseAll(raw());
+    expect(c['doctors.json'].doctors[0].photo).toBe('doctor-dr-sindhu');
+    const bad = structuredClone(c);
+    bad['doctors.json'].doctors[1].photo = 'hero';
+    expect(checkReferences(bad).join()).toMatch(/stock photo/);
+  });
+
+  it('the gallery uses only the clinic’s own photos (no stock credits)', () => {
+    const imgs = read('images.json').images;
+    for (const g of read('gallery.json').items) expect(imgs[g.image].credit).toBeUndefined();
+  });
+
   it('PIN is empty or 6 digits', () => {
     const c = read('clinic.json');
     c.address.postalCode = '5225';

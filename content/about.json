@@ -7,18 +7,37 @@
       "Gum disease is one of the most common reasons adults lose teeth, and it often goes unnoticed because it rarely hurts in the early stages. Starting every plan with the gums means problems are caught early and other treatment rests on a healthy base.",
       "Dr. Sindhu works alongside an oral and maxillofacial surgeon and a root canal specialist, so extractions, wisdom teeth and root canal treatment can be handled at the same clinic by the doctor trained for each."
     ],
-    "image": "about"
+    "image": "clinic-consultation-room"
   },
   "values": {
     "title": "What you can expect",
     "items": [
-      { "icon": "eye", "title": "See it for yourself", "text": "We show you what we find, using X-rays or photos where they help." },
-      { "icon": "indian-rupee", "title": "Costs before treatment", "text": "Prices are explained before any treatment starts. No surprises at the counter." },
-      { "icon": "hand-heart", "title": "Gentle by default", "text": "Local anaesthetic is used for procedures, and you can ask to pause at any time." },
-      { "icon": "shield-check", "title": "Sterile every time", "text": "Instruments are sterilised between patients; disposables are used once." }
+      {
+        "icon": "eye",
+        "title": "See it for yourself",
+        "text": "We show you what we find, using X-rays or photos where they help."
+      },
+      {
+        "icon": "indian-rupee",
+        "title": "Costs before treatment",
+        "text": "Prices are explained before any treatment starts. No surprises at the counter."
+      },
+      {
+        "icon": "hand-heart",
+        "title": "Gentle by default",
+        "text": "Local anaesthetic is used for procedures, and you can ask to pause at any time."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Sterile every time",
+        "text": "Instruments are sterilised between patients; disposables are used once."
+      }
     ]
   },
-  "team": { "title": "The team", "lead": "Three MDS specialists, one clinic." },
+  "team": {
+    "title": "The team",
+    "lead": "Three MDS specialists, one clinic."
+  },
   "starterFeatures": {
     "title": "Easier visits, before and after",
     "lead": "The clinic uses ClinicFlow247 for appointments, so you get:",

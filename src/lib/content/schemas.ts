@@ -123,6 +123,8 @@ export const DoctorSchema = z.object({
   role: z.string(),
   isHead: z.boolean(),
   photo: z.string().nullable(),
+  /** A second photo of the doctor (own photos only), shown on the profile page. */
+  photoSecondary: z.string().nullable(),
   registrationNumber: z.string(),
   clinicflowDoctorId: z.string().nullable(),
   summary: z.string().min(1),

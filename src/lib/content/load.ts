@@ -68,7 +68,13 @@ export function checkReferences(c: SiteContent, articleRefs: { slug: string; ima
   const allSlugs = doctors.flatMap((d) => [d.slug, ...d.previousSlugs]);
   need(new Set(allSlugs).size === allSlugs.length, 'doctors.json: a previousSlug clashes with a current slug');
   need(doctors.filter((d) => d.isHead).length <= 1, 'doctors.json: more than one isHead doctor');
-  for (const d of doctors) if (d.photo) need(imageIds.has(d.photo), `doctors.json ${d.id}: photo "${d.photo}" not in images.json`);
+  for (const d of doctors)
+    for (const ph of [d.photo, d.photoSecondary])
+      if (ph) {
+        need(imageIds.has(ph), `doctors.json ${d.id}: photo "${ph}" not in images.json`);
+        // Never present a stock photo as one of our doctors.
+        need(!c['images.json'].images[ph]?.credit, `doctors.json ${d.id}: photo "${ph}" is a stock photo`);
+      }
 
   for (const cat of c['services.json'].categories) {
     for (const id of cat.doctors) need(doctorIds.has(id), `services.json ${cat.slug}: unknown doctor "${id}"`);

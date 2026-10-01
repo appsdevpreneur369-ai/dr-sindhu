@@ -4,7 +4,7 @@ import { PageHeader } from '@/components/layout/PageHeader';
 import { Icon, WhatsAppIcon } from '@/components/ui/Icon';
 import { OpenStatus } from '@/components/ui/OpenStatus';
 import { DraftBadge } from '@/components/ui/primitives';
-import { siteClinic, sitePages } from '@/lib/content';
+import { getImage, siteClinic, sitePages } from '@/lib/content';
 import { DAY_LABEL, formatSession } from '@/lib/hours';
 import { channels, directionsHref, generalWhatsappHref, mapEmbedSrc, mapsApproximate } from '@/lib/links';
 import { pageMetadata } from '@/lib/seo';
@@ -17,7 +17,7 @@ export default function ContactPage() {
   const c = siteClinic;
   return (
     <>
-      <PageHeader title={p.h1!} intro={p.intro} crumbs={[{ name: 'Contact', path: '/contact' }]} />
+      <PageHeader title={p.h1!} intro={p.intro} image={getImage('clinic-front')} crumbs={[{ name: 'Contact', path: '/contact' }]} />
       <section className="section">
         <div className="container-site grid gap-10 lg:grid-cols-2">
           <div className="space-y-6">
