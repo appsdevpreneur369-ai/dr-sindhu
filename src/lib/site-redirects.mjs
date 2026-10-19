@@ -8,6 +8,9 @@ import { planHas } from './plan-matrix.mjs';
  * @param {import('./plan-matrix.mjs').Plan} plan
  */
 export function portalBase(portal, plan) {
+  // Per-deployment override (staging points at the staging ClinicFlow frontend); baked in at build time.
+  const override = (process.env.NEXT_PUBLIC_PORTAL_BASE_URL || '').trim();
+  if (override) return override.replace(/\/$/, '');
   if (planHas(plan, 'customSubdomain') && portal.enterprise.subdomain) return `https://${portal.enterprise.subdomain}.clinicflow247.com`;
   return portal.portalBaseUrl.replace(/\/$/, '');
 }

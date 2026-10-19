@@ -33,6 +33,14 @@ describe('portal links + redirects', () => {
     expect(portalBase(p, 'starter')).toBe('https://clinicflow247.com');
     expect(portalBase(p, 'enterprise')).toBe('https://drsindhu.clinicflow247.com');
   });
+  it('NEXT_PUBLIC_PORTAL_BASE_URL overrides the portal per deployment (staging)', () => {
+    process.env.NEXT_PUBLIC_PORTAL_BASE_URL = 'https://staging.example.run.app/';
+    try {
+      expect(portalUrl(portal, 'starter', 'login')).toBe('https://staging.example.run.app/clinic/dr-sindhu-dental-clinic/login');
+    } finally {
+      delete process.env.NEXT_PUBLIC_PORTAL_BASE_URL;
+    }
+  });
   it('serves /login, /register, /clinic/:slug/* and alias redirects', () => {
     const r = buildRedirects({ portal, plan: 'starter', doctors: [] });
     const find = (s: string) => r.find((x) => x.source === s);

@@ -94,7 +94,7 @@ Manual, same approach as the SMSDC site and ClinicFlow247 (no CI/CD): build the 
 | Image | `asia-south1-docker.pkg.dev/sincere-stock-499113-f1/clinicflow/drsdc-frontend:<git short SHA>` |
 | Staging service | `drsdc-frontend-staging` — 256Mi, 1 CPU, min-instances 0, unauthenticated, port 3000 |
 | Staging URL | https://drsdc-frontend-staging-1071497363324.asia-south1.run.app |
-| Staging build args | `NEXT_PUBLIC_SITE_ENV=staging` (noindex header + robots Disallow + meta noindex), `NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true`, `NEXT_PUBLIC_NOINDEX=true`, `NEXT_PUBLIC_SITE_URL=<staging URL>`. No ClinicFlow API args: the clinic is **not** onboarded on the staging API, so booking runs in **WhatsApp mode** (messages go to the clinic's real number +91 94416 95953). |
+| Staging build args | `NEXT_PUBLIC_SITE_ENV=staging` (noindex header + robots Disallow + meta noindex), `NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true`, `NEXT_PUBLIC_NOINDEX=true`, `NEXT_PUBLIC_SITE_URL=<staging URL>`. Since 2026-10-19 (owner's yes) the clinic is onboarded on the staging API and the site books live: `NEXT_PUBLIC_CLINICFLOW_API_URL=https://clinicflow-api-staging-1071497363324.asia-south1.run.app/api/v1`, `NEXT_PUBLIC_CLINICFLOW_CLINIC_SLUG=dr-sindhu-dental-clinic`, `NEXT_PUBLIC_BOOKING_OTP_HINT=123456`, `NEXT_PUBLIC_PORTAL_BASE_URL=https://clinicflow-frontend-staging-1071497363324.asia-south1.run.app` (sign-in/register go to the staging portal). This origin is in the staging API's `APP_CORS_ALLOWEDORIGINS`. |
 
 History (staging):
 
@@ -102,14 +102,14 @@ History (staging):
 | --- | --- | --- | --- |
 | 2026-10-01 | `9f5d400` | `drsdc-frontend-staging-00001-5rv` | First deploy (redesign: blue/green, Roboto + Montserrat, stock photos). Live-verified: 20 URLs 200/307/404 as expected, noindex, 129 images 0 broken, popup in WhatsApp mode, no ERROR logs. |
 | 2026-10-01 | `d9f2984` | `drsdc-frontend-staging-00002-zj5` | Clinic's own photos: 15-photo gallery, Dr. Sindhu's photo on her card/profile, real photos on About/Contact/home. Live-verified: pages 200, noindex, 162 images 0 broken, no ERROR logs. |
-| 2026-10-01 | `c5f2c9b` | `drsdc-frontend-staging-00003-mhr` | Nav underline-only active state (focus box removed), Dr. Sindhu's new large portrait, bigger About hero, full timings wording from one formatter. Live-verified: /, /about, /doctors/dr-sindhu 200, 165 images 0 broken, no ERROR logs. **Current.** |
+| 2026-10-01 | `c5f2c9b` | `drsdc-frontend-staging-00003-mhr` | Nav underline-only active state (focus box removed), Dr. Sindhu's new large portrait, bigger About hero, full timings wording from one formatter. Live-verified: /, /about, /doctors/dr-sindhu 200, 165 images 0 broken, no ERROR logs. |
 
 Redeploy staging (all NEXT_PUBLIC_* values are baked in at build time):
 
 ```bash
 SHA=$(git rev-parse --short HEAD)
 IMG=asia-south1-docker.pkg.dev/sincere-stock-499113-f1/clinicflow/drsdc-frontend:$SHA
-docker build   --build-arg NEXT_PUBLIC_SITE_ENV=staging   --build-arg NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true   --build-arg NEXT_PUBLIC_NOINDEX=true   --build-arg NEXT_PUBLIC_SITE_URL=https://drsdc-frontend-staging-1071497363324.asia-south1.run.app   -t $IMG .
+docker build   --build-arg NEXT_PUBLIC_SITE_ENV=staging   --build-arg NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true   --build-arg NEXT_PUBLIC_NOINDEX=true   --build-arg NEXT_PUBLIC_SITE_URL=https://drsdc-frontend-staging-1071497363324.asia-south1.run.app   --build-arg NEXT_PUBLIC_CLINICFLOW_API_URL=https://clinicflow-api-staging-1071497363324.asia-south1.run.app/api/v1   --build-arg NEXT_PUBLIC_CLINICFLOW_CLINIC_SLUG=dr-sindhu-dental-clinic   --build-arg NEXT_PUBLIC_BOOKING_OTP_HINT=123456   --build-arg NEXT_PUBLIC_PORTAL_BASE_URL=https://clinicflow-frontend-staging-1071497363324.asia-south1.run.app   -t $IMG .
 docker push $IMG
 gcloud run deploy drsdc-frontend-staging --project sincere-stock-499113-f1 --region asia-south1 --image $IMG
 ```
