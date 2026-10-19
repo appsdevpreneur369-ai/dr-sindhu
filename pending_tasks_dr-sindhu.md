@@ -11,7 +11,7 @@ Last updated: 2026-10-01 (staging live). Data to collect from the clinic is trac
 - [ ] Hero, treatment and article photos are still representative stock — replace if the clinic has suitable ones.
 - [x] Staging site deployed 2026-10-01: https://drsdc-frontend-staging-1071497363324.asia-south1.run.app (code on GitHub `appsdevpreneur369-ai/dr-sindhu`). Share with Dr. Sindhu for feedback.
 - [ ] Collect Dr. Sindhu's feedback on the staging site and apply it.
-- [ ] Approve onboarding `tenant/dr-sindhu.json` to staging/production and adding the site origin to the API's CORS list.
+- [x] Staging: onboarded + CORS approved and done (19 Oct 2026). - [ ] Production: still needs the owner's yes.
 
 ## B. After the clinic supplies data (see DRSDC_PendingItems.md)
 
@@ -23,9 +23,9 @@ Last updated: 2026-10-01 (staging live). Data to collect from the clinic is trac
 
 ## C. When going live with booking
 
-- [ ] Onboard tenant (STARTER), then super-admin sets clinic **ACTIVE** (importer does not), set doctor durations (15 min) + weekly schedules (Mon–Sat 10:00–21:00, break 14:00–17:00)
-- [ ] `booking.json` → `apiBaseUrl`, `clinicSlug` (or `NEXT_PUBLIC_CLINICFLOW_*` build args)
-- [ ] API `APP_CORS_ALLOWEDORIGINS` += site origin (owner approval)
+- [x] (staging, 19 Oct 2026) Onboard tenant (STARTER), then super-admin sets clinic **ACTIVE** (importer does not), set doctor durations (15 min) + weekly schedules (Mon–Sat 10:00–21:00, break 14:00–17:00)
+- [x] (staging, build args) `booking.json` → `apiBaseUrl`, `clinicSlug` (or `NEXT_PUBLIC_CLINICFLOW_*` build args)
+- [x] (staging) API `APP_CORS_ALLOWEDORIGINS` += site origin (owner approval)
 - [ ] Real doctor login emails (invite flow; no passwords in files)
 
 - [ ] Next.js image optimiser hung on some photos (fixed here by pre-generated WebP + custom loader); worth checking the same `sharp`/Next combination in other ClinicFlow sites.
