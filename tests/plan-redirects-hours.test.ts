@@ -5,9 +5,9 @@ import { buildRedirects, portalBase, portalUrl } from '@/lib/site-redirects.mjs'
 import { content } from './fixtures';
 
 describe('plan gating', () => {
-  it('the clinic is on STARTER', async () => {
+  it('the clinic is on ENTERPRISE (upgraded 19 Oct 2026, white-label)', async () => {
     const plan = (await import('../content/plan.json')).default.plan;
-    expect(plan).toBe('starter');
+    expect(plan).toBe('enterprise');
   });
   it('starter has exactly the promised features and none of the Pro/Enterprise ones', () => {
     for (const f of ['onlineBooking', 'liveQueue', 'digitalPrescriptions', 'emailReminders', 'whatsappReminders', 'smsReminders'] as const) expect(hasFeature('starter', f)).toBe(true);

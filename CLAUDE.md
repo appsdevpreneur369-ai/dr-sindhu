@@ -1,13 +1,13 @@
 # CLAUDE.md — Dr. Sindhu Dental Clinic public website (DRSDC)
 
-Public website for **Dr. Sindhu Dental Clinic**, Ashramam Road, Tadepalli (project code DRSDC), a ClinicFlow247 **STARTER** tenant with one extra: this free custom website.
+Public website for **Dr. Sindhu Dental Clinic**, Ashramam Road, Tadepalli (project code DRSDC), a ClinicFlow247 **ENTERPRISE (white-label)** tenant since 19 Oct 2026 (owner's decision; was STARTER) with this custom website. On staging the clinic's ClinicFlow pages carry its logo, colours and favicon. Still to do for Enterprise: a custom subdomain (tenant app + LB host rule) and `portal.json` `enterprise.subdomain`, see `docs/UPGRADE_TO_ENTERPRISE.md`.
 
 Status: **on staging since 2026-10-01** (owner approved the GitHub push and staging deploy) — not in production. Open items: `pending_tasks_dr-sindhu.md`; data to collect: `DRSDC_PendingItems.md`.
 
 ## Hard rules
 
 - **Deploy only when asked.** Staging deploys and pushes to GitHub happen when the owner asks; never production without explicit approval. Never modify anything under `D:\ClinicFlow` or `D:\SMSDC` (read-only references). Never run the onboarding file against staging or production, and never change the ClinicFlow staging API, without the owner's explicit yes.
-- **Starter plan only.** The site must not promise more than Starter (source: `D:\ClinicFlow\clinicflow-frontend\src\components\landing\pricingData.ts`): up to 5 doctors, unlimited appointments, online booking, live queue, digital prescriptions, email confirmations/reminders, WhatsApp 1,000/mo, SMS 1,000/mo. Not advertised/built: analytics, portal gallery, white-label portal, custom subdomain, custom fields, dedicated onboarding, review requests, no-show alerts, win-back, waitlist.
+- **Plan gate (was Starter-only until 19 Oct 2026).** The site must not promise more than the clinic's plan in `content/plan.json` (now enterprise); it was built to not promise more than Starter (source: `D:\ClinicFlow\clinicflow-frontend\src\components\landing\pricingData.ts`): up to 5 doctors, unlimited appointments, online booking, live queue, digital prescriptions, email confirmations/reminders, WhatsApp 1,000/mo, SMS 1,000/mo. Not advertised/built: analytics, portal gallery, white-label portal, custom subdomain, custom fields, dedicated onboarding, review requests, no-show alerts, win-back, waitlist.
 - **Plan gate:** `content/plan.json` `{ "plan": "starter" }` gates anything beyond Starter. Upgrading to Enterprise must be a config change (see `docs/UPGRADE_TO_ENTERPRISE.md`).
 - **Everything config-driven** from `/content`, zod-validated; every record has `status: approved | placeholder`. No hard-coded copy, colours, images, phones or hours in components. `NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true` shows "Draft" badges.
 - **Placeholders never become dead links.** While phone/WhatsApp/email are placeholders: hide Call/WhatsApp/email buttons (show "Book online"), omit them from JSON-LD, disable the WhatsApp booking fallback (`src/lib/contact.ts`, `selectMode.ts`). Phone + WhatsApp +91 94416 95953 are approved (30 Sep 2026); email is still a placeholder.

@@ -9,7 +9,7 @@
     "phone": "+919441695953",
     "email": null,
     "_note_email": "Clinic email not provided yet -> null (never invent one).",
-    "plan": "STARTER",
+    "plan": "ENTERPRISE",
     "slug": "dr-sindhu-dental-clinic",
     "_note_slug": "Passed explicitly to POST /clinics; must be free on the target environment (check GET /clinics/public/<slug> -> 404 first).",
     "whiteLabel": false,
@@ -179,9 +179,7 @@
   ],
   "processSteps": [],
   "videos": [],
-  "treatments": [],
-  "_note_treatmentsPlan": "Core gates treatments + gallery to PRO and above (PlanService \"gallery\"; confirmed on a local API 30 Sep 2026: 402 GALLERY_NOT_ENTITLED on STARTER). The website shows all 9 treatments from its own content either way. On upgrade, re-run `npm run tenant` with plan.json = enterprise to fill this list.",
-  "_upgradeTreatments": [
+  "treatments": [
     {
       "title": "Gum Care (Periodontics)",
       "category": "Gum care",
@@ -237,6 +235,8 @@
       "displayOrder": 8
     }
   ],
+  "_note_treatmentsPlan": "Core gates treatments + gallery to PRO and above (PlanService \"gallery\"; confirmed on a local API 30 Sep 2026: 402 GALLERY_NOT_ENTITLED on STARTER). The website shows all 9 treatments from its own content either way. On upgrade, re-run `npm run tenant` with plan.json = enterprise to fill this list.",
+  "_upgradeTreatments": [],
   "_note_treatments": "9 categories from content/services.json; sub-treatments folded into the description (no sub-treatment entity in core). No prices.",
   "contentPages": [],
   "flags": [
