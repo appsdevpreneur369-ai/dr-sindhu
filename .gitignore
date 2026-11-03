@@ -51,3 +51,6 @@ docs/seo-reports/**/*.report.json
 /qa/
 /.next-e2e/
 /public/images/opt/
+
+# production setup outputs (scripts/prod/setup-production.py)
+/scripts/prod/*.json
