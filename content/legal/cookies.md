@@ -6,8 +6,6 @@ draft: false
 lastUpdated: "2026-09-30"
 ---
 
-**Draft — to be reviewed by the clinic before launch.**
-
 ## What this website stores
 
 This website does **not** use advertising or analytics cookies.

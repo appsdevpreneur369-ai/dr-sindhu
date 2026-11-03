@@ -6,8 +6,6 @@ draft: false
 lastUpdated: "2026-09-30"
 ---
 
-**Draft — to be reviewed by the clinic and a legal adviser before launch.**
-
 By using this website you agree to these terms. If you do not agree, please do not use the site.
 
 ## About this website

@@ -6,15 +6,13 @@ draft: false
 lastUpdated: "2026-09-30"
 ---
 
-**Draft — to be reviewed by the clinic and a legal adviser before launch.**
-
 This policy explains how Dr. Sindhu Dental Clinic ("the clinic", "we") handles personal data collected through this website and its online booking. It is written with India's **Digital Personal Data Protection Act, 2023** ("DPDP Act") in mind.
 
 ## Who is responsible for your data
 
 The clinic is the **Data Fiduciary** for personal data you share with us through this website. Online booking and reminders are run on **ClinicFlow247**, which processes that data on the clinic's behalf as a **Data Processor**.
 
-Contact for privacy questions and grievances: the clinic's email address (to be confirmed) or the phone number shown on the Contact page. A named grievance officer will be listed here before launch.
+Contact for privacy questions and grievances: call the clinic on the phone number shown on the Contact page.
 
 ## What we collect
 

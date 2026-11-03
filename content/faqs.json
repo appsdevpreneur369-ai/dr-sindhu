@@ -2,7 +2,7 @@
   "_note": "General FAQs (FAQs page + home). Each treatment page has its own FAQs in services.json. {{tokens}} are filled from content (src/lib/vars.ts) so hours and addresses never drift.",
   "status": "placeholder",
   "items": [
-    { "q": "What are the clinic timings?", "a": "{{hoursSummary}}. Working days are to be confirmed by the clinic.", "home": true },
+    { "q": "What are the clinic timings?", "a": "{{hoursSummary}}.", "home": true },
     { "q": "Where exactly is the clinic?", "a": "On Ashramam Road, Tadepalli, Andhra Pradesh. The exact door number and landmark will be added here soon; until then, call us for directions.", "home": true },
     { "q": "How do I book an appointment?", "a": "Use the Book button on any page. Choose your concern, doctor, day and time, and confirm with a one-time code sent to your mobile. You can also call the clinic.", "home": true },
     { "q": "Do you publish treatment prices?", "a": "No. The cost depends on what the examination shows, so the dentist explains the plan and the fee before any treatment begins.", "home": true },

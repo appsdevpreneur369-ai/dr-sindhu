@@ -6,8 +6,6 @@ draft: false
 lastUpdated: "2026-09-30"
 ---
 
-**Draft — to be reviewed by the clinic before launch.**
-
 The information on this website — including treatment descriptions, patient education articles and FAQs — is **general information**. It is not a diagnosis and is not a substitute for an examination and advice from a qualified dentist or doctor.
 
 - Every mouth is different. The treatment, number of visits and results described here are typical and may not apply to you.

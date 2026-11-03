@@ -8,6 +8,7 @@ import { getImage, siteClinic, sitePages } from '@/lib/content';
 import { DAY_LABEL, formatSessions } from '@/lib/hours';
 import { channels, directionsHref, generalWhatsappHref, mapEmbedSrc, mapsApproximate } from '@/lib/links';
 import { pageMetadata } from '@/lib/seo';
+import { SHOW_BADGES } from '@/lib/site';
 import { fullAddress } from '@/lib/vars';
 
 const p = sitePages.contact;
@@ -94,9 +95,12 @@ export default function ContactPage() {
                   ))}
                 </tbody>
               </table>
-              <p className="border-t border-border px-6 py-3 text-sm text-textSecondary">
-                Session times confirmed; working days to be confirmed by the clinic. <DraftBadge status={c.hours.daysStatus} />
-              </p>
+              {/* Review note: only on preview builds with draft badges on (hidden for the clinic, 3 Nov 2026). */}
+              {SHOW_BADGES && c.hours.daysStatus === 'placeholder' && (
+                <p className="border-t border-border px-6 py-3 text-sm text-textSecondary">
+                  Session times confirmed; working days to be confirmed by the clinic. <DraftBadge status={c.hours.daysStatus} />
+                </p>
+              )}
             </div>
           </div>
 
