@@ -2,7 +2,7 @@
 title: "Cookie Policy"
 slug: cookies
 status: placeholder
-draft: true
+draft: false
 lastUpdated: "2026-09-30"
 ---
 

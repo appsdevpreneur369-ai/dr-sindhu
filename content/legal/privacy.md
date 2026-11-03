@@ -2,7 +2,7 @@
 title: "Privacy Policy"
 slug: privacy
 status: placeholder
-draft: true
+draft: false
 lastUpdated: "2026-09-30"
 ---
 

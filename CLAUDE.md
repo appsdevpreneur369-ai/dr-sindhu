@@ -109,7 +109,7 @@ Redeploy staging (all NEXT_PUBLIC_* values are baked in at build time):
 ```bash
 SHA=$(git rev-parse --short HEAD)
 IMG=asia-south1-docker.pkg.dev/sincere-stock-499113-f1/clinicflow/drsdc-frontend:$SHA
-docker build   --build-arg NEXT_PUBLIC_SITE_ENV=staging   --build-arg NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=true   --build-arg NEXT_PUBLIC_NOINDEX=true   --build-arg NEXT_PUBLIC_SITE_URL=https://drsdc-frontend-staging-1071497363324.asia-south1.run.app   --build-arg NEXT_PUBLIC_CLINICFLOW_API_URL=https://clinicflow-api-staging-1071497363324.asia-south1.run.app/api/v1   --build-arg NEXT_PUBLIC_CLINICFLOW_CLINIC_SLUG=dr-sindhu-dental-clinic   --build-arg NEXT_PUBLIC_BOOKING_OTP_HINT=123456   --build-arg NEXT_PUBLIC_PORTAL_BASE_URL=https://clinicflow-frontend-staging-1071497363324.asia-south1.run.app   -t $IMG .
+docker build   --build-arg NEXT_PUBLIC_SITE_ENV=staging   --build-arg NEXT_PUBLIC_SHOW_PLACEHOLDER_BADGES=false   --build-arg NEXT_PUBLIC_NOINDEX=true   --build-arg NEXT_PUBLIC_SITE_URL=https://drsdc-frontend-staging-1071497363324.asia-south1.run.app   --build-arg NEXT_PUBLIC_CLINICFLOW_API_URL=https://clinicflow-api-staging-1071497363324.asia-south1.run.app/api/v1   --build-arg NEXT_PUBLIC_CLINICFLOW_CLINIC_SLUG=dr-sindhu-dental-clinic   --build-arg NEXT_PUBLIC_BOOKING_OTP_HINT=123456   --build-arg NEXT_PUBLIC_PORTAL_BASE_URL=https://clinicflow-frontend-staging-1071497363324.asia-south1.run.app   -t $IMG .
 docker push $IMG
 gcloud run deploy drsdc-frontend-staging --project sincere-stock-499113-f1 --region asia-south1 --image $IMG
 ```
