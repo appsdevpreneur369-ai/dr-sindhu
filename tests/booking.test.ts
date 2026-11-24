@@ -121,7 +121,7 @@ describe('phone / email / name validation', () => {
     expect(normalizeIndianMobile('+91 XXXXX XXXXX')).toBeNull();
   });
   it('validates emails', () => {
-    expect(isValidEmail('patient@gmail.com')).toBe(true);
+    expect(isValidEmail('owner@example.invalid')).toBe(true);
     expect(isValidEmail('a@b')).toBe(false);
     expect(isValidEmail('email to be confirmed')).toBe(false);
     expect(isValidEmail('x..y@mail.com')).toBe(false);

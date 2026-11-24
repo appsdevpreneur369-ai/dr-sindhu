@@ -103,7 +103,7 @@
     "description": "A periodontist-led dental clinic on Ashramam Road, Tadepalli, with specialists for gum care, oral surgery and root canal treatment under one roof."
   },
   "owner": {
-    "email": "appsdevpreneur369+drsdc-admin@gmail.com",
+    "email": "drsdc-admin@example.invalid",
     "password": null,
     "firstName": "Sindhu",
     "lastName": "MDS",
@@ -113,7 +113,7 @@
   "_note_doctorNames": "The API requires a non-blank lastName. Doctors with a single name get lastName \"MDS\" (PLACEHOLDER), as in the SMSDC tenant file. The website matches ClinicFlow doctors by first name when content lastName is empty.",
   "doctors": [
     {
-      "email": "appsdevpreneur369+drsdc-sindhu@gmail.com",
+      "email": "drsdc-sindhu@example.invalid",
       "password": null,
       "firstName": "Sindhu",
       "lastName": "MDS",
@@ -125,7 +125,7 @@
       "isOwner": true
     },
     {
-      "email": "appsdevpreneur369+drsdc-preethi@gmail.com",
+      "email": "drsdc-preethi@example.invalid",
       "password": null,
       "firstName": "Preethi",
       "lastName": "MDS",
@@ -136,7 +136,7 @@
       "bio": "Dr. Preethi is an MDS oral and maxillofacial surgeon. She removes teeth that cannot be saved, including impacted wisdom teeth, and carries out minor oral surgery and the surgical stage of dental implants. Before any procedure she walks you through what will happen, how long healing usually takes and what to do at home afterwards."
     },
     {
-      "email": "appsdevpreneur369+drsdc-naveen-kumar@gmail.com",
+      "email": "drsdc-naveen-kumar@example.invalid",
       "password": null,
       "firstName": "Naveen",
       "lastName": "Kumar",

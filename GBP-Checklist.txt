@@ -53,7 +53,7 @@ Below is everything we need from you, and how the process works.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. NEEDED TO START
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• A Gmail ID for the clinic (e.g. dr.sindhu.mds@gmail.com). You will be the owner of the listing, and we will be added as manager to set it up and maintain it for you.
+• A Gmail ID for the clinic (e.g. owner@example.invalid). You will be the owner of the listing, and we will be added as manager to set it up and maintain it for you.
 • Clinic name exactly as it appears on your signboard
 • Full clinic address with landmark and PIN code
 • Clinic phone number (Google may call or text this number for verification)

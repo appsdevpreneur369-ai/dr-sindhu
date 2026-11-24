@@ -28,7 +28,13 @@ const hoursText = `${DAY[openDays[0].day]}–${DAY[openDays[openDays.length - 1]
 const address = [clinic.address.doorNumber, clinic.address.street, clinic.address.landmark && `near ${clinic.address.landmark}`, clinic.address.locality, `${clinic.address.region}${clinic.address.postalCode ? ` ${clinic.address.postalCode}` : ''}`]
   .filter(Boolean)
   .join(', ');
-const alias = (tag) => `appsdevpreneur369+drsdc-${tag}@gmail.com`;
+// Staff login aliases (audit L3, 2026-11-24): never commit a real inbox to this PUBLIC repo. Set
+// TENANT_LOGIN_EMAIL_BASE=<user>@<domain> when generating for onboarding; otherwise placeholders.
+const EMAIL_BASE = process.env.TENANT_LOGIN_EMAIL_BASE || '';
+const alias = (tag) => {
+  const [user, domain] = EMAIL_BASE.split('@');
+  return user && domain ? `${user}+drsdc-${tag}@${domain}` : `drsdc-${tag}@example.invalid`;
+};
 
 const tenant = {
   _note:
